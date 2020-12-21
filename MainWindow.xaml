@@ -78,6 +78,48 @@
 		<Button x:Name="f8" Content="bLaufer" HorizontalAlignment="Left" Margin="530,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
 		<Button x:Name="g8" Content="bKon" HorizontalAlignment="Left" Margin="630,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
 		<Button x:Name="h8" Content="bWieza" HorizontalAlignment="Left" Margin="730,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		
+		<!--custom control-->
+		<local:Field x:Name="field" HorizontalAlignment="Left" Height="100" Margin="385,10,0,0" VerticalAlignment="Top" Width="75"/>
+		
+		<!--creating a custom wpf button template in XAML-->
+		
+		<!--creating a style-->
+		<!--sets the properties of the button that we want to customize-->
+		<Page.Resources>
+			<Style x:Key="OrangeButton" TargetType="Button">
+				<Setter Property="OverridesDefaultStyle" Value="True"/>
+				<Setter Property="Margin" Value="2"/>
+				<Setter Property="FontFamily" Value="Verdana"/>
+				<Setter Property="FontSize" Value="11px"/>
+				<Setter Property="FontWeight" Value="Bold"/>
+				<Setter Property="FocusVisualStyle"Value="{StaticResource MyFocusVisual}"/>
+				<Setter Property="Background">
+					<Setter.Value>
+						<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+							<GradientStop Color="#FFFFD190" Offset="0.2"/>
+							<GradientStop Color="Orange" Offset="0.85"/>
+							<GradientStop Color="#FFFFD190" Offset="1"/>
+						</LinearGradientBrush>
+					</Setter.Value>
+				</Setter>
+			</Style>
+
+			<Style x:Key="MyFocusVisual">
+				<Setter Property="Control.Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type Control}">
+							<Grid Margin="3 2">
+								<Rectangle Name="r1" StrokeThickness="1" Stroke="Black" StrokeDashArray="2 2"/>
+								<Border Name="border" Width="{TemplateBinding ActualWidth}" Height="{TemplateBinding ActualHeight}"  CornerRadius="2" BorderThickness="1" />
+							</Grid>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		</Page.Resources>
+		
+		
 
 	</Grid>
 </Window>

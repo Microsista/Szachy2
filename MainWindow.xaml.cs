@@ -199,8 +199,6 @@ namespace Szachy2
 						chessboard[i, j].Background = cKrol;
 					}
 				}
-
-
 		}
 
 		private String findSelected(object sender)
