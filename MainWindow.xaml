@@ -86,14 +86,14 @@
 		
 		<!--creating a style-->
 		<!--sets the properties of the button that we want to customize-->
-		<!--<Page.Resources>
+		<Grid.Resources>
 			<Style x:Key="OrangeButton" TargetType="Button">
 				<Setter Property="OverridesDefaultStyle" Value="True"/>
 				<Setter Property="Margin" Value="2"/>
 				<Setter Property="FontFamily" Value="Verdana"/>
 				<Setter Property="FontSize" Value="11px"/>
 				<Setter Property="FontWeight" Value="Bold"/>
-				<Setter Property="FocusVisualStyle"Value="{StaticResource MyFocusVisual}"/>
+				<Setter Property="FocusVisualStyle" Value="{StaticResource MyFocusVisual}"/>
 				<Setter Property="Background">
 					<Setter.Value>
 						<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -117,7 +117,7 @@
 					</Setter.Value>
 				</Setter>
 			</Style>
-		</Page.Resources>-->
+		</Grid.Resources>
 		
 		
 
