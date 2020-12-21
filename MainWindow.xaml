@@ -86,7 +86,7 @@
 		
 		<!--creating a style-->
 		<!--sets the properties of the button that we want to customize-->
-		<Page.Resources>
+		<!--<Page.Resources>
 			<Style x:Key="OrangeButton" TargetType="Button">
 				<Setter Property="OverridesDefaultStyle" Value="True"/>
 				<Setter Property="Margin" Value="2"/>
@@ -117,7 +117,7 @@
 					</Setter.Value>
 				</Setter>
 			</Style>
-		</Page.Resources>
+		</Page.Resources>-->
 		
 		
 
