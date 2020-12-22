@@ -14,8 +14,8 @@
 						<ControlTemplate TargetType="Button">
 							<Border Name="border" BorderThickness="2" BorderBrush="Black" Background="{TemplateBinding Background}"/>
 							<ControlTemplate.Triggers>
-								<Trigger Property="IsMouseOver" Value="True">
-									<Setter TargetName="border" Property="BorderBrush" Value="Red" />
+								<Trigger Property="IsKeyboardFocused" Value="True">
+									<Setter TargetName="border" Property="BorderBrush" Value="Blue" />
 								</Trigger>
 								
 							</ControlTemplate.Triggers>

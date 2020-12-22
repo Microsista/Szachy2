@@ -169,6 +169,7 @@ namespace Szachy2
 				for (int j = 0; j < 8; j += 2)
 				{
 					chessboard[i, j].Background = light;
+					chessboard[i, j].Tag = "";
 					// Biale
 
 					if (chessboard[i, j].Content.ToString() == "bPion")
@@ -229,6 +230,7 @@ namespace Szachy2
 				for (int j = 1; j < 8; j += 2)
 				{
 					chessboard[i, j].Background = light;
+					chessboard[i, j].Tag = "";
 					// Biale
 
 					if (chessboard[i, j].Content.ToString() == "bPion")
@@ -289,6 +291,7 @@ namespace Szachy2
 				for (int j = 0; j < 8; j += 2)
 				{
 					chessboard[i, j].Background = dark;
+					chessboard[i, j].Tag = "";
 					//Biale
 
 					if (chessboard[i, j].Content.ToString() == "bPion")
@@ -351,6 +354,7 @@ namespace Szachy2
 				for (int j = 1; j < 8; j += 2)
 				{
 					chessboard[i, j].Background = dark;
+					chessboard[i, j].Tag = "";
 
 					//Biale
 
@@ -471,7 +475,7 @@ namespace Szachy2
 		{
 			for (int i = 0; i < 8; i++)
 				for (int j = 0; j < 8; j++)
-					if (chessboard[i, j].Background == selected)
+					if (chessboard[i, j].Tag == "selected")
 					{
 						String temp = chessboard[i, j].Content.ToString();
 						chessboard[i, j].Content = "";
@@ -489,7 +493,8 @@ namespace Szachy2
 				return;
 			}
 			clearSelection();
-			(sender as Button).Background = selected;
+			(sender as Button).Tag = "selected";
+
 			highlight(sender);
 		}
 
@@ -509,6 +514,7 @@ namespace Szachy2
 							////chessboard[i - 2, j].BorderBrush = highlighted;
 
 							chessboard[i - 1, j].Background = highlighted;
+
 							chessboard[i - 2, j].Background = highlighted;
 						}
 						if (chessboard[i, j].Content.ToString() == "bWieza")
