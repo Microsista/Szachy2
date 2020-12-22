@@ -508,73 +508,416 @@ namespace Szachy2
 
 						if (chessboard[i, j].Content.ToString() == "bPion")
 						{
-							//chessboard[i - 1, j].BorderThickness = new Thickness(2);
-							////chessboard[i - 1, j].Margin = new Thickness(20);
-							//chessboard[i - 1, j].BorderBrush = highlighted;
-							////chessboard[i - 2, j].BorderBrush = highlighted;
+							if (i -1 >=0 && i -1 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 1, j].Background = highlighted;
 
-							chessboard[i - 1, j].Background = highlighted;
 
-							chessboard[i - 2, j].Background = highlighted;
+							if (i -2>= 0 && i -2<= 7 && j >= 0 && j <= 7)
+								chessboard[i - 2, j].Background = highlighted;
 						}
-						if (chessboard[i, j].Content.ToString() == "bWieza")
+
+						if (chessboard[i, j].Content.ToString() == "bWieza" || chessboard[i, j].Content.ToString() == "cWieza")
 						{
-							chessboard[i - 1, j].Background = highlighted;
-							chessboard[i - 2, j].Background = highlighted;
+							if (i - 1 >= 0 && i - 1 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 1, j].Background = highlighted;
+							if (i - 2 >= 0 && i - 2 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 2, j].Background = highlighted;
+							if (i - 3 >= 0 && i - 3 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 3, j].Background = highlighted;
+							if (i - 4 >= 0 && i - 4 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 4, j].Background = highlighted;
+							if (i - 5 >= 0 && i - 5 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 5, j].Background = highlighted;
+							if (i - 6 >= 0 && i - 6 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 6, j].Background = highlighted;
+							if (i - 7 >= 0 && i - 7 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 7, j].Background = highlighted;
+
+							if (i + 1 >= 0 && i + 1 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 1, j].Background = highlighted;
+							if (i + 2 >= 0 && i + 2 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 2, j].Background = highlighted;
+							if (i + 3 >= 0 && i + 3 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 3, j].Background = highlighted;
+							if (i + 4 >= 0 && i + 4 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 4, j].Background = highlighted;
+							if (i + 5 >= 0 && i + 5 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 5, j].Background = highlighted;
+							if (i + 6 >= 0 && i + 6 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 6, j].Background = highlighted;
+							if (i + 7 >= 0 && i + 7 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 7, j].Background = highlighted;
+
+
+							if ( j -1>= 0 && j - 1 <= 7)
+								chessboard[i, j - 1].Background = highlighted;
+							if ( j -2>= 0 && j -2<= 7)
+								chessboard[i, j - 2].Background = highlighted;
+							if (j -3>= 0 && j -3<= 7)
+								chessboard[i, j - 3].Background = highlighted;
+							if ( j -4>= 0 && j -4<= 7)
+								chessboard[i , j - 4].Background = highlighted;
+							if ( j -5>= 0 && j -5<= 7)
+								chessboard[i , j - 5].Background = highlighted;
+							if ( j -6>= 0 && j -6<= 7)
+								chessboard[i , j - 6].Background = highlighted;
+							if (j -7>= 0 && j -7<= 7)
+								chessboard[i , j - 7].Background = highlighted;
+
+							if (j +1>= 0 && j + 1 <= 7)
+								chessboard[i, j + 1].Background = highlighted;
+							if (j +2>= 0 && j + 2 <= 7)
+								chessboard[i, j + 2].Background = highlighted;
+							if (j +3>= 0 && j + 3 <= 7)
+								chessboard[i, j + 3].Background = highlighted;
+							if (j +4>= 0 && j + 4 <= 7)
+								chessboard[i, j + 4].Background = highlighted;
+							if (j +5>= 0 && j + 5 <= 7)
+								chessboard[i, j + 5].Background = highlighted;
+							if (j +6>= 0 && j + 6 <= 7)
+								chessboard[i, j + 6].Background = highlighted;
+							if (j +7>= 0 && j + 7 <= 7)
+								chessboard[i, j + 7].Background = highlighted;
+
+
 						}
-						if (chessboard[i, j].Content.ToString() == "bKon")
+
+						if (chessboard[i, j].Content.ToString() == "bKon" || chessboard[i, j].Content.ToString() == "cKon")
 						{
-							chessboard[i - 1, j].Background = highlighted;
-							chessboard[i - 2, j].Background = highlighted;
+							if (i - 2 >= 0 && i - 2 <= 7  && j + 1 >= 0 && j + 1 <= 7)
+								chessboard[i - 2, j +1].Background = highlighted;
+
+							if (i - 2 >= 0 && i - 2 <= 7 && j - 1 >= 0 && j - 1 <= 7)
+								chessboard[i - 2, j - 1].Background = highlighted;
+
+							if (i + 2 >= 0 && i + 2 <= 7 && j + 1 >= 0 && j + 1 <= 7)
+								chessboard[i + 2, j + 1].Background = highlighted;
+
+							if (i + 2 >= 0 && i + 2 <= 7 && j - 1 >= 0 && j - 1 <= 7)
+								chessboard[i + 2, j - 1].Background = highlighted;
+
+							if (i + 1 >= 0 && i + 1 <= 7 && j - 2 >= 0 && j - 2 <= 7)
+								chessboard[i + 1, j - 2].Background = highlighted;
+
+							if (i - 1 >= 0 && i - 1 <= 7 && j - 2 >= 0 && j - 2 <= 7)
+								chessboard[i - 1, j - 2].Background = highlighted;
+
+							if (i + 1 >= 0 && i + 1 <= 7 && j + 2 >= 0 && j + 2 <= 7)
+								chessboard[i + 1, j + 2].Background = highlighted;
+
+							if (i - 1 >= 0 && i - 1 <= 7 && j + 2 >= 0 && j + 2 <= 7)
+								chessboard[i - 1, j + 2].Background = highlighted;
+
 						}
-						if (chessboard[i, j].Content.ToString() == "bLaufer")
+
+						if (chessboard[i, j].Content.ToString() == "bLaufer" || chessboard[i, j].Content.ToString() == "cLaufer")
 						{
-							chessboard[i - 1, j].Background = highlighted;
-							chessboard[i - 2, j].Background = highlighted;
+							if (i - 1 >= 0 && i - 1 <= 7 && j - 1 >= 0 && j - 1 <= 7)
+								chessboard[i - 1, j - 1].Background = highlighted;
+
+							if (i - 2 >= 0 && i - 2 <= 7 && j - 2 >= 0 && j - 2 <= 7)
+								chessboard[i - 2, j - 2].Background = highlighted;
+
+							if (i - 3 >= 0 && i - 3 <= 7 && j - 3 >= 0 && j - 3 <= 7)
+								chessboard[i - 3, j - 3].Background = highlighted;
+
+							if (i - 4 >= 0 && i - 4 <= 7 && j - 4 >= 0 && j - 4 <= 7)
+								chessboard[i - 4, j - 4].Background = highlighted;
+
+							if (i - 5 >= 0 && i - 5 <= 7 && j - 5 >= 0 && j - 5 <= 7)
+								chessboard[i - 5, j - 5].Background = highlighted;
+
+							if (i - 6 >= 0 && i - 6 <= 7 && j - 6 >= 0 && j - 6 <= 7)
+								chessboard[i - 6, j - 6].Background = highlighted;
+
+							if (i - 7 >= 0 && i - 7 <= 7 && j - 7 >= 0 && j - 7 <= 7)
+								chessboard[i - 7, j - 7].Background = highlighted;
+
+
+
+							if (i + 1 >= 0 && i + 1 <= 7 && j + 1 >= 0 && j + 1 <= 7)
+								chessboard[i + 1, j + 1].Background = highlighted;
+
+							if (i + 2 >= 0 && i + 2 <= 7 && j + 2 >= 0 && j + 2 <= 7)
+								chessboard[i + 2, j + 2].Background = highlighted;
+
+							if (i + 3 >= 0 && i + 3 <= 7 && j + 3 >= 0 && j + 3 <= 7)
+								chessboard[i + 3, j + 3].Background = highlighted;
+
+							if (i + 4 >= 0 && i + 4 <= 7 && j + 4 >= 0 && j + 4 <= 7)
+								chessboard[i + 4, j + 4].Background = highlighted;
+
+							if (i + 5 >= 0 && i + 5 <= 7 && j + 5 >= 0 && j + 5 <= 7)
+								chessboard[i + 5, j + 5].Background = highlighted;
+
+							if (i + 6 >= 0 && i + 6 <= 7 && j + 6 >= 0 && j + 6 <= 7)
+								chessboard[i + 6, j + 6].Background = highlighted;
+
+							if (i + 7 >= 0 && i + 7 <= 7 && j + 7 >= 0 && j + 7 <= 7)
+								chessboard[i + 7, j + 7].Background = highlighted;
+
+
+
+							if (i + 1 >= 0 && i + 1 <= 7 && j - 1 >= 0 && j - 1 <= 7)
+								chessboard[i + 1, j - 1].Background = highlighted;
+
+							if (i + 2 >= 0 && i + 2 <= 7 && j - 2 >= 0 && j - 2 <= 7)
+								chessboard[i + 2, j - 2].Background = highlighted;
+
+							if (i + 3 >= 0 && i + 3 <= 7 && j - 3 >= 0 && j - 3 <= 7)
+								chessboard[i + 3, j - 3].Background = highlighted;
+
+							if (i + 4 >= 0 && i + 4 <= 7 && j - 4 >= 0 && j - 4 <= 7)
+								chessboard[i + 4, j - 4].Background = highlighted;
+
+							if (i + 5 >= 0 && i + 5 <= 7 && j - 5 >= 0 && j - 5 <= 7)
+								chessboard[i + 5, j - 5].Background = highlighted;
+
+							if (i + 6 >= 0 && i + 6 <= 7 && j - 6 >= 0 && j - 6 <= 7)
+								chessboard[i + 6, j - 6].Background = highlighted;
+
+							if (i + 7 >= 0 && i + 7 <= 7 && j - 7 >= 0 && j - 7 <= 7)
+								chessboard[i + 7, j - 7].Background = highlighted;
+
+
+
+							if (i - 1 >= 0 && i - 1 <= 7 && j + 1 >= 0 && j + 1 <= 7)
+								chessboard[i - 1, j + 1].Background = highlighted;
+
+							if (i - 2 >= 0 && i - 2 <= 7 && j + 2 >= 0 && j + 2 <= 7)
+								chessboard[i - 2, j + 2].Background = highlighted;
+
+							if (i - 3 >= 0 && i - 3 <= 7 && j + 3 >= 0 && j + 3 <= 7)
+								chessboard[i - 3, j + 3].Background = highlighted;
+
+							if (i - 4 >= 0 && i - 4 <= 7 && j + 4 >= 0 && j + 4 <= 7)
+								chessboard[i - 4, j + 4].Background = highlighted;
+
+							if (i - 5 >= 0 && i - 5 <= 7 && j + 5 >= 0 && j + 5 <= 7)
+								chessboard[i - 5, j + 5].Background = highlighted;
+
+							if (i - 6 >= 0 && i - 6 <= 7 && j + 6 >= 0 && j + 6 <= 7)
+								chessboard[i - 6, j + 6].Background = highlighted;
+
+							if (i - 7 >= 0 && i - 7 <= 7 && j + 7 >= 0 && j + 7 <= 7)
+								chessboard[i - 7, j + 7].Background = highlighted;
+
+
+
+
 						}
-						if (chessboard[i, j].Content.ToString() == "bKrolowa")
+
+						if (chessboard[i, j].Content.ToString() == "bKrolowa" || chessboard[i, j].Content.ToString() == "cKrolowa")
 						{
-							chessboard[i - 1, j].Background = highlighted;
-							chessboard[i - 2, j].Background = highlighted;
+							if (i - 1 >= 0 && i - 1 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 1, j].Background = highlighted;
+							if (i - 2 >= 0 && i - 2 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 2, j].Background = highlighted;
+							if (i - 3 >= 0 && i - 3 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 3, j].Background = highlighted;
+							if (i - 4 >= 0 && i - 4 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 4, j].Background = highlighted;
+							if (i - 5 >= 0 && i - 5 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 5, j].Background = highlighted;
+							if (i - 6 >= 0 && i - 6 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 6, j].Background = highlighted;
+							if (i - 7 >= 0 && i - 7 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 7, j].Background = highlighted;
+
+							if (i + 1 >= 0 && i + 1 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 1, j].Background = highlighted;
+							if (i + 2 >= 0 && i + 2 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 2, j].Background = highlighted;
+							if (i + 3 >= 0 && i + 3 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 3, j].Background = highlighted;
+							if (i + 4 >= 0 && i + 4 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 4, j].Background = highlighted;
+							if (i + 5 >= 0 && i + 5 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 5, j].Background = highlighted;
+							if (i + 6 >= 0 && i + 6 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 6, j].Background = highlighted;
+							if (i + 7 >= 0 && i + 7 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 7, j].Background = highlighted;
+
+
+							if (j - 1 >= 0 && j - 1 <= 7)
+								chessboard[i, j - 1].Background = highlighted;
+							if (j - 2 >= 0 && j - 2 <= 7)
+								chessboard[i, j - 2].Background = highlighted;
+							if (j - 3 >= 0 && j - 3 <= 7)
+								chessboard[i, j - 3].Background = highlighted;
+							if (j - 4 >= 0 && j - 4 <= 7)
+								chessboard[i, j - 4].Background = highlighted;
+							if (j - 5 >= 0 && j - 5 <= 7)
+								chessboard[i, j - 5].Background = highlighted;
+							if (j - 6 >= 0 && j - 6 <= 7)
+								chessboard[i, j - 6].Background = highlighted;
+							if (j - 7 >= 0 && j - 7 <= 7)
+								chessboard[i, j - 7].Background = highlighted;
+
+							if (j + 1 >= 0 && j + 1 <= 7)
+								chessboard[i, j + 1].Background = highlighted;
+							if (j + 2 >= 0 && j + 2 <= 7)
+								chessboard[i, j + 2].Background = highlighted;
+							if (j + 3 >= 0 && j + 3 <= 7)
+								chessboard[i, j + 3].Background = highlighted;
+							if (j + 4 >= 0 && j + 4 <= 7)
+								chessboard[i, j + 4].Background = highlighted;
+							if (j + 5 >= 0 && j + 5 <= 7)
+								chessboard[i, j + 5].Background = highlighted;
+							if (j + 6 >= 0 && j + 6 <= 7)
+								chessboard[i, j + 6].Background = highlighted;
+							if (j + 7 >= 0 && j + 7 <= 7)
+								chessboard[i, j + 7].Background = highlighted;
+
+
+							if (i - 1 >= 0 && i - 1 <= 7 && j - 1 >= 0 && j - 1 <= 7)
+								chessboard[i - 1, j - 1].Background = highlighted;
+
+							if (i - 2 >= 0 && i - 2 <= 7 && j - 2 >= 0 && j - 2 <= 7)
+								chessboard[i - 2, j - 2].Background = highlighted;
+
+							if (i - 3 >= 0 && i - 3 <= 7 && j - 3 >= 0 && j - 3 <= 7)
+								chessboard[i - 3, j - 3].Background = highlighted;
+
+							if (i - 4 >= 0 && i - 4 <= 7 && j - 4 >= 0 && j - 4 <= 7)
+								chessboard[i - 4, j - 4].Background = highlighted;
+
+							if (i - 5 >= 0 && i - 5 <= 7 && j - 5 >= 0 && j - 5 <= 7)
+								chessboard[i - 5, j - 5].Background = highlighted;
+
+							if (i - 6 >= 0 && i - 6 <= 7 && j - 6 >= 0 && j - 6 <= 7)
+								chessboard[i - 6, j - 6].Background = highlighted;
+
+							if (i - 7 >= 0 && i - 7 <= 7 && j - 7 >= 0 && j - 7 <= 7)
+								chessboard[i - 7, j - 7].Background = highlighted;
+
+
+
+							if (i + 1 >= 0 && i + 1 <= 7 && j + 1 >= 0 && j + 1 <= 7)
+								chessboard[i + 1, j + 1].Background = highlighted;
+
+							if (i + 2 >= 0 && i + 2 <= 7 && j + 2 >= 0 && j + 2 <= 7)
+								chessboard[i + 2, j + 2].Background = highlighted;
+
+							if (i + 3 >= 0 && i + 3 <= 7 && j + 3 >= 0 && j + 3 <= 7)
+								chessboard[i + 3, j + 3].Background = highlighted;
+
+							if (i + 4 >= 0 && i + 4 <= 7 && j + 4 >= 0 && j + 4 <= 7)
+								chessboard[i + 4, j + 4].Background = highlighted;
+
+							if (i + 5 >= 0 && i + 5 <= 7 && j + 5 >= 0 && j + 5 <= 7)
+								chessboard[i + 5, j + 5].Background = highlighted;
+
+							if (i + 6 >= 0 && i + 6 <= 7 && j + 6 >= 0 && j + 6 <= 7)
+								chessboard[i + 6, j + 6].Background = highlighted;
+
+							if (i + 7 >= 0 && i + 7 <= 7 && j + 7 >= 0 && j + 7 <= 7)
+								chessboard[i + 7, j + 7].Background = highlighted;
+
+
+
+							if (i + 1 >= 0 && i + 1 <= 7 && j - 1 >= 0 && j - 1 <= 7)
+								chessboard[i + 1, j - 1].Background = highlighted;
+
+							if (i + 2 >= 0 && i + 2 <= 7 && j - 2 >= 0 && j - 2 <= 7)
+								chessboard[i + 2, j - 2].Background = highlighted;
+
+							if (i + 3 >= 0 && i + 3 <= 7 && j - 3 >= 0 && j - 3 <= 7)
+								chessboard[i + 3, j - 3].Background = highlighted;
+
+							if (i + 4 >= 0 && i + 4 <= 7 && j - 4 >= 0 && j - 4 <= 7)
+								chessboard[i + 4, j - 4].Background = highlighted;
+
+							if (i + 5 >= 0 && i + 5 <= 7 && j - 5 >= 0 && j - 5 <= 7)
+								chessboard[i + 5, j - 5].Background = highlighted;
+
+							if (i + 6 >= 0 && i + 6 <= 7 && j - 6 >= 0 && j - 6 <= 7)
+								chessboard[i + 6, j - 6].Background = highlighted;
+
+							if (i + 7 >= 0 && i + 7 <= 7 && j - 7 >= 0 && j - 7 <= 7)
+								chessboard[i + 7, j - 7].Background = highlighted;
+
+
+
+							if (i - 1 >= 0 && i - 1 <= 7 && j + 1 >= 0 && j + 1 <= 7)
+								chessboard[i - 1, j + 1].Background = highlighted;
+
+							if (i - 2 >= 0 && i - 2 <= 7 && j + 2 >= 0 && j + 2 <= 7)
+								chessboard[i - 2, j + 2].Background = highlighted;
+
+							if (i - 3 >= 0 && i - 3 <= 7 && j + 3 >= 0 && j + 3 <= 7)
+								chessboard[i - 3, j + 3].Background = highlighted;
+
+							if (i - 4 >= 0 && i - 4 <= 7 && j + 4 >= 0 && j + 4 <= 7)
+								chessboard[i - 4, j + 4].Background = highlighted;
+
+							if (i - 5 >= 0 && i - 5 <= 7 && j + 5 >= 0 && j + 5 <= 7)
+								chessboard[i - 5, j + 5].Background = highlighted;
+
+							if (i - 6 >= 0 && i - 6 <= 7 && j + 6 >= 0 && j + 6 <= 7)
+								chessboard[i - 6, j + 6].Background = highlighted;
+
+							if (i - 7 >= 0 && i - 7 <= 7 && j + 7 >= 0 && j + 7 <= 7)
+								chessboard[i - 7, j + 7].Background = highlighted;
 						}
-						if (chessboard[i, j].Content.ToString() == "bKrol")
+
+						if (chessboard[i, j].Content.ToString() == "bKrol" || chessboard[i, j].Content.ToString() == "cKrol")
 						{
-							chessboard[i - 1, j].Background = highlighted;
-							chessboard[i - 2, j].Background = highlighted;
+							if (i - 1 >= 0 && i - 1 <= 7 && j >= 0 && j <= 7)
+								chessboard[i - 1, j].Background = highlighted;
+							
+
+							if (i + 1 >= 0 && i + 1 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 1, j].Background = highlighted;
+							
+
+
+							if (j - 1 >= 0 && j - 1 <= 7)
+								chessboard[i, j - 1].Background = highlighted;
+							
+
+							if (j + 1 >= 0 && j + 1 <= 7)
+								chessboard[i, j + 1].Background = highlighted;
+							
 						}
 
 						// Czarne
 
 						if (chessboard[i, j].Content.ToString() == "cPion")
 						{
-							chessboard[i + 1, j].Background = highlighted;
-							chessboard[i + 2, j].Background = highlighted;
+							if (i + 1 >= 0 && i + 1 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 1, j].Background = highlighted;
+
+
+							if (i + 2 >= 0 && i + 2 <= 7 && j >= 0 && j <= 7)
+								chessboard[i + 2, j].Background = highlighted;
 						}
-						if (chessboard[i, j].Content.ToString() == "cWieza")
-						{
-							chessboard[i + 1, j].Background = highlighted;
-							chessboard[i + 2, j].Background = highlighted;
-						}
-						if (chessboard[i, j].Content.ToString() == "cKon")
-						{
-							chessboard[i + 1, j].Background = highlighted;
-							chessboard[i + 2, j].Background = highlighted;
-						}
-						if (chessboard[i, j].Content.ToString() == "cLaufer")
-						{
-							chessboard[i + 1, j].Background = highlighted;
-							chessboard[i + 2, j].Background = highlighted;
-						}
-						if (chessboard[i, j].Content.ToString() == "cKrolowa")
-						{
-							chessboard[i + 1, j].Background = highlighted;
-							chessboard[i + 2, j].Background = highlighted;
-						}
-						if (chessboard[i, j].Content.ToString() == "cKrol")
-						{
-							chessboard[i + 1, j].Background = highlighted;
-							chessboard[i + 2, j].Background = highlighted;
-						}
+						//if (chessboard[i, j].Content.ToString() == "cWieza")
+						//{
+						//	chessboard[i + 1, j].Background = highlighted;
+						//	chessboard[i + 2, j].Background = highlighted;
+						//}
+						//if (chessboard[i, j].Content.ToString() == "cKon")
+						//{
+						//	chessboard[i + 1, j].Background = highlighted;
+						//	chessboard[i + 2, j].Background = highlighted;
+						//}
+						//if (chessboard[i, j].Content.ToString() == "cLaufer")
+						//{
+						//	chessboard[i + 1, j].Background = highlighted;
+						//	chessboard[i + 2, j].Background = highlighted;
+						//}
+						//if (chessboard[i, j].Content.ToString() == "cKrolowa")
+						//{
+						//	chessboard[i + 1, j].Background = highlighted;
+						//	chessboard[i + 2, j].Background = highlighted;
+						//}
+						//if (chessboard[i, j].Content.ToString() == "cKrol")
+						//{
+						//	chessboard[i + 1, j].Background = highlighted;
+						//	chessboard[i + 2, j].Background = highlighted;
+						//}
 					}
 		}
 						
