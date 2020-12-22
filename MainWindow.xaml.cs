@@ -70,6 +70,7 @@ namespace Szachy2
 
 
 		Button[,] chessboard = new Button[8, 8];
+		Button[,] fchessboard = new Button[8, 8];
 
 		private void assignFields()
 		{
@@ -144,6 +145,80 @@ namespace Szachy2
 			chessboard[7, 5] = f8;
 			chessboard[7, 6] = g8;
 			chessboard[7, 7] = h8;
+
+
+
+			fchessboard[0, 0] = fa1;
+			fchessboard[0, 1] = fb1;
+			fchessboard[0, 2] = fc1;
+			fchessboard[0, 3] = fd1;
+			fchessboard[0, 4] = fe1;
+			fchessboard[0, 5] = ff1;
+			fchessboard[0, 6] = fg1;
+			fchessboard[0, 7] = fh1;
+
+			fchessboard[1, 0] = fa2;
+			fchessboard[1, 1] = fb2;
+			fchessboard[1, 2] = fc2;
+			fchessboard[1, 3] = fd2;
+			fchessboard[1, 4] = fe2;
+			fchessboard[1, 5] = ff2;
+			fchessboard[1, 6] = fg2;
+			fchessboard[1, 7] = fh2;
+
+			fchessboard[2, 0] = fa3;
+			fchessboard[2, 1] = fb3;
+			fchessboard[2, 2] = fc3;
+			fchessboard[2, 3] = fd3;
+			fchessboard[2, 4] = fe3;
+			fchessboard[2, 5] = ff3;
+			fchessboard[2, 6] = fg3;
+			fchessboard[2, 7] = fh3;
+
+			fchessboard[3, 0] = fa4;
+			fchessboard[3, 1] = fb4;
+			fchessboard[3, 2] = fc4;
+			fchessboard[3, 3] = fd4;
+			fchessboard[3, 4] = fe4;
+			fchessboard[3, 5] = ff4;
+			fchessboard[3, 6] = fg4;
+			fchessboard[3, 7] = fh4;
+
+			fchessboard[4, 0] = fa5;
+			fchessboard[4, 1] = fb5;
+			fchessboard[4, 2] = fc5;
+			fchessboard[4, 3] = fd5;
+			fchessboard[4, 4] = fe5;
+			fchessboard[4, 5] = ff5;
+			fchessboard[4, 6] = fg5;
+			fchessboard[4, 7] = fh5;
+
+			fchessboard[5, 0] = fa6;
+			fchessboard[5, 1] = fb6;
+			fchessboard[5, 2] = fc6;
+			fchessboard[5, 3] = fd6;
+			fchessboard[5, 4] = fe6;
+			fchessboard[5, 5] = ff6;
+			fchessboard[5, 6] = fg6;
+			fchessboard[5, 7] = fh6;
+
+			fchessboard[6, 0] = fa7;
+			fchessboard[6, 1] = fb7;
+			fchessboard[6, 2] = fc7;
+			fchessboard[6, 3] = fd7;
+			fchessboard[6, 4] = fe7;
+			fchessboard[6, 5] = ff7;
+			fchessboard[6, 6] = fg7;
+			fchessboard[6, 7] = fh7;
+
+			fchessboard[7, 0] = fa8;
+			fchessboard[7, 1] = fb8;
+			fchessboard[7, 2] = fc8;
+			fchessboard[7, 3] = fd8;
+			fchessboard[7, 4] = fe8;
+			fchessboard[7, 5] = ff8;
+			fchessboard[7, 6] = fg8;
+			fchessboard[7, 7] = fh8;
 		}
 
 		private void loadImages()
@@ -175,6 +250,7 @@ namespace Szachy2
 					if (chessboard[i, j].Content.ToString() == "bPion")
 					{
 						chessboard[i, j].Background = bPionJ;
+
 					}
 					if (chessboard[i, j].Content.ToString() == "bWieza")
 					{
@@ -509,11 +585,18 @@ namespace Szachy2
 						if (chessboard[i, j].Content.ToString() == "bPion")
 						{
 							if (i -1 >=0 && i -1 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 1, j].Background = highlighted;
-
+							{
+								fchessboard[i - 1, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 1, j].BorderBrush = highlighted;
+							}
 
 							if (i -2>= 0 && i -2<= 7 && j >= 0 && j <= 7)
-								chessboard[i - 2, j].Background = highlighted;
+							{
+								fchessboard[i - 2, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 2, j].BorderBrush = highlighted;
+							}
+
+								
 						}
 
 						if (chessboard[i, j].Content.ToString() == "bWieza" || chessboard[i, j].Content.ToString() == "cWieza")
