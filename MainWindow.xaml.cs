@@ -503,6 +503,11 @@ namespace Szachy2
 
 						if (chessboard[i, j].Content.ToString() == "bPion")
 						{
+							//chessboard[i - 1, j].BorderThickness = new Thickness(2);
+							////chessboard[i - 1, j].Margin = new Thickness(20);
+							//chessboard[i - 1, j].BorderBrush = highlighted;
+							////chessboard[i - 2, j].BorderBrush = highlighted;
+
 							chessboard[i - 1, j].Background = highlighted;
 							chessboard[i - 2, j].Background = highlighted;
 						}
