@@ -24,6 +24,7 @@ namespace Szachy2
 		SolidColorBrush dark = new SolidColorBrush(Colors.Brown);
 		SolidColorBrush selected = new SolidColorBrush(Colors.Blue);
 		SolidColorBrush highlighted = new SolidColorBrush(Colors.Green);
+		SolidColorBrush white = new SolidColorBrush(Colors.White);
 
 		//ImageBrush bPion = new ImageBrush(new BitmapImage(new Uri("../../ikony/bPionek.png", UriKind.Relative)));
 		//ImageBrush bWieza = new ImageBrush(new BitmapImage(new Uri("../../ikony/bWieza.png", UriKind.Relative)));
@@ -240,6 +241,11 @@ namespace Szachy2
 
 		private void clearSelection()
 		{
+			for (int i = 0; i < 7; i++)
+				for (int j = 0; j < 7; j++) {
+					fchessboard[i, j].BorderBrush = white;
+				}
+
 			for (int i = 0; i < 8; i += 2)
 				for (int j = 0; j < 8; j += 2)
 				{
@@ -562,7 +568,7 @@ namespace Szachy2
 
 		private void fieldClick(object sender, RoutedEventArgs e)
 		{
-			if ((sender as Button).Background == highlighted)
+			if ((sender as Button).Tag == "highlighted")
 			{
 				(sender as Button).Content = findSelected(sender);
 				clearSelection();
@@ -588,12 +594,14 @@ namespace Szachy2
 							{
 								fchessboard[i - 1, j].BorderThickness = new Thickness(2);
 								fchessboard[i - 1, j].BorderBrush = highlighted;
+								chessboard[i - 1, j].Tag = "highlighted";
 							}
 
 							if (i -2>= 0 && i -2<= 7 && j >= 0 && j <= 7)
 							{
 								fchessboard[i - 2, j].BorderThickness = new Thickness(2);
 								fchessboard[i - 2, j].BorderBrush = highlighted;
+								chessboard[i - 2, j].Tag = "highlighted";
 							}
 
 								
@@ -602,65 +610,234 @@ namespace Szachy2
 						if (chessboard[i, j].Content.ToString() == "bWieza" || chessboard[i, j].Content.ToString() == "cWieza")
 						{
 							if (i - 1 >= 0 && i - 1 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 1, j].Background = highlighted;
-							if (i - 2 >= 0 && i - 2 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 2, j].Background = highlighted;
-							if (i - 3 >= 0 && i - 3 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 3, j].Background = highlighted;
-							if (i - 4 >= 0 && i - 4 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 4, j].Background = highlighted;
-							if (i - 5 >= 0 && i - 5 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 5, j].Background = highlighted;
-							if (i - 6 >= 0 && i - 6 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 6, j].Background = highlighted;
-							if (i - 7 >= 0 && i - 7 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 7, j].Background = highlighted;
+							{
+								fchessboard[i - 1, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 1, j].BorderBrush = highlighted;
+								chessboard[i - 1, j].Tag = "highlighted";
+							}
+
 
 							if (i + 1 >= 0 && i + 1 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 1, j].Background = highlighted;
+							{
+								fchessboard[i + 1, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 1, j].BorderBrush = highlighted;
+								chessboard[i + 1, j].Tag = "highlighted";
+							}
+
+
+
+							if (j - 1 >= 0 && j - 1 <= 7)
+							{
+								fchessboard[i, j - 1].BorderThickness = new Thickness(2);
+								fchessboard[i, j - 1].BorderBrush = highlighted;
+								chessboard[i, j - 1].Tag = "highlighted";
+							}
+
+
+							if (j + 1 >= 0 && j + 1 <= 7)
+							{
+								fchessboard[i, j + 1].BorderThickness = new Thickness(2);
+								fchessboard[i, j + 1].BorderBrush = highlighted;
+								chessboard[i, j + 1].Tag = "highlighted";
+							}
+
+
+							if (i - 2 >= 0 && i - 2 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i - 2, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 2, j].BorderBrush = highlighted;
+								chessboard[i - 2, j].Tag = "highlighted";
+							}
+
+
 							if (i + 2 >= 0 && i + 2 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 2, j].Background = highlighted;
+							{
+								fchessboard[i + 2, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 2, j].BorderBrush = highlighted;
+								chessboard[i + 2, j].Tag = "highlighted";
+							}
+
+
+
+							if (j - 2 >= 0 && j - 2 <= 7)
+							{
+								fchessboard[i, j - 2].BorderThickness = new Thickness(2);
+								fchessboard[i, j - 2].BorderBrush = highlighted;
+								chessboard[i, j - 2].Tag = "highlighted";
+							}
+
+
+							if (j + 2 >= 0 && j + 2 <= 7)
+							{
+								fchessboard[i, j + 2].BorderThickness = new Thickness(2);
+								fchessboard[i, j + 2].BorderBrush = highlighted;
+								chessboard[i, j + 2].Tag = "highlighted";
+							}
+
+
+							if (i - 3 >= 0 && i - 3 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i - 3, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 3, j].BorderBrush = highlighted;
+								chessboard[i - 3, j].Tag = "highlighted";
+							}
+
+
 							if (i + 3 >= 0 && i + 3 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 3, j].Background = highlighted;
+							{
+								fchessboard[i + 3, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 3, j].BorderBrush = highlighted;
+								chessboard[i + 3, j].Tag = "highlighted";
+							}
+
+
+
+							if (j - 3 >= 0 && j - 3 <= 7)
+							{
+								fchessboard[i, j - 3].BorderThickness = new Thickness(2);
+								fchessboard[i, j - 3].BorderBrush = highlighted;
+								chessboard[i, j - 3].Tag = "highlighted";
+							}
+
+
+							if (j + 3 >= 0 && j + 3 <= 7)
+							{
+								fchessboard[i, j + 3].BorderThickness = new Thickness(2);
+								fchessboard[i, j + 3].BorderBrush = highlighted;
+								chessboard[i, j + 3].Tag = "highlighted";
+							}
+
+
+							if (i - 4 >= 0 && i - 4 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i - 4, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 4, j].BorderBrush = highlighted;
+								chessboard[i - 4, j].Tag = "highlighted";
+							}
+
+
 							if (i + 4 >= 0 && i + 4 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 4, j].Background = highlighted;
+							{
+								fchessboard[i + 4, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 4, j].BorderBrush = highlighted;
+								chessboard[i + 4, j].Tag = "highlighted";
+							}
+
+
+
+							if (j - 4 >= 0 && j - 4 <= 7)
+							{
+								fchessboard[i, j - 4].BorderThickness = new Thickness(2);
+								fchessboard[i, j - 4].BorderBrush = highlighted;
+								chessboard[i, j - 4].Tag = "highlighted";
+							}
+
+
+							if (j + 4 >= 0 && j + 4 <= 7)
+							{
+								fchessboard[i, j + 4].BorderThickness = new Thickness(2);
+								fchessboard[i, j + 4].BorderBrush = highlighted;
+								chessboard[i, j + 4].Tag = "highlighted";
+							}
+
+
+							if (i - 5 >= 0 && i - 5 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i - 5, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 5, j].BorderBrush = highlighted;
+								chessboard[i - 5, j].Tag = "highlighted";
+							}
+
+
 							if (i + 5 >= 0 && i + 5 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 5, j].Background = highlighted;
+							{
+								fchessboard[i + 5, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 5, j].BorderBrush = highlighted;
+								chessboard[i + 5, j].Tag = "highlighted";
+							}
+
+
+
+							if (j - 5 >= 0 && j - 5 <= 7)
+							{
+								fchessboard[i, j - 5].BorderThickness = new Thickness(2);
+								fchessboard[i, j - 5].BorderBrush = highlighted;
+								chessboard[i, j - 5].Tag = "highlighted";
+							}
+
+
+							if (j + 5 >= 0 && j + 5 <= 7)
+							{
+								fchessboard[i, j + 5].BorderThickness = new Thickness(2);
+								fchessboard[i, j + 5].BorderBrush = highlighted;
+								chessboard[i, j + 5].Tag = "highlighted";
+							}
+
+
+							if (i - 6 >= 0 && i - 6 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i - 6, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 6, j].BorderBrush = highlighted;
+								chessboard[i - 6, j].Tag = "highlighted";
+							}
+
+
 							if (i + 6 >= 0 && i + 6 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 6, j].Background = highlighted;
+							{
+								fchessboard[i + 6, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 6, j].BorderBrush = highlighted;
+								chessboard[i + 6, j].Tag = "highlighted";
+							}
+
+
+
+							if (j - 6 >= 0 && j - 6 <= 7)
+							{
+								fchessboard[i, j - 6].BorderThickness = new Thickness(2);
+								fchessboard[i, j - 6].BorderBrush = highlighted;
+								chessboard[i, j - 6].Tag = "highlighted";
+							}
+
+
+							if (j + 6 >= 0 && j + 6 <= 7)
+							{
+								fchessboard[i, j + 6].BorderThickness = new Thickness(2);
+								fchessboard[i, j + 6].BorderBrush = highlighted;
+								chessboard[i, j + 6].Tag = "highlighted";
+							}
+
+
+							if (i - 7 >= 0 && i - 7 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i - 7, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 7, j].BorderBrush = highlighted;
+								chessboard[i - 7, j].Tag = "highlighted";
+							}
+
+
 							if (i + 7 >= 0 && i + 7 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 7, j].Background = highlighted;
+							{
+								fchessboard[i + 7, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 7, j].BorderBrush = highlighted;
+								chessboard[i + 7, j].Tag = "highlighted";
+							}
 
 
-							if ( j -1>= 0 && j - 1 <= 7)
-								chessboard[i, j - 1].Background = highlighted;
-							if ( j -2>= 0 && j -2<= 7)
-								chessboard[i, j - 2].Background = highlighted;
-							if (j -3>= 0 && j -3<= 7)
-								chessboard[i, j - 3].Background = highlighted;
-							if ( j -4>= 0 && j -4<= 7)
-								chessboard[i , j - 4].Background = highlighted;
-							if ( j -5>= 0 && j -5<= 7)
-								chessboard[i , j - 5].Background = highlighted;
-							if ( j -6>= 0 && j -6<= 7)
-								chessboard[i , j - 6].Background = highlighted;
-							if (j -7>= 0 && j -7<= 7)
-								chessboard[i , j - 7].Background = highlighted;
 
-							if (j +1>= 0 && j + 1 <= 7)
-								chessboard[i, j + 1].Background = highlighted;
-							if (j +2>= 0 && j + 2 <= 7)
-								chessboard[i, j + 2].Background = highlighted;
-							if (j +3>= 0 && j + 3 <= 7)
-								chessboard[i, j + 3].Background = highlighted;
-							if (j +4>= 0 && j + 4 <= 7)
-								chessboard[i, j + 4].Background = highlighted;
-							if (j +5>= 0 && j + 5 <= 7)
-								chessboard[i, j + 5].Background = highlighted;
-							if (j +6>= 0 && j + 6 <= 7)
-								chessboard[i, j + 6].Background = highlighted;
-							if (j +7>= 0 && j + 7 <= 7)
-								chessboard[i, j + 7].Background = highlighted;
+							if (j - 7 >= 0 && j - 7 <= 7)
+							{
+								fchessboard[i, j - 7].BorderThickness = new Thickness(2);
+								fchessboard[i, j - 7].BorderBrush = highlighted;
+								chessboard[i, j - 7].Tag = "highlighted";
+							}
+
+
+							if (j + 7 >= 0 && j + 7 <= 7)
+							{
+								fchessboard[i, j + 7].BorderThickness = new Thickness(2);
+								fchessboard[i, j + 7].BorderBrush = highlighted;
+								chessboard[i, j + 7].Tag = "highlighted";
+							}
 
 
 						}
@@ -668,122 +845,250 @@ namespace Szachy2
 						if (chessboard[i, j].Content.ToString() == "bKon" || chessboard[i, j].Content.ToString() == "cKon")
 						{
 							if (i - 2 >= 0 && i - 2 <= 7  && j + 1 >= 0 && j + 1 <= 7)
-								chessboard[i - 2, j +1].Background = highlighted;
+							{
+								fchessboard[i-2, j+1].BorderThickness = new Thickness(2);
+								fchessboard[i-2, j+1].BorderBrush = highlighted;
+								chessboard[i-2, j+1].Tag = "highlighted";
+							}
 
 							if (i - 2 >= 0 && i - 2 <= 7 && j - 1 >= 0 && j - 1 <= 7)
-								chessboard[i - 2, j - 1].Background = highlighted;
+							{
+								fchessboard[i-2, j-1].BorderThickness = new Thickness(2);
+								fchessboard[i-2, j-1].BorderBrush = highlighted;
+								chessboard[i-2, j-1].Tag = "highlighted";
+							}
 
 							if (i + 2 >= 0 && i + 2 <= 7 && j + 1 >= 0 && j + 1 <= 7)
-								chessboard[i + 2, j + 1].Background = highlighted;
+							{
+								fchessboard[i+2, j+1].BorderThickness = new Thickness(2);
+								fchessboard[i+2, j+1].BorderBrush = highlighted;
+								chessboard[i+2, j+1].Tag = "highlighted";
+							}
 
 							if (i + 2 >= 0 && i + 2 <= 7 && j - 1 >= 0 && j - 1 <= 7)
-								chessboard[i + 2, j - 1].Background = highlighted;
+							{
+								fchessboard[i+2, j-1].BorderThickness = new Thickness(2);
+								fchessboard[i+2, j-1].BorderBrush = highlighted;
+								chessboard[i+2, j-1].Tag = "highlighted";
+							}
 
 							if (i + 1 >= 0 && i + 1 <= 7 && j - 2 >= 0 && j - 2 <= 7)
-								chessboard[i + 1, j - 2].Background = highlighted;
+							{
+								fchessboard[i+1, j-2].BorderThickness = new Thickness(2);
+								fchessboard[i+1, j-2].BorderBrush = highlighted;
+								chessboard[i+1, j-2].Tag = "highlighted";
+							}
 
 							if (i - 1 >= 0 && i - 1 <= 7 && j - 2 >= 0 && j - 2 <= 7)
-								chessboard[i - 1, j - 2].Background = highlighted;
+							{
+								fchessboard[i-1, j-2].BorderThickness = new Thickness(2);
+								fchessboard[i-1, j-2].BorderBrush = highlighted;
+								chessboard[i-1, j-2].Tag = "highlighted";
+							}
 
 							if (i + 1 >= 0 && i + 1 <= 7 && j + 2 >= 0 && j + 2 <= 7)
-								chessboard[i + 1, j + 2].Background = highlighted;
+							{
+								fchessboard[i+1, j+2].BorderThickness = new Thickness(2);
+								fchessboard[i+1, j+2].BorderBrush = highlighted;
+								chessboard[i+1, j+2].Tag = "highlighted";
+							}
 
 							if (i - 1 >= 0 && i - 1 <= 7 && j + 2 >= 0 && j + 2 <= 7)
-								chessboard[i - 1, j + 2].Background = highlighted;
+							{
+								fchessboard[i-1, j+2].BorderThickness = new Thickness(2);
+								fchessboard[i-1, j+2].BorderBrush = highlighted;
+								chessboard[i-1, j+2].Tag = "highlighted";
+							}
 
 						}
 
 						if (chessboard[i, j].Content.ToString() == "bLaufer" || chessboard[i, j].Content.ToString() == "cLaufer")
 						{
 							if (i - 1 >= 0 && i - 1 <= 7 && j - 1 >= 0 && j - 1 <= 7)
-								chessboard[i - 1, j - 1].Background = highlighted;
-
+							{
+								fchessboard[i-1, j-1].BorderThickness = new Thickness(2);
+								fchessboard[i-1, j-1].BorderBrush = highlighted;
+								chessboard[i-1, j-1].Tag = "highlighted";
+							}
 							if (i - 2 >= 0 && i - 2 <= 7 && j - 2 >= 0 && j - 2 <= 7)
-								chessboard[i - 2, j - 2].Background = highlighted;
-
+							{
+								fchessboard[i - 2, j - 2].BorderThickness = new Thickness(2);
+								fchessboard[i - 2, j - 2].BorderBrush = highlighted;
+								chessboard[i - 2, j - 2].Tag = "highlighted";
+							}
 							if (i - 3 >= 0 && i - 3 <= 7 && j - 3 >= 0 && j - 3 <= 7)
-								chessboard[i - 3, j - 3].Background = highlighted;
-
+							{
+								fchessboard[i - 3, j - 3].BorderThickness = new Thickness(2);
+								fchessboard[i - 3, j - 3].BorderBrush = highlighted;
+								chessboard[i - 3, j - 3].Tag = "highlighted";
+							}
 							if (i - 4 >= 0 && i - 4 <= 7 && j - 4 >= 0 && j - 4 <= 7)
-								chessboard[i - 4, j - 4].Background = highlighted;
-
+							{
+								fchessboard[i - 4, j - 4].BorderThickness = new Thickness(2);
+								fchessboard[i - 4, j - 4].BorderBrush = highlighted;
+								chessboard[i - 4, j - 4].Tag = "highlighted";
+							}
 							if (i - 5 >= 0 && i - 5 <= 7 && j - 5 >= 0 && j - 5 <= 7)
-								chessboard[i - 5, j - 5].Background = highlighted;
-
+							{
+								fchessboard[i - 5, j - 5].BorderThickness = new Thickness(2);
+								fchessboard[i - 5, j - 5].BorderBrush = highlighted;
+								chessboard[i - 5, j - 5].Tag = "highlighted";
+							}
 							if (i - 6 >= 0 && i - 6 <= 7 && j - 6 >= 0 && j - 6 <= 7)
-								chessboard[i - 6, j - 6].Background = highlighted;
-
+							{
+								fchessboard[i - 6, j - 6].BorderThickness = new Thickness(2);
+								fchessboard[i - 6, j - 6].BorderBrush = highlighted;
+								chessboard[i - 6, j - 6].Tag = "highlighted";
+							}
 							if (i - 7 >= 0 && i - 7 <= 7 && j - 7 >= 0 && j - 7 <= 7)
-								chessboard[i - 7, j - 7].Background = highlighted;
+							{
+								fchessboard[i - 7, j - 7].BorderThickness = new Thickness(2);
+								fchessboard[i - 7, j - 7].BorderBrush = highlighted;
+								chessboard[i - 7, j - 7].Tag = "highlighted";
+							}
+
+
 
 
 
 							if (i + 1 >= 0 && i + 1 <= 7 && j + 1 >= 0 && j + 1 <= 7)
-								chessboard[i + 1, j + 1].Background = highlighted;
-
+							{
+								fchessboard[i+1, j+1].BorderThickness = new Thickness(2);
+								fchessboard[i+1, j+1].BorderBrush = highlighted;
+								chessboard[i+1, j+1].Tag = "highlighted";
+							}
 							if (i + 2 >= 0 && i + 2 <= 7 && j + 2 >= 0 && j + 2 <= 7)
-								chessboard[i + 2, j + 2].Background = highlighted;
-
+							{
+								fchessboard[i + 2, j + 2].BorderThickness = new Thickness(2);
+								fchessboard[i + 2, j + 2].BorderBrush = highlighted;
+								chessboard[i + 2, j + 2].Tag = "highlighted";
+							}
 							if (i + 3 >= 0 && i + 3 <= 7 && j + 3 >= 0 && j + 3 <= 7)
-								chessboard[i + 3, j + 3].Background = highlighted;
-
+							{
+								fchessboard[i + 3, j + 3].BorderThickness = new Thickness(2);
+								fchessboard[i + 3, j + 3].BorderBrush = highlighted;
+								chessboard[i + 3, j + 3].Tag = "highlighted";
+							}
 							if (i + 4 >= 0 && i + 4 <= 7 && j + 4 >= 0 && j + 4 <= 7)
-								chessboard[i + 4, j + 4].Background = highlighted;
-
+							{
+								fchessboard[i + 4, j + 4].BorderThickness = new Thickness(2);
+								fchessboard[i + 4, j + 4].BorderBrush = highlighted;
+								chessboard[i + 4, j + 4].Tag = "highlighted";
+							}
 							if (i + 5 >= 0 && i + 5 <= 7 && j + 5 >= 0 && j + 5 <= 7)
-								chessboard[i + 5, j + 5].Background = highlighted;
-
+							{
+								fchessboard[i + 5, j + 5].BorderThickness = new Thickness(2);
+								fchessboard[i + 5, j + 5].BorderBrush = highlighted;
+								chessboard[i + 5, j + 5].Tag = "highlighted";
+							}
 							if (i + 6 >= 0 && i + 6 <= 7 && j + 6 >= 0 && j + 6 <= 7)
-								chessboard[i + 6, j + 6].Background = highlighted;
-
+							{
+								fchessboard[i + 6, j + 6].BorderThickness = new Thickness(2);
+								fchessboard[i + 6, j + 6].BorderBrush = highlighted;
+								chessboard[i + 6, j + 6].Tag = "highlighted";
+							}
 							if (i + 7 >= 0 && i + 7 <= 7 && j + 7 >= 0 && j + 7 <= 7)
-								chessboard[i + 7, j + 7].Background = highlighted;
+							{
+								fchessboard[i + 7, j + 7].BorderThickness = new Thickness(2);
+								fchessboard[i + 7, j + 7].BorderBrush = highlighted;
+								chessboard[i + 7, j + 7].Tag = "highlighted";
+							}
+
+
 
 
 
 							if (i + 1 >= 0 && i + 1 <= 7 && j - 1 >= 0 && j - 1 <= 7)
-								chessboard[i + 1, j - 1].Background = highlighted;
-
+							{
+								fchessboard[i+1, j-1].BorderThickness = new Thickness(2);
+								fchessboard[i+1, j-1].BorderBrush = highlighted;
+								chessboard[i+1, j-1].Tag = "highlighted";
+							}
 							if (i + 2 >= 0 && i + 2 <= 7 && j - 2 >= 0 && j - 2 <= 7)
-								chessboard[i + 2, j - 2].Background = highlighted;
-
+							{
+								fchessboard[i + 2, j - 2].BorderThickness = new Thickness(2);
+								fchessboard[i + 2, j - 2].BorderBrush = highlighted;
+								chessboard[i + 2, j - 2].Tag = "highlighted";
+							}
 							if (i + 3 >= 0 && i + 3 <= 7 && j - 3 >= 0 && j - 3 <= 7)
-								chessboard[i + 3, j - 3].Background = highlighted;
-
+							{
+								fchessboard[i + 3, j - 3].BorderThickness = new Thickness(2);
+								fchessboard[i + 3, j - 3].BorderBrush = highlighted;
+								chessboard[i + 3, j - 3].Tag = "highlighted";
+							}
 							if (i + 4 >= 0 && i + 4 <= 7 && j - 4 >= 0 && j - 4 <= 7)
-								chessboard[i + 4, j - 4].Background = highlighted;
-
+							{
+								fchessboard[i + 4, j - 4].BorderThickness = new Thickness(2);
+								fchessboard[i + 4, j - 4].BorderBrush = highlighted;
+								chessboard[i + 4, j - 4].Tag = "highlighted";
+							}
 							if (i + 5 >= 0 && i + 5 <= 7 && j - 5 >= 0 && j - 5 <= 7)
-								chessboard[i + 5, j - 5].Background = highlighted;
-
+							{
+								fchessboard[i + 5, j - 5].BorderThickness = new Thickness(2);
+								fchessboard[i + 5, j - 5].BorderBrush = highlighted;
+								chessboard[i + 5, j - 5].Tag = "highlighted";
+							}
 							if (i + 6 >= 0 && i + 6 <= 7 && j - 6 >= 0 && j - 6 <= 7)
-								chessboard[i + 6, j - 6].Background = highlighted;
-
+							{
+								fchessboard[i + 6, j - 6].BorderThickness = new Thickness(2);
+								fchessboard[i + 6, j - 6].BorderBrush = highlighted;
+								chessboard[i + 6, j - 6].Tag = "highlighted";
+							}
 							if (i + 7 >= 0 && i + 7 <= 7 && j - 7 >= 0 && j - 7 <= 7)
-								chessboard[i + 7, j - 7].Background = highlighted;
+							{
+								fchessboard[i + 7, j - 7].BorderThickness = new Thickness(2);
+								fchessboard[i + 7, j - 7].BorderBrush = highlighted;
+								chessboard[i + 7, j - 7].Tag = "highlighted";
+							}
+
+
 
 
 
 							if (i - 1 >= 0 && i - 1 <= 7 && j + 1 >= 0 && j + 1 <= 7)
-								chessboard[i - 1, j + 1].Background = highlighted;
-
+							{
+								fchessboard[i-1, j+1].BorderThickness = new Thickness(2);
+								fchessboard[i-1, j+1].BorderBrush = highlighted;
+								chessboard[i-1, j+1].Tag = "highlighted";
+							}
 							if (i - 2 >= 0 && i - 2 <= 7 && j + 2 >= 0 && j + 2 <= 7)
-								chessboard[i - 2, j + 2].Background = highlighted;
-
+							{
+								fchessboard[i - 2, j + 2].BorderThickness = new Thickness(2);
+								fchessboard[i - 2, j + 2].BorderBrush = highlighted;
+								chessboard[i - 2, j + 2].Tag = "highlighted";
+							}
 							if (i - 3 >= 0 && i - 3 <= 7 && j + 3 >= 0 && j + 3 <= 7)
-								chessboard[i - 3, j + 3].Background = highlighted;
-
+							{
+								fchessboard[i - 3, j + 3].BorderThickness = new Thickness(2);
+								fchessboard[i - 3, j + 3].BorderBrush = highlighted;
+								chessboard[i - 3, j + 3].Tag = "highlighted";
+							}
 							if (i - 4 >= 0 && i - 4 <= 7 && j + 4 >= 0 && j + 4 <= 7)
-								chessboard[i - 4, j + 4].Background = highlighted;
-
+							{
+								fchessboard[i - 4, j + 4].BorderThickness = new Thickness(2);
+								fchessboard[i - 4, j + 4].BorderBrush = highlighted;
+								chessboard[i - 4, j + 4].Tag = "highlighted";
+							}
 							if (i - 5 >= 0 && i - 5 <= 7 && j + 5 >= 0 && j + 5 <= 7)
-								chessboard[i - 5, j + 5].Background = highlighted;
-
+							{
+								fchessboard[i - 5, j + 5].BorderThickness = new Thickness(2);
+								fchessboard[i - 5, j + 5].BorderBrush = highlighted;
+								chessboard[i - 5, j + 5].Tag = "highlighted";
+							}
 							if (i - 6 >= 0 && i - 6 <= 7 && j + 6 >= 0 && j + 6 <= 7)
-								chessboard[i - 6, j + 6].Background = highlighted;
-
+							{
+								fchessboard[i - 6, j + 6].BorderThickness = new Thickness(2);
+								fchessboard[i - 6, j + 6].BorderBrush = highlighted;
+								chessboard[i - 6, j + 6].Tag = "highlighted";
+							}
 							if (i - 7 >= 0 && i - 7 <= 7 && j + 7 >= 0 && j + 7 <= 7)
-								chessboard[i - 7, j + 7].Background = highlighted;
+							{
+								fchessboard[i - 7, j + 7].BorderThickness = new Thickness(2);
+								fchessboard[i - 7, j + 7].BorderBrush = highlighted;
+								chessboard[i - 7, j + 7].Tag = "highlighted";
+							}
+
+
 
 
 
@@ -792,205 +1097,499 @@ namespace Szachy2
 
 						if (chessboard[i, j].Content.ToString() == "bKrolowa" || chessboard[i, j].Content.ToString() == "cKrolowa")
 						{
-							if (i - 1 >= 0 && i - 1 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 1, j].Background = highlighted;
-							if (i - 2 >= 0 && i - 2 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 2, j].Background = highlighted;
-							if (i - 3 >= 0 && i - 3 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 3, j].Background = highlighted;
-							if (i - 4 >= 0 && i - 4 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 4, j].Background = highlighted;
-							if (i - 5 >= 0 && i - 5 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 5, j].Background = highlighted;
-							if (i - 6 >= 0 && i - 6 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 6, j].Background = highlighted;
-							if (i - 7 >= 0 && i - 7 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 7, j].Background = highlighted;
-
-							if (i + 1 >= 0 && i + 1 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 1, j].Background = highlighted;
-							if (i + 2 >= 0 && i + 2 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 2, j].Background = highlighted;
-							if (i + 3 >= 0 && i + 3 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 3, j].Background = highlighted;
-							if (i + 4 >= 0 && i + 4 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 4, j].Background = highlighted;
-							if (i + 5 >= 0 && i + 5 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 5, j].Background = highlighted;
-							if (i + 6 >= 0 && i + 6 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 6, j].Background = highlighted;
-							if (i + 7 >= 0 && i + 7 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 7, j].Background = highlighted;
-
-
-							if (j - 1 >= 0 && j - 1 <= 7)
-								chessboard[i, j - 1].Background = highlighted;
-							if (j - 2 >= 0 && j - 2 <= 7)
-								chessboard[i, j - 2].Background = highlighted;
-							if (j - 3 >= 0 && j - 3 <= 7)
-								chessboard[i, j - 3].Background = highlighted;
-							if (j - 4 >= 0 && j - 4 <= 7)
-								chessboard[i, j - 4].Background = highlighted;
-							if (j - 5 >= 0 && j - 5 <= 7)
-								chessboard[i, j - 5].Background = highlighted;
-							if (j - 6 >= 0 && j - 6 <= 7)
-								chessboard[i, j - 6].Background = highlighted;
-							if (j - 7 >= 0 && j - 7 <= 7)
-								chessboard[i, j - 7].Background = highlighted;
-
-							if (j + 1 >= 0 && j + 1 <= 7)
-								chessboard[i, j + 1].Background = highlighted;
-							if (j + 2 >= 0 && j + 2 <= 7)
-								chessboard[i, j + 2].Background = highlighted;
-							if (j + 3 >= 0 && j + 3 <= 7)
-								chessboard[i, j + 3].Background = highlighted;
-							if (j + 4 >= 0 && j + 4 <= 7)
-								chessboard[i, j + 4].Background = highlighted;
-							if (j + 5 >= 0 && j + 5 <= 7)
-								chessboard[i, j + 5].Background = highlighted;
-							if (j + 6 >= 0 && j + 6 <= 7)
-								chessboard[i, j + 6].Background = highlighted;
-							if (j + 7 >= 0 && j + 7 <= 7)
-								chessboard[i, j + 7].Background = highlighted;
-
-
 							if (i - 1 >= 0 && i - 1 <= 7 && j - 1 >= 0 && j - 1 <= 7)
-								chessboard[i - 1, j - 1].Background = highlighted;
-
+							{
+								fchessboard[i - 1, j - 1].BorderThickness = new Thickness(2);
+								fchessboard[i - 1, j - 1].BorderBrush = highlighted;
+								chessboard[i - 1, j - 1].Tag = "highlighted";
+							}
 							if (i - 2 >= 0 && i - 2 <= 7 && j - 2 >= 0 && j - 2 <= 7)
-								chessboard[i - 2, j - 2].Background = highlighted;
-
+							{
+								fchessboard[i - 2, j - 2].BorderThickness = new Thickness(2);
+								fchessboard[i - 2, j - 2].BorderBrush = highlighted;
+								chessboard[i - 2, j - 2].Tag = "highlighted";
+							}
 							if (i - 3 >= 0 && i - 3 <= 7 && j - 3 >= 0 && j - 3 <= 7)
-								chessboard[i - 3, j - 3].Background = highlighted;
-
+							{
+								fchessboard[i - 3, j - 3].BorderThickness = new Thickness(2);
+								fchessboard[i - 3, j - 3].BorderBrush = highlighted;
+								chessboard[i - 3, j - 3].Tag = "highlighted";
+							}
 							if (i - 4 >= 0 && i - 4 <= 7 && j - 4 >= 0 && j - 4 <= 7)
-								chessboard[i - 4, j - 4].Background = highlighted;
-
+							{
+								fchessboard[i - 4, j - 4].BorderThickness = new Thickness(2);
+								fchessboard[i - 4, j - 4].BorderBrush = highlighted;
+								chessboard[i - 4, j - 4].Tag = "highlighted";
+							}
 							if (i - 5 >= 0 && i - 5 <= 7 && j - 5 >= 0 && j - 5 <= 7)
-								chessboard[i - 5, j - 5].Background = highlighted;
-
+							{
+								fchessboard[i - 5, j - 5].BorderThickness = new Thickness(2);
+								fchessboard[i - 5, j - 5].BorderBrush = highlighted;
+								chessboard[i - 5, j - 5].Tag = "highlighted";
+							}
 							if (i - 6 >= 0 && i - 6 <= 7 && j - 6 >= 0 && j - 6 <= 7)
-								chessboard[i - 6, j - 6].Background = highlighted;
-
+							{
+								fchessboard[i - 6, j - 6].BorderThickness = new Thickness(2);
+								fchessboard[i - 6, j - 6].BorderBrush = highlighted;
+								chessboard[i - 6, j - 6].Tag = "highlighted";
+							}
 							if (i - 7 >= 0 && i - 7 <= 7 && j - 7 >= 0 && j - 7 <= 7)
-								chessboard[i - 7, j - 7].Background = highlighted;
+							{
+								fchessboard[i - 7, j - 7].BorderThickness = new Thickness(2);
+								fchessboard[i - 7, j - 7].BorderBrush = highlighted;
+								chessboard[i - 7, j - 7].Tag = "highlighted";
+							}
+
+
 
 
 
 							if (i + 1 >= 0 && i + 1 <= 7 && j + 1 >= 0 && j + 1 <= 7)
-								chessboard[i + 1, j + 1].Background = highlighted;
-
+							{
+								fchessboard[i + 1, j + 1].BorderThickness = new Thickness(2);
+								fchessboard[i + 1, j + 1].BorderBrush = highlighted;
+								chessboard[i + 1, j + 1].Tag = "highlighted";
+							}
 							if (i + 2 >= 0 && i + 2 <= 7 && j + 2 >= 0 && j + 2 <= 7)
-								chessboard[i + 2, j + 2].Background = highlighted;
-
+							{
+								fchessboard[i + 2, j + 2].BorderThickness = new Thickness(2);
+								fchessboard[i + 2, j + 2].BorderBrush = highlighted;
+								chessboard[i + 2, j + 2].Tag = "highlighted";
+							}
 							if (i + 3 >= 0 && i + 3 <= 7 && j + 3 >= 0 && j + 3 <= 7)
-								chessboard[i + 3, j + 3].Background = highlighted;
-
+							{
+								fchessboard[i + 3, j + 3].BorderThickness = new Thickness(2);
+								fchessboard[i + 3, j + 3].BorderBrush = highlighted;
+								chessboard[i + 3, j + 3].Tag = "highlighted";
+							}
 							if (i + 4 >= 0 && i + 4 <= 7 && j + 4 >= 0 && j + 4 <= 7)
-								chessboard[i + 4, j + 4].Background = highlighted;
-
+							{
+								fchessboard[i + 4, j + 4].BorderThickness = new Thickness(2);
+								fchessboard[i + 4, j + 4].BorderBrush = highlighted;
+								chessboard[i + 4, j + 4].Tag = "highlighted";
+							}
 							if (i + 5 >= 0 && i + 5 <= 7 && j + 5 >= 0 && j + 5 <= 7)
-								chessboard[i + 5, j + 5].Background = highlighted;
-
+							{
+								fchessboard[i + 5, j + 5].BorderThickness = new Thickness(2);
+								fchessboard[i + 5, j + 5].BorderBrush = highlighted;
+								chessboard[i + 5, j + 5].Tag = "highlighted";
+							}
 							if (i + 6 >= 0 && i + 6 <= 7 && j + 6 >= 0 && j + 6 <= 7)
-								chessboard[i + 6, j + 6].Background = highlighted;
-
+							{
+								fchessboard[i + 6, j + 6].BorderThickness = new Thickness(2);
+								fchessboard[i + 6, j + 6].BorderBrush = highlighted;
+								chessboard[i + 6, j + 6].Tag = "highlighted";
+							}
 							if (i + 7 >= 0 && i + 7 <= 7 && j + 7 >= 0 && j + 7 <= 7)
-								chessboard[i + 7, j + 7].Background = highlighted;
+							{
+								fchessboard[i + 7, j + 7].BorderThickness = new Thickness(2);
+								fchessboard[i + 7, j + 7].BorderBrush = highlighted;
+								chessboard[i + 7, j + 7].Tag = "highlighted";
+							}
+
+
 
 
 
 							if (i + 1 >= 0 && i + 1 <= 7 && j - 1 >= 0 && j - 1 <= 7)
-								chessboard[i + 1, j - 1].Background = highlighted;
-
+							{
+								fchessboard[i + 1, j - 1].BorderThickness = new Thickness(2);
+								fchessboard[i + 1, j - 1].BorderBrush = highlighted;
+								chessboard[i + 1, j - 1].Tag = "highlighted";
+							}
 							if (i + 2 >= 0 && i + 2 <= 7 && j - 2 >= 0 && j - 2 <= 7)
-								chessboard[i + 2, j - 2].Background = highlighted;
-
+							{
+								fchessboard[i + 2, j - 2].BorderThickness = new Thickness(2);
+								fchessboard[i + 2, j - 2].BorderBrush = highlighted;
+								chessboard[i + 2, j - 2].Tag = "highlighted";
+							}
 							if (i + 3 >= 0 && i + 3 <= 7 && j - 3 >= 0 && j - 3 <= 7)
-								chessboard[i + 3, j - 3].Background = highlighted;
-
+							{
+								fchessboard[i + 3, j - 3].BorderThickness = new Thickness(2);
+								fchessboard[i + 3, j - 3].BorderBrush = highlighted;
+								chessboard[i + 3, j - 3].Tag = "highlighted";
+							}
 							if (i + 4 >= 0 && i + 4 <= 7 && j - 4 >= 0 && j - 4 <= 7)
-								chessboard[i + 4, j - 4].Background = highlighted;
-
+							{
+								fchessboard[i + 4, j - 4].BorderThickness = new Thickness(2);
+								fchessboard[i + 4, j - 4].BorderBrush = highlighted;
+								chessboard[i + 4, j - 4].Tag = "highlighted";
+							}
 							if (i + 5 >= 0 && i + 5 <= 7 && j - 5 >= 0 && j - 5 <= 7)
-								chessboard[i + 5, j - 5].Background = highlighted;
-
+							{
+								fchessboard[i + 5, j - 5].BorderThickness = new Thickness(2);
+								fchessboard[i + 5, j - 5].BorderBrush = highlighted;
+								chessboard[i + 5, j - 5].Tag = "highlighted";
+							}
 							if (i + 6 >= 0 && i + 6 <= 7 && j - 6 >= 0 && j - 6 <= 7)
-								chessboard[i + 6, j - 6].Background = highlighted;
-
+							{
+								fchessboard[i + 6, j - 6].BorderThickness = new Thickness(2);
+								fchessboard[i + 6, j - 6].BorderBrush = highlighted;
+								chessboard[i + 6, j - 6].Tag = "highlighted";
+							}
 							if (i + 7 >= 0 && i + 7 <= 7 && j - 7 >= 0 && j - 7 <= 7)
-								chessboard[i + 7, j - 7].Background = highlighted;
+							{
+								fchessboard[i + 7, j - 7].BorderThickness = new Thickness(2);
+								fchessboard[i + 7, j - 7].BorderBrush = highlighted;
+								chessboard[i + 7, j - 7].Tag = "highlighted";
+							}
+
+
 
 
 
 							if (i - 1 >= 0 && i - 1 <= 7 && j + 1 >= 0 && j + 1 <= 7)
-								chessboard[i - 1, j + 1].Background = highlighted;
-
+							{
+								fchessboard[i - 1, j + 1].BorderThickness = new Thickness(2);
+								fchessboard[i - 1, j + 1].BorderBrush = highlighted;
+								chessboard[i - 1, j + 1].Tag = "highlighted";
+							}
 							if (i - 2 >= 0 && i - 2 <= 7 && j + 2 >= 0 && j + 2 <= 7)
-								chessboard[i - 2, j + 2].Background = highlighted;
-
+							{
+								fchessboard[i - 2, j + 2].BorderThickness = new Thickness(2);
+								fchessboard[i - 2, j + 2].BorderBrush = highlighted;
+								chessboard[i - 2, j + 2].Tag = "highlighted";
+							}
 							if (i - 3 >= 0 && i - 3 <= 7 && j + 3 >= 0 && j + 3 <= 7)
-								chessboard[i - 3, j + 3].Background = highlighted;
-
+							{
+								fchessboard[i - 3, j + 3].BorderThickness = new Thickness(2);
+								fchessboard[i - 3, j + 3].BorderBrush = highlighted;
+								chessboard[i - 3, j + 3].Tag = "highlighted";
+							}
 							if (i - 4 >= 0 && i - 4 <= 7 && j + 4 >= 0 && j + 4 <= 7)
-								chessboard[i - 4, j + 4].Background = highlighted;
-
+							{
+								fchessboard[i - 4, j + 4].BorderThickness = new Thickness(2);
+								fchessboard[i - 4, j + 4].BorderBrush = highlighted;
+								chessboard[i - 4, j + 4].Tag = "highlighted";
+							}
 							if (i - 5 >= 0 && i - 5 <= 7 && j + 5 >= 0 && j + 5 <= 7)
-								chessboard[i - 5, j + 5].Background = highlighted;
-
+							{
+								fchessboard[i - 5, j + 5].BorderThickness = new Thickness(2);
+								fchessboard[i - 5, j + 5].BorderBrush = highlighted;
+								chessboard[i - 5, j + 5].Tag = "highlighted";
+							}
 							if (i - 6 >= 0 && i - 6 <= 7 && j + 6 >= 0 && j + 6 <= 7)
-								chessboard[i - 6, j + 6].Background = highlighted;
-
+							{
+								fchessboard[i - 6, j + 6].BorderThickness = new Thickness(2);
+								fchessboard[i - 6, j + 6].BorderBrush = highlighted;
+								chessboard[i - 6, j + 6].Tag = "highlighted";
+							}
 							if (i - 7 >= 0 && i - 7 <= 7 && j + 7 >= 0 && j + 7 <= 7)
-								chessboard[i - 7, j + 7].Background = highlighted;
+							{
+								fchessboard[i - 7, j + 7].BorderThickness = new Thickness(2);
+								fchessboard[i - 7, j + 7].BorderBrush = highlighted;
+								chessboard[i - 7, j + 7].Tag = "highlighted";
+							}
+
+							if (i - 1 >= 0 && i - 1 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i - 1, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 1, j].BorderBrush = highlighted;
+								chessboard[i - 1, j].Tag = "highlighted";
+							}
+
+
+							if (i + 1 >= 0 && i + 1 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i + 1, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 1, j].BorderBrush = highlighted;
+								chessboard[i + 1, j].Tag = "highlighted";
+							}
+
+
+
+							if (j - 1 >= 0 && j - 1 <= 7)
+							{
+								fchessboard[i, j - 1].BorderThickness = new Thickness(2);
+								fchessboard[i, j - 1].BorderBrush = highlighted;
+								chessboard[i, j - 1].Tag = "highlighted";
+							}
+
+
+							if (j + 1 >= 0 && j + 1 <= 7)
+							{
+								fchessboard[i, j + 1].BorderThickness = new Thickness(2);
+								fchessboard[i, j + 1].BorderBrush = highlighted;
+								chessboard[i, j + 1].Tag = "highlighted";
+							}
+
+
+							if (i - 2 >= 0 && i - 2 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i - 2, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 2, j].BorderBrush = highlighted;
+								chessboard[i - 2, j].Tag = "highlighted";
+							}
+
+
+							if (i + 2 >= 0 && i + 2 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i + 2, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 2, j].BorderBrush = highlighted;
+								chessboard[i + 2, j].Tag = "highlighted";
+							}
+
+
+
+							if (j - 2 >= 0 && j - 2 <= 7)
+							{
+								fchessboard[i, j - 2].BorderThickness = new Thickness(2);
+								fchessboard[i, j - 2].BorderBrush = highlighted;
+								chessboard[i, j - 2].Tag = "highlighted";
+							}
+
+
+							if (j + 2 >= 0 && j + 2 <= 7)
+							{
+								fchessboard[i, j + 2].BorderThickness = new Thickness(2);
+								fchessboard[i, j + 2].BorderBrush = highlighted;
+								chessboard[i, j + 2].Tag = "highlighted";
+							}
+
+
+							if (i - 3 >= 0 && i - 3 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i - 3, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 3, j].BorderBrush = highlighted;
+								chessboard[i - 3, j].Tag = "highlighted";
+							}
+
+
+							if (i + 3 >= 0 && i + 3 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i + 3, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 3, j].BorderBrush = highlighted;
+								chessboard[i + 3, j].Tag = "highlighted";
+							}
+
+
+
+							if (j - 3 >= 0 && j - 3 <= 7)
+							{
+								fchessboard[i, j - 3].BorderThickness = new Thickness(2);
+								fchessboard[i, j - 3].BorderBrush = highlighted;
+								chessboard[i, j - 3].Tag = "highlighted";
+							}
+
+
+							if (j + 3 >= 0 && j + 3 <= 7)
+							{
+								fchessboard[i, j + 3].BorderThickness = new Thickness(2);
+								fchessboard[i, j + 3].BorderBrush = highlighted;
+								chessboard[i, j + 3].Tag = "highlighted";
+							}
+
+
+							if (i - 4 >= 0 && i - 4 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i - 4, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 4, j].BorderBrush = highlighted;
+								chessboard[i - 4, j].Tag = "highlighted";
+							}
+
+
+							if (i + 4 >= 0 && i + 4 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i + 4, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 4, j].BorderBrush = highlighted;
+								chessboard[i + 4, j].Tag = "highlighted";
+							}
+
+
+
+							if (j - 4 >= 0 && j - 4 <= 7)
+							{
+								fchessboard[i, j - 4].BorderThickness = new Thickness(2);
+								fchessboard[i, j - 4].BorderBrush = highlighted;
+								chessboard[i, j - 4].Tag = "highlighted";
+							}
+
+
+							if (j + 4 >= 0 && j + 4 <= 7)
+							{
+								fchessboard[i, j + 4].BorderThickness = new Thickness(2);
+								fchessboard[i, j + 4].BorderBrush = highlighted;
+								chessboard[i, j + 4].Tag = "highlighted";
+							}
+
+
+							if (i - 5 >= 0 && i - 5 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i - 5, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 5, j].BorderBrush = highlighted;
+								chessboard[i - 5, j].Tag = "highlighted";
+							}
+
+
+							if (i + 5 >= 0 && i + 5 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i + 5, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 5, j].BorderBrush = highlighted;
+								chessboard[i + 5, j].Tag = "highlighted";
+							}
+
+
+
+							if (j - 5 >= 0 && j - 5 <= 7)
+							{
+								fchessboard[i, j - 5].BorderThickness = new Thickness(2);
+								fchessboard[i, j - 5].BorderBrush = highlighted;
+								chessboard[i, j - 5].Tag = "highlighted";
+							}
+
+
+							if (j + 5 >= 0 && j + 5 <= 7)
+							{
+								fchessboard[i, j + 5].BorderThickness = new Thickness(2);
+								fchessboard[i, j + 5].BorderBrush = highlighted;
+								chessboard[i, j + 5].Tag = "highlighted";
+							}
+
+
+							if (i - 6 >= 0 && i - 6 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i - 6, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 6, j].BorderBrush = highlighted;
+								chessboard[i - 6, j].Tag = "highlighted";
+							}
+
+
+							if (i + 6 >= 0 && i + 6 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i + 6, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 6, j].BorderBrush = highlighted;
+								chessboard[i + 6, j].Tag = "highlighted";
+							}
+
+
+
+							if (j - 6 >= 0 && j - 6 <= 7)
+							{
+								fchessboard[i, j - 6].BorderThickness = new Thickness(2);
+								fchessboard[i, j - 6].BorderBrush = highlighted;
+								chessboard[i, j - 6].Tag = "highlighted";
+							}
+
+
+							if (j + 6 >= 0 && j + 6 <= 7)
+							{
+								fchessboard[i, j + 6].BorderThickness = new Thickness(2);
+								fchessboard[i, j + 6].BorderBrush = highlighted;
+								chessboard[i, j + 6].Tag = "highlighted";
+							}
+
+
+							if (i - 7 >= 0 && i - 7 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i - 7, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 7, j].BorderBrush = highlighted;
+								chessboard[i - 7, j].Tag = "highlighted";
+							}
+
+
+							if (i + 7 >= 0 && i + 7 <= 7 && j >= 0 && j <= 7)
+							{
+								fchessboard[i + 7, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 7, j].BorderBrush = highlighted;
+								chessboard[i + 7, j].Tag = "highlighted";
+							}
+
+
+
+							if (j - 7 >= 0 && j - 7 <= 7)
+							{
+								fchessboard[i, j - 7].BorderThickness = new Thickness(2);
+								fchessboard[i, j - 7].BorderBrush = highlighted;
+								chessboard[i, j - 7].Tag = "highlighted";
+							}
+
+
+							if (j + 7 >= 0 && j + 7 <= 7)
+							{
+								fchessboard[i, j + 7].BorderThickness = new Thickness(2);
+								fchessboard[i, j + 7].BorderBrush = highlighted;
+								chessboard[i, j + 7].Tag = "highlighted";
+							}
 						}
 
 						if (chessboard[i, j].Content.ToString() == "bKrol" || chessboard[i, j].Content.ToString() == "cKrol")
 						{
 							if (i - 1 >= 0 && i - 1 <= 7 && j >= 0 && j <= 7)
-								chessboard[i - 1, j].Background = highlighted;
+							{
+								fchessboard[i - 1, j].BorderThickness = new Thickness(2);
+								fchessboard[i - 1, j].BorderBrush = highlighted;
+								chessboard[i - 1, j].Tag = "highlighted";
+							}
 							
 
 							if (i + 1 >= 0 && i + 1 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 1, j].Background = highlighted;
-							
+							{
+								fchessboard[i + 1, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 1, j].BorderBrush = highlighted;
+								chessboard[i + 1, j].Tag = "highlighted";
+							}
+
 
 
 							if (j - 1 >= 0 && j - 1 <= 7)
-								chessboard[i, j - 1].Background = highlighted;
-							
+							{
+								fchessboard[i, j -1].BorderThickness = new Thickness(2);
+								fchessboard[i, j -1].BorderBrush = highlighted;
+								chessboard[i , j-1].Tag = "highlighted";
+							}
+
 
 							if (j + 1 >= 0 && j + 1 <= 7)
-								chessboard[i, j + 1].Background = highlighted;
+							{
+								fchessboard[i , j+1].BorderThickness = new Thickness(2);
+								fchessboard[i, j+1].BorderBrush = highlighted;
+								chessboard[i , j+1].Tag = "highlighted";
+							}
 
 
 
 
 							if (i - 1 >= 0 && i - 1 <= 7 && j - 1 >= 0 && j - 1 <= 7)
-								chessboard[i - 1, j - 1].Background = highlighted;
+							{
+								fchessboard[i-1, j-1].BorderThickness = new Thickness(2);
+								fchessboard[i-1, j-1].BorderBrush = highlighted;
+								chessboard[i-1, j-1].Tag = "highlighted";
+							}
 
-							
+
 
 
 
 							if (i + 1 >= 0 && i + 1 <= 7 && j + 1 >= 0 && j + 1 <= 7)
-								chessboard[i + 1, j + 1].Background = highlighted;
+							{
+								fchessboard[i+1, j+1].BorderThickness = new Thickness(2);
+								fchessboard[i+1, j+1].BorderBrush = highlighted;
+								chessboard[i+1, j+1].Tag = "highlighted";
+							}
 
-							
+
 
 
 
 							if (i + 1 >= 0 && i + 1 <= 7 && j - 1 >= 0 && j - 1 <= 7)
-								chessboard[i + 1, j - 1].Background = highlighted;
+							{
+								fchessboard[i+1, j-1].BorderThickness = new Thickness(2);
+								fchessboard[i+1, j-1].BorderBrush = highlighted;
+								chessboard[i+1, j-1].Tag = "highlighted";
+							}
 
-							
+
 
 
 
 							if (i - 1 >= 0 && i - 1 <= 7 && j + 1 >= 0 && j + 1 <= 7)
-								chessboard[i - 1, j + 1].Background = highlighted;
+							{
+								fchessboard[i-1, j+1].BorderThickness = new Thickness(2);
+								fchessboard[i-1, j+1].BorderBrush = highlighted;
+								chessboard[i-1, j+1].Tag = "highlighted";
+							}
 
-							
+
 
 						}
 
@@ -999,11 +1598,21 @@ namespace Szachy2
 						if (chessboard[i, j].Content.ToString() == "cPion")
 						{
 							if (i + 1 >= 0 && i + 1 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 1, j].Background = highlighted;
+							{
+								fchessboard[i + 1, j].BorderThickness = new Thickness(2);
+								fchessboard[i + 1, j].BorderBrush = highlighted;
+								chessboard[i + 1, j].Tag = "highlighted";
+							}
+								
 
 
 							if (i + 2 >= 0 && i + 2 <= 7 && j >= 0 && j <= 7)
-								chessboard[i + 2, j].Background = highlighted;
+							{
+								fchessboard[i + 2, j].BorderThickness = new Thickness(2);
+								fchessboard[i +2, j].BorderBrush = highlighted;
+								chessboard[i +2, j].Tag = "highlighted";
+							}
+								
 						}
 						//if (chessboard[i, j].Content.ToString() == "cWieza")
 						//{
