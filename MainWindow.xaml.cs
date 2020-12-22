@@ -879,7 +879,36 @@ namespace Szachy2
 
 							if (j + 1 >= 0 && j + 1 <= 7)
 								chessboard[i, j + 1].Background = highlighted;
+
+
+
+
+							if (i - 1 >= 0 && i - 1 <= 7 && j - 1 >= 0 && j - 1 <= 7)
+								chessboard[i - 1, j - 1].Background = highlighted;
+
 							
+
+
+
+							if (i + 1 >= 0 && i + 1 <= 7 && j + 1 >= 0 && j + 1 <= 7)
+								chessboard[i + 1, j + 1].Background = highlighted;
+
+							
+
+
+
+							if (i + 1 >= 0 && i + 1 <= 7 && j - 1 >= 0 && j - 1 <= 7)
+								chessboard[i + 1, j - 1].Background = highlighted;
+
+							
+
+
+
+							if (i - 1 >= 0 && i - 1 <= 7 && j + 1 >= 0 && j + 1 <= 7)
+								chessboard[i - 1, j + 1].Background = highlighted;
+
+							
+
 						}
 
 						// Czarne
