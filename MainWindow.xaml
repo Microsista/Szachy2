@@ -7,119 +7,94 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="891" Width="868">
 	<Grid>
-		<Button x:Name="a1" Content="cWieza" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="b1" Content="cKon" HorizontalAlignment="Left" Margin="130,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="c1" Content="cLaufer" HorizontalAlignment="Left" Margin="230,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="d1" Content="cKrolowa" HorizontalAlignment="Left" Margin="330,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="e1" Content="cKrol" HorizontalAlignment="Left" Margin="430,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="f1" Content="cLaufer" HorizontalAlignment="Left" Margin="530,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="g1" Content="cKon" HorizontalAlignment="Left" Margin="630,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="h1" Content="cWieza" HorizontalAlignment="Left" Margin="730,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-
-		<Button x:Name="a2" Content="cPion" HorizontalAlignment="Left" Margin="30,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="b2" Content="cPion" HorizontalAlignment="Left" Margin="130,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="c2" Content="cPion" HorizontalAlignment="Left" Margin="230,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="d2" Content="cPion" HorizontalAlignment="Left" Margin="330,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="e2" Content="cPion" HorizontalAlignment="Left" Margin="430,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="f2" Content="cPion" HorizontalAlignment="Left" Margin="530,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="g2" Content="cPion" HorizontalAlignment="Left" Margin="630,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="h2" Content="cPion" HorizontalAlignment="Left" Margin="730,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-
-		<Button x:Name="a3" Content="" HorizontalAlignment="Left" Margin="30,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="b3" Content="" HorizontalAlignment="Left" Margin="130,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="c3" Content="" HorizontalAlignment="Left" Margin="230,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="d3" Content="" HorizontalAlignment="Left" Margin="330,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="e3" Content="" HorizontalAlignment="Left" Margin="430,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="f3" Content="" HorizontalAlignment="Left" Margin="530,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="g3" Content="" HorizontalAlignment="Left" Margin="630,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="h3" Content="" HorizontalAlignment="Left" Margin="730,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-
-		<Button x:Name="a4" Content="" HorizontalAlignment="Left" Margin="30,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="b4" Content="" HorizontalAlignment="Left" Margin="130,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="c4" Content="" HorizontalAlignment="Left" Margin="230,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="d4" Content="" HorizontalAlignment="Left" Margin="330,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="e4" Content="" HorizontalAlignment="Left" Margin="430,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="f4" Content="" HorizontalAlignment="Left" Margin="530,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="g4" Content="" HorizontalAlignment="Left" Margin="630,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="h4" Content="" HorizontalAlignment="Left" Margin="730,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-
-		<Button x:Name="a5" Content="" HorizontalAlignment="Left" Margin="30,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="b5" Content="" HorizontalAlignment="Left" Margin="130,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="c5" Content="" HorizontalAlignment="Left" Margin="230,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="d5" Content="" HorizontalAlignment="Left" Margin="330,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="e5" Content="" HorizontalAlignment="Left" Margin="430,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="f5" Content="" HorizontalAlignment="Left" Margin="530,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="g5" Content="" HorizontalAlignment="Left" Margin="630,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="h5" Content="" HorizontalAlignment="Left" Margin="730,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-
-		<Button x:Name="a6" Content="" HorizontalAlignment="Left" Margin="30,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="b6" Content="" HorizontalAlignment="Left" Margin="130,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="c6" Content="" HorizontalAlignment="Left" Margin="230,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="d6" Content="" HorizontalAlignment="Left" Margin="330,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="e6" Content="" HorizontalAlignment="Left" Margin="430,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="f6" Content="" HorizontalAlignment="Left" Margin="530,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="g6" Content="" HorizontalAlignment="Left" Margin="630,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="h6" Content="" HorizontalAlignment="Left" Margin="730,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-
-		<Button x:Name="a7" Content="bPion" HorizontalAlignment="Left" Margin="30,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="b7" Content="bPion" HorizontalAlignment="Left" Margin="130,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="c7" Content="bPion" HorizontalAlignment="Left" Margin="230,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="d7" Content="bPion" HorizontalAlignment="Left" Margin="330,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="e7" Content="bPion" HorizontalAlignment="Left" Margin="430,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="f7" Content="bPion" HorizontalAlignment="Left" Margin="530,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="g7" Content="bPion" HorizontalAlignment="Left" Margin="630,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="h7" Content="bPion" HorizontalAlignment="Left" Margin="730,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-
-		<Button x:Name="a8" Content="bWieza" HorizontalAlignment="Left" Margin="30,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="b8" Content="bKon" HorizontalAlignment="Left" Margin="130,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="c8" Content="bLaufer" HorizontalAlignment="Left" Margin="230,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="d8" Content="bKrolowa" HorizontalAlignment="Left" Margin="330,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="e8" Content="bKrol" HorizontalAlignment="Left" Margin="430,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="f8" Content="bLaufer" HorizontalAlignment="Left" Margin="530,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="g8" Content="bKon" HorizontalAlignment="Left" Margin="630,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		<Button x:Name="h8" Content="bWieza" HorizontalAlignment="Left" Margin="730,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
-		
-		<!--custom control-->
-		<local:Field x:Name="field" HorizontalAlignment="Left" Height="100" Margin="385,10,0,0" VerticalAlignment="Top" Width="75"/>
-		
-		<!--creating a custom wpf button template in XAML-->
-		
-		<!--creating a style-->
-		<!--sets the properties of the button that we want to customize-->
 		<Grid.Resources>
-			<Style x:Key="OrangeButton" TargetType="Button">
-				<Setter Property="OverridesDefaultStyle" Value="True"/>
-				<Setter Property="Margin" Value="2"/>
-				<Setter Property="FontFamily" Value="Verdana"/>
-				<Setter Property="FontSize" Value="11px"/>
-				<Setter Property="FontWeight" Value="Bold"/>
-				<Setter Property="FocusVisualStyle" Value="{StaticResource MyFocusVisual}"/>
-				<Setter Property="Background">
+			<Style x:Key="Field" TargetType="Button">
+				<Setter Property="Template">
 					<Setter.Value>
-						<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-							<GradientStop Color="#FFFFD190" Offset="0.2"/>
-							<GradientStop Color="Orange" Offset="0.85"/>
-							<GradientStop Color="#FFFFD190" Offset="1"/>
-						</LinearGradientBrush>
-					</Setter.Value>
-				</Setter>
-			</Style>
-
-			<Style x:Key="MyFocusVisual">
-				<Setter Property="Control.Template">
-					<Setter.Value>
-						<ControlTemplate TargetType="{x:Type Control}">
-							<Grid Margin="3 2">
-								<Rectangle Name="r1" StrokeThickness="1" Stroke="Black" StrokeDashArray="2 2"/>
-								<Border Name="border" Width="{TemplateBinding ActualWidth}" Height="{TemplateBinding ActualHeight}"  CornerRadius="2" BorderThickness="1" />
-							</Grid>
+						<ControlTemplate TargetType="Button">
+							<Border Name="border" BorderThickness="1" BorderBrush="Red" Background="{TemplateBinding Background}"/>
+							<ControlTemplate.Triggers>
+								<Trigger Property="IsMouseOver" Value="False">
+									<Setter TargetName="border" Property="BorderBrush" Value="#FF4788c8" />
+									<Setter Property="Foreground" Value="#FF4788c8" />
+								</Trigger>
+							</ControlTemplate.Triggers>
 						</ControlTemplate>
 					</Setter.Value>
 				</Setter>
 			</Style>
 		</Grid.Resources>
-		
-		
 
+		<Button Style="{StaticResource Field}" x:Name="a1" Content="cWieza" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="b1" Content="cKon" HorizontalAlignment="Left" Margin="130,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="c1" Content="cLaufer" HorizontalAlignment="Left" Margin="230,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="d1" Content="cKrolowa" HorizontalAlignment="Left" Margin="330,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="e1" Content="cKrol" HorizontalAlignment="Left" Margin="430,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="f1" Content="cLaufer" HorizontalAlignment="Left" Margin="530,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="g1" Content="cKon" HorizontalAlignment="Left" Margin="630,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="h1" Content="cWieza" HorizontalAlignment="Left" Margin="730,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+
+		<Button Style="{StaticResource Field}" x:Name="a2" Content="cPion" HorizontalAlignment="Left" Margin="30,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="b2" Content="cPion" HorizontalAlignment="Left" Margin="130,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="c2" Content="cPion" HorizontalAlignment="Left" Margin="230,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="d2" Content="cPion" HorizontalAlignment="Left" Margin="330,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="e2" Content="cPion" HorizontalAlignment="Left" Margin="430,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="f2" Content="cPion" HorizontalAlignment="Left" Margin="530,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="g2" Content="cPion" HorizontalAlignment="Left" Margin="630,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="h2" Content="cPion" HorizontalAlignment="Left" Margin="730,130,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+
+		<Button Style="{StaticResource Field}" x:Name="a3" Content="" HorizontalAlignment="Left" Margin="30,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="b3" Content="" HorizontalAlignment="Left" Margin="130,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="c3" Content="" HorizontalAlignment="Left" Margin="230,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="d3" Content="" HorizontalAlignment="Left" Margin="330,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="e3" Content="" HorizontalAlignment="Left" Margin="430,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="f3" Content="" HorizontalAlignment="Left" Margin="530,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="g3" Content="" HorizontalAlignment="Left" Margin="630,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="h3" Content="" HorizontalAlignment="Left" Margin="730,230,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+
+		<Button Style="{StaticResource Field}" x:Name="a4" Content="" HorizontalAlignment="Left" Margin="30,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="b4" Content="" HorizontalAlignment="Left" Margin="130,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="c4" Content="" HorizontalAlignment="Left" Margin="230,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="d4" Content="" HorizontalAlignment="Left" Margin="330,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="e4" Content="" HorizontalAlignment="Left" Margin="430,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="f4" Content="" HorizontalAlignment="Left" Margin="530,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="g4" Content="" HorizontalAlignment="Left" Margin="630,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="h4" Content="" HorizontalAlignment="Left" Margin="730,330,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+
+		<Button Style="{StaticResource Field}" x:Name="a5" Content="" HorizontalAlignment="Left" Margin="30,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="b5" Content="" HorizontalAlignment="Left" Margin="130,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="c5" Content="" HorizontalAlignment="Left" Margin="230,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="d5" Content="" HorizontalAlignment="Left" Margin="330,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="e5" Content="" HorizontalAlignment="Left" Margin="430,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="f5" Content="" HorizontalAlignment="Left" Margin="530,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="g5" Content="" HorizontalAlignment="Left" Margin="630,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="h5" Content="" HorizontalAlignment="Left" Margin="730,429,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+
+		<Button Style="{StaticResource Field}" x:Name="a6" Content="" HorizontalAlignment="Left" Margin="30,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="b6" Content="" HorizontalAlignment="Left" Margin="130,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="c6" Content="" HorizontalAlignment="Left" Margin="230,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="d6" Content="" HorizontalAlignment="Left" Margin="330,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="e6" Content="" HorizontalAlignment="Left" Margin="430,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="f6" Content="" HorizontalAlignment="Left" Margin="530,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="g6" Content="" HorizontalAlignment="Left" Margin="630,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="h6" Content="" HorizontalAlignment="Left" Margin="730,529,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+
+		<Button Style="{StaticResource Field}" x:Name="a7" Content="bPion" HorizontalAlignment="Left" Margin="30,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="b7" Content="bPion" HorizontalAlignment="Left" Margin="130,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="c7" Content="bPion" HorizontalAlignment="Left" Margin="230,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="d7" Content="bPion" HorizontalAlignment="Left" Margin="330,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="e7" Content="bPion" HorizontalAlignment="Left" Margin="430,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="f7" Content="bPion" HorizontalAlignment="Left" Margin="530,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="g7" Content="bPion" HorizontalAlignment="Left" Margin="630,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="h7" Content="bPion" HorizontalAlignment="Left" Margin="730,629,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+
+		<Button Style="{StaticResource Field}" x:Name="a8" Content="bWieza" HorizontalAlignment="Left" Margin="30,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="b8" Content="bKon" HorizontalAlignment="Left" Margin="130,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="c8" Content="bLaufer" HorizontalAlignment="Left" Margin="230,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="d8" Content="bKrolowa" HorizontalAlignment="Left" Margin="330,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="e8" Content="bKrol" HorizontalAlignment="Left" Margin="430,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="f8" Content="bLaufer" HorizontalAlignment="Left" Margin="530,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="g8" Content="bKon" HorizontalAlignment="Left" Margin="630,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button Style="{StaticResource Field}" x:Name="h8" Content="bWieza" HorizontalAlignment="Left" Margin="730,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
 	</Grid>
 </Window>
