@@ -25,18 +25,47 @@ namespace Szachy2
 		SolidColorBrush selected = new SolidColorBrush(Colors.Blue);
 		SolidColorBrush highlighted = new SolidColorBrush(Colors.Green);
 
-		ImageBrush bPion = new ImageBrush(new BitmapImage(new Uri("../../ikony/bPionek.png", UriKind.Relative)));
-		ImageBrush bWieza = new ImageBrush(new BitmapImage(new Uri("../../ikony/bWieza.png", UriKind.Relative)));
-		ImageBrush bKon = new ImageBrush(new BitmapImage(new Uri("../../ikony/bKon.png", UriKind.Relative)));
-		ImageBrush bLaufer = new ImageBrush(new BitmapImage(new Uri("../../ikony/bLaufer.png", UriKind.Relative)));
-		ImageBrush bKrolowa = new ImageBrush(new BitmapImage(new Uri("../../ikony/bKrolowa.png", UriKind.Relative)));
-		ImageBrush bKrol = new ImageBrush(new BitmapImage(new Uri("../../ikony/bKrol.png", UriKind.Relative)));
-		ImageBrush cPion = new ImageBrush(new BitmapImage(new Uri("../../ikony/cPionek.png", UriKind.Relative)));
-		ImageBrush cWieza = new ImageBrush(new BitmapImage(new Uri("../../ikony/cWieza.png", UriKind.Relative)));
-		ImageBrush cKon = new ImageBrush(new BitmapImage(new Uri("../../ikony/cKon.png", UriKind.Relative)));
-		ImageBrush cLaufer = new ImageBrush(new BitmapImage(new Uri("../../ikony/cLaufer.png", UriKind.Relative)));
-		ImageBrush cKrolowa = new ImageBrush(new BitmapImage(new Uri("../../ikony/cKrolowa.png", UriKind.Relative)));
-		ImageBrush cKrol = new ImageBrush(new BitmapImage(new Uri("../../ikony/cKrol.png", UriKind.Relative)));
+		//ImageBrush bPion = new ImageBrush(new BitmapImage(new Uri("../../ikony/bPionek.png", UriKind.Relative)));
+		//ImageBrush bWieza = new ImageBrush(new BitmapImage(new Uri("../../ikony/bWieza.png", UriKind.Relative)));
+		//ImageBrush bKon = new ImageBrush(new BitmapImage(new Uri("../../ikony/bKon.png", UriKind.Relative)));
+		//ImageBrush bLaufer = new ImageBrush(new BitmapImage(new Uri("../../ikony/bLaufer.png", UriKind.Relative)));
+		//ImageBrush bKrolowa = new ImageBrush(new BitmapImage(new Uri("../../ikony/bKrolowa.png", UriKind.Relative)));
+		//ImageBrush bKrol = new ImageBrush(new BitmapImage(new Uri("../../ikony/bKrol.png", UriKind.Relative)));
+		//ImageBrush cPion = new ImageBrush(new BitmapImage(new Uri("../../ikony/cPionek.png", UriKind.Relative)));
+		//ImageBrush cWieza = new ImageBrush(new BitmapImage(new Uri("../../ikony/cWieza.png", UriKind.Relative)));
+		//ImageBrush cKon = new ImageBrush(new BitmapImage(new Uri("../../ikony/cKon.png", UriKind.Relative)));
+		//ImageBrush cLaufer = new ImageBrush(new BitmapImage(new Uri("../../ikony/cLaufer.png", UriKind.Relative)));
+		//ImageBrush cKrolowa = new ImageBrush(new BitmapImage(new Uri("../../ikony/cKrolowa.png", UriKind.Relative)));
+		//ImageBrush cKrol = new ImageBrush(new BitmapImage(new Uri("../../ikony/cKrol.png", UriKind.Relative)));
+
+		ImageBrush bPionJ = new ImageBrush(new BitmapImage(new Uri("../../ikony/bPionekJ.png", UriKind.Relative)));
+		ImageBrush bWiezaJ = new ImageBrush(new BitmapImage(new Uri("../../ikony/bWiezaJ.png", UriKind.Relative)));
+		ImageBrush bKonJ = new ImageBrush(new BitmapImage(new Uri("../../ikony/bKonJ.png", UriKind.Relative)));
+		ImageBrush bLauferJ = new ImageBrush(new BitmapImage(new Uri("../../ikony/bLauferJ.png", UriKind.Relative)));
+		ImageBrush bKrolowaJ = new ImageBrush(new BitmapImage(new Uri("../../ikony/bKrolowaJ.png", UriKind.Relative)));
+		ImageBrush bKrolJ = new ImageBrush(new BitmapImage(new Uri("../../ikony/bKrolJ.png", UriKind.Relative)));
+		ImageBrush cPionJ = new ImageBrush(new BitmapImage(new Uri("../../ikony/cPionekJ.png", UriKind.Relative)));
+		ImageBrush cWiezaJ = new ImageBrush(new BitmapImage(new Uri("../../ikony/cWiezaJ.png", UriKind.Relative)));
+		ImageBrush cKonJ = new ImageBrush(new BitmapImage(new Uri("../../ikony/cKonJ.png", UriKind.Relative)));
+		ImageBrush cLauferJ = new ImageBrush(new BitmapImage(new Uri("../../ikony/cLauferJ.png", UriKind.Relative)));
+		ImageBrush cKrolowaJ = new ImageBrush(new BitmapImage(new Uri("../../ikony/cKrolowaJ.png", UriKind.Relative)));
+		ImageBrush cKrolJ = new ImageBrush(new BitmapImage(new Uri("../../ikony/cKrolJ.png", UriKind.Relative)));
+
+		ImageBrush bPionC = new ImageBrush(new BitmapImage(new Uri("../../ikony/bPionekC.png", UriKind.Relative)));
+		ImageBrush bWiezaC = new ImageBrush(new BitmapImage(new Uri("../../ikony/bWiezaC.png", UriKind.Relative)));
+		ImageBrush bKonC = new ImageBrush(new BitmapImage(new Uri("../../ikony/bKonC.png", UriKind.Relative)));
+		ImageBrush bLauferC = new ImageBrush(new BitmapImage(new Uri("../../ikony/bLauferC.png", UriKind.Relative)));
+		ImageBrush bKrolowaC = new ImageBrush(new BitmapImage(new Uri("../../ikony/bKrolowaC.png", UriKind.Relative)));
+		ImageBrush bKrolC = new ImageBrush(new BitmapImage(new Uri("../../ikony/bKrolC.png", UriKind.Relative)));
+		ImageBrush cPionC = new ImageBrush(new BitmapImage(new Uri("../../ikony/cPionekC.png", UriKind.Relative)));
+		ImageBrush cWiezaC = new ImageBrush(new BitmapImage(new Uri("../../ikony/cWiezaC.png", UriKind.Relative)));
+		ImageBrush cKonC = new ImageBrush(new BitmapImage(new Uri("../../ikony/cKonC.png", UriKind.Relative)));
+		ImageBrush cLauferC = new ImageBrush(new BitmapImage(new Uri("../../ikony/cLauferC.png", UriKind.Relative)));
+		ImageBrush cKrolowaC = new ImageBrush(new BitmapImage(new Uri("../../ikony/cKrolowaC.png", UriKind.Relative)));
+		ImageBrush cKrolC = new ImageBrush(new BitmapImage(new Uri("../../ikony/cKrolC.png", UriKind.Relative)));
+
+		Image img = new Image();
+		StackPanel stackPnl = new StackPanel();
 
 
 
@@ -117,10 +146,20 @@ namespace Szachy2
 			chessboard[7, 7] = h8;
 		}
 
+		private void loadImages()
+		{
+			img.Source = new BitmapImage(new Uri("../../ikony/bPionek.png", UriKind.Relative));
+			
+			stackPnl.Orientation = Orientation.Horizontal;
+			stackPnl.Margin = new Thickness(10);
+			stackPnl.Children.Add(img);
+		}
+
 		public MainWindow()
 		{
 			InitializeComponent();
 			assignFields();
+			loadImages();
 			clearSelection();
 		}
 
@@ -128,77 +167,304 @@ namespace Szachy2
 		{
 			for (int i = 0; i < 8; i += 2)
 				for (int j = 0; j < 8; j += 2)
-					chessboard[i, j].Background = light;
-
-			for (int i = 1; i < 8; i += 2)
-				for (int j = 1; j < 8; j += 2)
-					chessboard[i, j].Background = light;
-
-			for (int i = 1; i < 8; i += 2)
-				for (int j = 0; j < 8; j += 2)
-					chessboard[i, j].Background = dark;
-
-			for (int i = 0; i < 8; i += 2)
-				for (int j = 1; j < 8; j += 2)
-					chessboard[i, j].Background = dark;
-
-			for (int i = 0; i < 8; i++)
-				for (int j = 0; j < 8; j++)
 				{
+					chessboard[i, j].Background = light;
 					// Biale
 
 					if (chessboard[i, j].Content.ToString() == "bPion")
 					{
-						chessboard[i, j].Background = bPion;
+						chessboard[i, j].Background = bPionJ;
 					}
 					if (chessboard[i, j].Content.ToString() == "bWieza")
 					{
-						chessboard[i, j].Background = bWieza;
+						chessboard[i, j].Background = bWiezaJ;
 					}
 					if (chessboard[i, j].Content.ToString() == "bKon")
 					{
-						chessboard[i, j].Background = bKon;
+						chessboard[i, j].Background = bKonJ;
 					}
 					if (chessboard[i, j].Content.ToString() == "bLaufer")
 					{
-						chessboard[i, j].Background = bLaufer;
+						chessboard[i, j].Background = bLauferJ;
 					}
 					if (chessboard[i, j].Content.ToString() == "bKrolowa")
 					{
-						chessboard[i, j].Background = bKrolowa;
+						chessboard[i, j].Background = bKrolowaJ;
 					}
 					if (chessboard[i, j].Content.ToString() == "bKrol")
 					{
-						chessboard[i, j].Background = bKrol;
+						chessboard[i, j].Background = bKrolJ;
 					}
 
 					// Czarne
 
 					if (chessboard[i, j].Content.ToString() == "cPion")
 					{
-						chessboard[i, j].Background = cPion;
+						chessboard[i, j].Background = cPionJ;
 					}
 					if (chessboard[i, j].Content.ToString() == "cWieza")
 					{
-						chessboard[i, j].Background = cWieza;
+						chessboard[i, j].Background = cWiezaJ;
 					}
 					if (chessboard[i, j].Content.ToString() == "cKon")
 					{
-						chessboard[i, j].Background = cKon;
+						chessboard[i, j].Background = cKonJ;
 					}
 					if (chessboard[i, j].Content.ToString() == "cLaufer")
 					{
-						chessboard[i, j].Background = cLaufer;
+						chessboard[i, j].Background = cLauferJ;
 					}
 					if (chessboard[i, j].Content.ToString() == "cKrolowa")
 					{
-						chessboard[i, j].Background = cKrolowa;
+						chessboard[i, j].Background = cKrolowaJ;
 					}
 					if (chessboard[i, j].Content.ToString() == "cKrol")
 					{
-						chessboard[i, j].Background = cKrol;
+						chessboard[i, j].Background = cKrolJ;
 					}
 				}
+					
+
+			for (int i = 1; i < 8; i += 2)
+				for (int j = 1; j < 8; j += 2)
+				{
+					chessboard[i, j].Background = light;
+					// Biale
+
+					if (chessboard[i, j].Content.ToString() == "bPion")
+					{
+						chessboard[i, j].Background = bPionJ;
+					}
+					if (chessboard[i, j].Content.ToString() == "bWieza")
+					{
+						chessboard[i, j].Background = bWiezaJ;
+					}
+					if (chessboard[i, j].Content.ToString() == "bKon")
+					{
+						chessboard[i, j].Background = bKonJ;
+					}
+					if (chessboard[i, j].Content.ToString() == "bLaufer")
+					{
+						chessboard[i, j].Background = bLauferJ;
+					}
+					if (chessboard[i, j].Content.ToString() == "bKrolowa")
+					{
+						chessboard[i, j].Background = bKrolowaJ;
+					}
+					if (chessboard[i, j].Content.ToString() == "bKrol")
+					{
+						chessboard[i, j].Background = bKrolJ;
+					}
+
+					// Czarne
+
+					if (chessboard[i, j].Content.ToString() == "cPion")
+					{
+						chessboard[i, j].Background = cPionJ;
+					}
+					if (chessboard[i, j].Content.ToString() == "cWieza")
+					{
+						chessboard[i, j].Background = cWiezaJ;
+					}
+					if (chessboard[i, j].Content.ToString() == "cKon")
+					{
+						chessboard[i, j].Background = cKonJ;
+					}
+					if (chessboard[i, j].Content.ToString() == "cLaufer")
+					{
+						chessboard[i, j].Background = cLauferJ;
+					}
+					if (chessboard[i, j].Content.ToString() == "cKrolowa")
+					{
+						chessboard[i, j].Background = cKrolowaJ;
+					}
+					if (chessboard[i, j].Content.ToString() == "cKrol")
+					{
+						chessboard[i, j].Background = cKrolJ;
+					}
+				}
+					
+
+			for (int i = 1; i < 8; i += 2)
+				for (int j = 0; j < 8; j += 2)
+				{
+					chessboard[i, j].Background = dark;
+					//Biale
+
+					if (chessboard[i, j].Content.ToString() == "bPion")
+					{
+						chessboard[i, j].Background = bPionC;
+					}
+					if (chessboard[i, j].Content.ToString() == "bWieza")
+					{
+						chessboard[i, j].Background = bWiezaC;
+					}
+					if (chessboard[i, j].Content.ToString() == "bKon")
+					{
+						chessboard[i, j].Background = bKonC;
+					}
+					if (chessboard[i, j].Content.ToString() == "bLaufer")
+					{
+						chessboard[i, j].Background = bLauferC;
+					}
+					if (chessboard[i, j].Content.ToString() == "bKrolowa")
+					{
+						chessboard[i, j].Background = bKrolowaC;
+					}
+					if (chessboard[i, j].Content.ToString() == "bKrol")
+					{
+						chessboard[i, j].Background = bKrolC;
+					}
+
+					// Czarne
+
+					if (chessboard[i, j].Content.ToString() == "cPion")
+					{
+						chessboard[i, j].Background = cPionC;
+					}
+					if (chessboard[i, j].Content.ToString() == "cWieza")
+					{
+						chessboard[i, j].Background = cWiezaC;
+					}
+					if (chessboard[i, j].Content.ToString() == "cKon")
+					{
+						chessboard[i, j].Background = cKonC;
+					}
+					if (chessboard[i, j].Content.ToString() == "cLaufer")
+					{
+						chessboard[i, j].Background = cLauferC;
+					}
+					if (chessboard[i, j].Content.ToString() == "cKrolowa")
+					{
+						chessboard[i, j].Background = cKrolowaC;
+					}
+					if (chessboard[i, j].Content.ToString() == "cKrol")
+					{
+						chessboard[i, j].Background = cKrolC;
+					}
+
+
+				}
+
+
+			for (int i = 0; i < 8; i += 2)
+				for (int j = 1; j < 8; j += 2)
+				{
+					chessboard[i, j].Background = dark;
+
+					//Biale
+
+					if (chessboard[i, j].Content.ToString() == "bPion")
+					{
+						chessboard[i, j].Background = bPionC;
+					}
+					if (chessboard[i, j].Content.ToString() == "bWieza")
+					{
+						chessboard[i, j].Background = bWiezaC;
+					}
+					if (chessboard[i, j].Content.ToString() == "bKon")
+					{
+						chessboard[i, j].Background = bKonC;
+					}
+					if (chessboard[i, j].Content.ToString() == "bLaufer")
+					{
+						chessboard[i, j].Background = bLauferC;
+					}
+					if (chessboard[i, j].Content.ToString() == "bKrolowa")
+					{
+						chessboard[i, j].Background = bKrolowaC;
+					}
+					if (chessboard[i, j].Content.ToString() == "bKrol")
+					{
+						chessboard[i, j].Background = bKrolC;
+					}
+
+					// Czarne
+
+					if (chessboard[i, j].Content.ToString() == "cPion")
+					{
+						chessboard[i, j].Background = cPionC;
+					}
+					if (chessboard[i, j].Content.ToString() == "cWieza")
+					{
+						chessboard[i, j].Background = cWiezaC;
+					}
+					if (chessboard[i, j].Content.ToString() == "cKon")
+					{
+						chessboard[i, j].Background = cKonC;
+					}
+					if (chessboard[i, j].Content.ToString() == "cLaufer")
+					{
+						chessboard[i, j].Background = cLauferC;
+					}
+					if (chessboard[i, j].Content.ToString() == "cKrolowa")
+					{
+						chessboard[i, j].Background = cKrolowaC;
+					}
+					if (chessboard[i, j].Content.ToString() == "cKrol")
+					{
+						chessboard[i, j].Background = cKrolC;
+					}
+				}
+					
+
+			//for (int i = 0; i < 8; i++)
+			//	for (int j = 0; j < 8; j++)
+			//	{
+			//		// Biale
+
+			//		if (chessboard[i, j].Content.ToString() == "bPion")
+			//		{
+			//			chessboard[i, j].Background = bPion;
+			//		}
+			//		if (chessboard[i, j].Content.ToString() == "bWieza")
+			//		{
+			//			chessboard[i, j].Background = bWieza;
+			//		}
+			//		if (chessboard[i, j].Content.ToString() == "bKon")
+			//		{
+			//			chessboard[i, j].Background = bKon;
+			//		}
+			//		if (chessboard[i, j].Content.ToString() == "bLaufer")
+			//		{
+			//			chessboard[i, j].Background = bLaufer;
+			//		}
+			//		if (chessboard[i, j].Content.ToString() == "bKrolowa")
+			//		{
+			//			chessboard[i, j].Background = bKrolowa;
+			//		}
+			//		if (chessboard[i, j].Content.ToString() == "bKrol")
+			//		{
+			//			chessboard[i, j].Background = bKrol;
+			//		}
+
+			//		// Czarne
+
+			//		if (chessboard[i, j].Content.ToString() == "cPion")
+			//		{
+			//			chessboard[i, j].Background = cPion;
+			//		}
+			//		if (chessboard[i, j].Content.ToString() == "cWieza")
+			//		{
+			//			chessboard[i, j].Background = cWieza;
+			//		}
+			//		if (chessboard[i, j].Content.ToString() == "cKon")
+			//		{
+			//			chessboard[i, j].Background = cKon;
+			//		}
+			//		if (chessboard[i, j].Content.ToString() == "cLaufer")
+			//		{
+			//			chessboard[i, j].Background = cLaufer;
+			//		}
+			//		if (chessboard[i, j].Content.ToString() == "cKrolowa")
+			//		{
+			//			chessboard[i, j].Background = cKrolowa;
+			//		}
+			//		if (chessboard[i, j].Content.ToString() == "cKrol")
+			//		{
+			//			chessboard[i, j].Background = cKrol;
+			//		}
+			//	}
 		}
 
 		private String findSelected(object sender)
