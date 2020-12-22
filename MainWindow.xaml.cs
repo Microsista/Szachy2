@@ -241,8 +241,8 @@ namespace Szachy2
 
 		private void clearSelection()
 		{
-			for (int i = 0; i < 7; i++)
-				for (int j = 0; j < 7; j++) {
+			for (int i = 0; i < 8; i++)
+				for (int j = 0; j < 8; j++) {
 					fchessboard[i, j].BorderBrush = white;
 				}
 
