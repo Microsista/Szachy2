@@ -40,7 +40,7 @@ namespace Szachy2
 		{
 			InitializeComponent();
 			this.figura = Figura.Pion;
-			this.MouseEnter += mouse_enter;
+			//this.MouseEnter += mouse_enter;
 			//this.Mouse
 		}
 
