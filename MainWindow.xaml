@@ -17,13 +17,15 @@
 								<Trigger Property="IsKeyboardFocused" Value="True">
 									<Setter TargetName="border" Property="BorderBrush" Value="Blue" />
 								</Trigger>
-								
+
 							</ControlTemplate.Triggers>
 						</ControlTemplate>
 					</Setter.Value>
 				</Setter>
 			</Style>
 		</Grid.Resources>
+
+
 
 		<Button x:Name="fa1" Content="cWieza" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
 		<Button x:Name="fb1" Content="cKon" HorizontalAlignment="Left" Margin="130,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
@@ -169,10 +171,7 @@
 		<Button Style="{StaticResource Field}" x:Name="g8" Content="bKon" HorizontalAlignment="Left" Margin="630,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
 		<Button Style="{StaticResource Field}" x:Name="h8" Content="bWieza" HorizontalAlignment="Left" Margin="730,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
 
-
-
-		
-
-
+		<Image x:Name="startBackground" HorizontalAlignment="Left" Height="860" VerticalAlignment="Top" Width="860" Source="menu.jpeg"/>
+		<Button x:Name="startButton" Content="Rozpocznij grę" Click="startButton_Click" Margin="350,200,350,620"/>
 	</Grid>
 </Window>

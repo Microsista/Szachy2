@@ -1650,6 +1650,11 @@ namespace Szachy2
 						//}
 					}
 		}
-						
+
+		private void startButton_Click(object sender, RoutedEventArgs e)
+		{
+			startButton.Visibility = Visibility.Hidden;
+			startBackground.Visibility = Visibility.Hidden;
+		}
 	}
 }
