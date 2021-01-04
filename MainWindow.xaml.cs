@@ -807,8 +807,10 @@ namespace Szachy2
 					if (chessboard[i, j].Name == (sender as Button).Name)
 					{
 						Console.Write("Koordynaty X = " + i + ", Koordynaty Y = " + j + "\n");
+						// zaznacz klikniete pole
 						game.GetChessBoard().GetSquare(j, j).SetSelected(true);
 
+						// jesli klikniete pole jest podswietlone
 						if (game.GetChessBoard().GetSquare(j, j).GetHighlight())
 						{
 							game.GetChessBoard().GetSquare(j, j).SetPiece(findSelected(sender));
