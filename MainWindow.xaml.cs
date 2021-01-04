@@ -24,6 +24,7 @@ namespace Szachy2
 		SolidColorBrush dark = new SolidColorBrush(Colors.Brown);
 		SolidColorBrush selected = new SolidColorBrush(Colors.Blue);
 		SolidColorBrush highlighted = new SolidColorBrush(Colors.Green);
+		SolidColorBrush threat = new SolidColorBrush(Colors.Red);
 		SolidColorBrush white = new SolidColorBrush(Colors.White);
 
 		Game game = new Game();
@@ -806,7 +807,7 @@ namespace Szachy2
 				for (int j = 0; j < 8; j++)
 					if (chessboard[i, j].Name == (sender as Button).Name)
 					{
-						Console.Write("Koordynaty X = " + i + ", Koordynaty Y = " + j + "\n");
+						//Console.Write("Koordynaty X = " + i + ", Koordynaty Y = " + j + "\n");
 						
 						//// zaznacz klikniete pole
 						//game.GetChessBoard().GetSquare(j, j).SetSelected(true);
@@ -833,6 +834,19 @@ namespace Szachy2
 			//(sender as Button).Tag = "selected";
 
 			highlight(sender);
+			threatHighlight();
+		}
+
+		private void threatHighlight()
+		{
+			for (int i = 0; i < 8; i++)
+				for (int j = 0; j < 8; j++)
+					//if (game.GetChessBoard().GetSquare(i, j).GetEnPassant() != null) debug 
+					if (game.GetChessBoard().GetSquare(i, j).GetThreat(game.GetTurn()))
+					{
+						fchessboard[i, j].BorderThickness = new Thickness(2);
+						fchessboard[i, j].BorderBrush = threat;
+					}
 		}
 
 		private void highlight(object sender)
@@ -847,7 +861,7 @@ namespace Szachy2
 
 
 
-
+			//if (game.GetChessBoard().GetSquare(i, j).GetEnPassant() != null)
 			//for (int i = 0; i < 8; i++)
 			//	for (int j = 0; j < 8; j++)
 			//		if (chessboard[i, j] == (sender as Button))

@@ -15,7 +15,124 @@ namespace Szachy2
 
         public override void HighlightMovement(ChessBoard chessBoard, Square mySquare)
         {
-            throw new NotImplementedException();
+            int x = mySquare.GetX();
+            int y = mySquare.GetY();
+            Square[,] squares = chessBoard.GetSquares();
+
+            //left-up
+            int i = x;
+            int j = y;
+            if(i > 0 && j < 7)
+            {
+                i--;
+                j++;
+                do
+                {
+                    if (squares[i, j].GetPiece() == null) //no piece
+                    {
+                        squares[i, j].SetHighlight(true);
+                        i--;
+                        j++;
+                    }
+                    else if (squares[i, j].GetPiece().GetColor() == color) //same color piece
+                    {
+                        break;
+                    }
+                    else //another color piece
+                    {
+                        squares[i, j].SetHighlight(true);
+                        break;
+                    }
+                } while (i >= 0 && j <= 7);
+            }
+
+            //left-down
+            i = x;
+            j = y;
+            if (i > 0 && j > 0)
+            {
+                i--;
+                j--;
+                do
+                {
+                    if (squares[i, j].GetPiece() == null) //no piece
+                    {
+                        squares[i, j].SetHighlight(true);
+                        i--;
+                        j--;
+                    }
+                    else if (squares[i, j].GetPiece().GetColor() == color) //same color piece
+                    {
+                        break;
+                    }
+                    else //another color piece
+                    {
+                        squares[i, j].SetHighlight(true);
+                        break;
+                    }
+                } while (i >= 0 && j >= 0);
+            }
+
+            //right-down
+            i = x;
+            j = y;
+            if (i < 7 && j > 0)
+            {
+                i++;
+                j--;
+                do
+                {
+                    if (squares[i, j].GetPiece() == null) //no piece
+                    {
+                        squares[i, j].SetHighlight(true);
+                        i++;
+                        j--;
+                    }
+                    else if (squares[i, j].GetPiece().GetColor() == color) //same color piece
+                    {
+                        break;
+                    }
+                    else //another color piece
+                    {
+                        squares[i, j].SetHighlight(true);
+                        break;
+                    }
+                } while (i <= 7 && j >= 0);
+            }
+
+            //right-up
+            i = x;
+            j = y;
+            if (i < 7 && j < 7)
+            {
+                i++;
+                j++;
+                do
+                {
+                    if (squares[i, j].GetPiece() == null) //no piece
+                    {
+                        squares[i, j].SetHighlight(true);
+                        i++;
+                        j++;
+                    }
+                    else if (squares[i, j].GetPiece().GetColor() == color) //same color piece
+                    {
+                        break;
+                    }
+                    else //another color piece
+                    {
+                        squares[i, j].SetHighlight(true);
+                        break;
+                    }
+                } while (i <= 7 && j <= 7);
+            }
+
+        }
+
+        public override void Move(Square startSquare, Square endSquare, ChessBoard chessBoard)
+        {
+            startSquare.SetPiece(null);
+            endSquare.SetPiece(this);
         }
     }
 }

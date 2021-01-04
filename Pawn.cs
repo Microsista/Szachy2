@@ -18,12 +18,12 @@ namespace Szachy2
             Piece possiblePiece = squares[gotoSquareX, gotoSquareY].GetPiece();
             if (possiblePiece != null)
             {
-                if (possiblePiece.GetColor() == Constants.Black)
+                if (possiblePiece.GetColor() == !color)
                 {
                     squares[gotoSquareX, gotoSquareY].SetHighlight(true);
                 }
             }
-            else if (squares[gotoSquareX, gotoSquareY].GetEnPassant())
+            else if (squares[gotoSquareX, gotoSquareY].GetEnPassant() != null)
             {
                 squares[gotoSquareX, gotoSquareY].SetHighlight(true);
             }
@@ -92,6 +92,18 @@ namespace Szachy2
                 }
                 HighlightAttack(squares, mySquare);
             }
+        }
+
+        public override void Move(Square startSquare, Square endSquare, ChessBoard chessBoard)
+        {
+            startSquare.SetPiece(null);
+            if(endSquare.GetEnPassant() != null)
+            {
+                endSquare.GetEnPassant().SetPiece(null);
+                endSquare.SetEnPassant(null);
+            } 
+            endSquare.SetPiece(this);
+            firstMove = false;
         }
     }
 }

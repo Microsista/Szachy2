@@ -10,18 +10,19 @@ namespace Szachy2
     {
         private ChessBoard chessBoard = new ChessBoard();
         private Square selectedSquare = null;
-        bool turn = Constants.White;
+        private bool turn = Constants.White;
 
         public void Click(int x, int y)
         {
             Square s = chessBoard.GetSquare(x, y);
             if(s.GetHighlight() == true) //jeśli hilighted to mozna tam isc
             {
-                MakeMove();
+                MakeMove(s);
             } else
             {
                 SelectStartSquare(s); //wybierz inne pole?
             }
+            
         }
 
         public void SelectStartSquare(Square square)
@@ -51,12 +52,19 @@ namespace Szachy2
 
         public Game()
         {
-            //
         }
 
-        public void MakeMove()
+        public void MakeMove(Square endSquare)
         {
-            //todo xd
+            chessBoard.makeMove(selectedSquare, endSquare);
+
+            selectedSquare = null;
+            foreach (Square s in chessBoard.GetSquares())
+            {
+                s.SetHighlight(false);
+            }
+
+            turn = !turn;
         }
 
         public ChessBoard GetChessBoard()
@@ -64,6 +72,10 @@ namespace Szachy2
             return chessBoard;
 		}
 
+        public bool GetTurn()
+        {
+            return turn;
+        }
 
     }
 }

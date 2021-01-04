@@ -14,9 +14,50 @@ namespace Szachy2
         {
             Reset();
         }
+
+        private ChessBoard(Square[,] squares)
+        {
+            this.squares = squares;
+        }
+
+        public void makeMove(Square start, Square end)
+        {
+            start.GetPiece().Move(start, end, this); //because each piece tracks its movement differently espacially castling
+            
+            foreach (Square s in squares)
+            {
+                s.SetEnPassant(null);  //after my move enPassant is no longer available, as it is 1 turn only
+            }
+
+            if (end.GetPiece().GetType() == typeof(Pawn)) //if pawn moved correctly it creates enPassant after the cleaning
+            {
+                if (Math.Abs(start.GetX() - end.GetX()) == 2) //that creates enPassant opportunity
+                {
+                    if (end.GetPiece().GetColor() == Constants.White)
+                        this.GetSquares()[2, start.GetY()].SetEnPassant(end);
+                    else
+                        this.GetSquares()[5, start.GetY()].SetEnPassant(end);
+                }
+            }
+        }
+
+        public ChessBoard Copy()
+        {
+            Square[,] newSquares = new Square[8,8];
+            for(int i = 0; i < 8; i++)
+            {
+                for(int j = 0; j < 8; j++)
+                {
+                    newSquares[i, j] = new Square(i, j, squares[i, j].GetPiece().Copy());
+                }
+            }
+            ChessBoard chessBoard = new ChessBoard(newSquares);
+            return chessBoard;
+        }
+
         public Square[,] GetSquares()
         {
-            return squares;
+            return squares ;
         }
 
         public Square GetSquare(int x, int y)
@@ -26,13 +67,22 @@ namespace Szachy2
         public void Reset()
         {
             squares = new Square[8, 8];
+            //squares[0, 0] = new Square(0, 0, new Rook(Constants.White));
+            //squares[0, 1] = new Square(0, 1, new Knight(Constants.White));
+            //squares[0, 2] = new Square(0, 2, new Bishop(Constants.White));
+            //squares[0, 3] = new Square(0, 3, new Queen(Constants.White));
+            //squares[0, 4] = new Square(0, 4, new King(Constants.White));
+            //squares[0, 5] = new Square(0, 5, new Bishop(Constants.White));
+            //squares[0, 6] = new Square(0, 6, new Knight(Constants.White));
+            //squares[0, 7] = new Square(0, 7, new Rook(Constants.White));
+
             squares[0, 0] = new Square(0, 0, new Rook(Constants.White));
-            squares[0, 1] = new Square(0, 1, new Knight(Constants.White));
-            squares[0, 2] = new Square(0, 2, new Bishop(Constants.White));
-            squares[0, 3] = new Square(0, 3, new Queen(Constants.White));
+            squares[0, 1] = new Square(0, 1, new Pawn(Constants.White));
+            squares[0, 2] = new Square(0, 2, null);
+            squares[0, 3] = new Square(0, 3, null);
             squares[0, 4] = new Square(0, 4, new King(Constants.White));
-            squares[0, 5] = new Square(0, 5, new Bishop(Constants.White));
-            squares[0, 6] = new Square(0, 6, new Knight(Constants.White));
+            squares[0, 5] = new Square(0, 5, null);
+            squares[0, 6] = new Square(0, 6, null);
             squares[0, 7] = new Square(0, 7, new Rook(Constants.White));
 
             squares[7, 0] = new Square(7, 0, new Rook(Constants.Black));
@@ -61,9 +111,6 @@ namespace Szachy2
                     squares[i, j] = new Square(i, j);
                 }
             }
-
-            //debug
-            squares[2, 1].SetPiece(new Pawn(Constants.Black));
         }
     }
 }

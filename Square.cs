@@ -8,11 +8,15 @@ namespace Szachy2
 {
     class Square
     {
-        private bool selected = false;
-        private bool highlight = false;
-        private bool enPassant = false;
-        private int x, y;
-        private Piece piece;
+        private bool selected = false; //is the square selected
+        private bool highlight = false; //is the movement here ok thus the highlight
+        private Square enPassant = null; //Square tied to this square who caused enPassant
+
+        private bool threatForWhite = false; //is this square threatened by blacks - king cannot move here
+        private bool threatForBlack = false; //is this square threatened by whites
+
+        private int x, y;   //coordinates of the square
+        private Piece piece;    //piece on this square
 
         public Square(int x, int y, Piece piece = null)
         {
@@ -64,14 +68,27 @@ namespace Szachy2
             return highlight;
         }
 
-        public bool GetEnPassant()
+        public Square GetEnPassant()
         {
             return enPassant;
         }
 
-        public void SetEnPassant(bool enPassant)
+        public void SetEnPassant(Square enPassant)
         {
             this.enPassant = enPassant;
+        }
+
+        public void CaptureEnPassant()
+        {
+            
+        }
+
+        public bool GetThreat(bool turn)
+        {
+            if(turn == Constants.White)
+                return threatForBlack;
+            else
+                return threatForWhite;
         }
     }
 }

@@ -12,11 +12,122 @@ namespace Szachy2
         {
         }
 
-
+        private bool firstMove = true;
 
         public override void HighlightMovement(ChessBoard chessBoard, Square mySquare)
         {
-            throw new NotImplementedException();
+            int x = mySquare.GetX();
+            int y = mySquare.GetY();
+            Square[,] squares = chessBoard.GetSquares();
+
+            int i = x;
+            if(x > 0) //go left
+            {
+                i--;
+                do
+                {
+                    if(squares[i, y].GetPiece() == null) //no piece
+                    {
+                        squares[i, y].SetHighlight(true);
+                        i--;
+                    }
+                    else if(squares[i, y].GetPiece().GetColor() == color) //same color piece
+                    {
+                        break;
+                    }
+                    else //another color piece
+                    {
+                        squares[i, y].SetHighlight(true);
+                        break;
+                    }
+                } while (i >= 0);
+            }
+
+            i = x;
+            if (x < 7) //go right
+            {
+                i++;
+                do
+                {
+                    if (squares[i, y].GetPiece() == null) //no piece
+                    {
+                        squares[i, y].SetHighlight(true);
+                        i++;
+                    }
+                    else if (squares[i, y].GetPiece().GetColor() == color) //same color piece
+                    {
+                        break;
+                    }
+                    else //another color piece
+                    {
+                        squares[i, y].SetHighlight(true);
+                        break;
+                    }
+                } while (i <= 7);
+            }
+
+            i = y;
+            if (y < 7) //go up
+            {
+                i++;
+                do
+                {
+                    if (squares[x, i].GetPiece() == null) //no piece
+                    {
+                        squares[x, i].SetHighlight(true);
+                        i++;
+                    }
+                    else if (squares[x, i].GetPiece().GetColor() == color) //same color piece
+                    {
+                        break;
+                    }
+                    else //another color piece
+                    {
+                        squares[x, i].SetHighlight(true);
+                        break;
+                    }
+                } while (i <= 7);
+            }
+
+            i = y;
+            if (y > 0) //go down
+            {
+                i--;
+                do
+                {
+                    if (squares[x, i].GetPiece() == null) //no piece
+                    {
+                        squares[x, i].SetHighlight(true);
+                        i--;
+                    }
+                    else if (squares[x, i].GetPiece().GetColor() == color) //same color piece
+                    {
+                        break;
+                    }
+                    else //another color piece
+                    {
+                        squares[x, i].SetHighlight(true);
+                        break;
+                    }
+                } while (i >= 0);
+            }
+        }
+
+        public override void Move(Square startSquare, Square endSquare, ChessBoard chessBoard) //rook cannot "really" castle (we want to be albe to move rook without touching the king)
+        {
+            startSquare.SetPiece(null);
+            endSquare.SetPiece(this);
+            firstMove = false;
+        }
+
+        public bool GetFirstMove()
+        {
+            return firstMove;
+        }
+
+        public void setFirstMove(bool b)
+        {
+            firstMove = b;
         }
     }
 }
