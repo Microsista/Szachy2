@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Szachy2"
         mc:Ignorable="d"
         Title="MainWindow" Height="891" Width="868">
-	<Grid>
+	<Grid Margin="0,0,-27,-21">
 		<Grid.Resources>
 			<Style x:Key="Field" TargetType="Button">
 				<Setter Property="Template">
@@ -170,8 +170,14 @@
 		<Button Style="{StaticResource Field}" x:Name="f8" Content="bLaufer" HorizontalAlignment="Left" Margin="530,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
 		<Button Style="{StaticResource Field}" x:Name="g8" Content="bKon" HorizontalAlignment="Left" Margin="630,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
 		<Button Style="{StaticResource Field}" x:Name="h8" Content="bWieza" HorizontalAlignment="Left" Margin="730,729,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
+		<Button x:Name="endButton" Content="Zakończ" HorizontalAlignment="Left" Margin="775,6,0,0" VerticalAlignment="Top" Width="72" Height="19" Click="endButtton_Click"/>
 
 		<Image x:Name="startBackground" HorizontalAlignment="Left" Height="860" VerticalAlignment="Top" Width="860" Source="menu.jpeg"/>
 		<Button x:Name="startButton" Content="Rozpocznij grę" Click="startButton_Click" Margin="350,200,350,620"/>
+		<Image x:Name="endBackground" HorizontalAlignment="Left" Height="860" VerticalAlignment="Top" Width="860" Source="gameover.jpeg" Visibility="Hidden"/>
+		<Label x:Name="endLabel" Content="Szach mat" HorizontalAlignment="Left" Margin="335,187,0,0" VerticalAlignment="Top" FontSize="40" FontWeight="Bold" Width="260" Visibility="Hidden"/>
+
+
+
 	</Grid>
 </Window>

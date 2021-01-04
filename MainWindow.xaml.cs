@@ -1656,5 +1656,11 @@ namespace Szachy2
 			startButton.Visibility = Visibility.Hidden;
 			startBackground.Visibility = Visibility.Hidden;
 		}
+
+		private void endButtton_Click(object sender, RoutedEventArgs e)
+		{
+			endBackground.Visibility = Visibility.Visible;
+			endLabel.Visibility = Visibility.Visible;
+		}
 	}
 }
