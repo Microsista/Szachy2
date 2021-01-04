@@ -65,6 +65,11 @@ namespace Szachy2
 
         }
 
+        public ChessBoard GetChessBoard()
+		{
+            return chessBoard;
+		}
+
 
     }
 }
