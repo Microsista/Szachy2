@@ -12,7 +12,8 @@ namespace Szachy2
         {
         }
 
-        public override bool CanMove(ChessBoard chessBoard, Square start, Square end)
+
+        public override void HighlightMovement(ChessBoard chessBoard, Square mySquare)
         {
             throw new NotImplementedException();
         }

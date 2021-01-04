@@ -10,6 +10,7 @@ namespace Szachy2
     {
         private bool selected = false;
         private bool highlight = false;
+        private bool enPassant = false;
         private int x, y;
         private Piece piece;
 
@@ -37,9 +38,10 @@ namespace Szachy2
 
         public Piece GetPiece() => piece;
 
-        public void Select()
+        public void Select(ChessBoard chessBoard)
         {
             SetSelected(true);
+            piece.HighlightMovement(chessBoard, this);
         }
 
         public void SetSelected(bool selected)
@@ -60,6 +62,16 @@ namespace Szachy2
         public bool GetHighlight()
         {
             return highlight;
+        }
+
+        public bool GetEnPassant()
+        {
+            return enPassant;
+        }
+
+        public void SetEnPassant(bool enPassant)
+        {
+            this.enPassant = enPassant;
         }
     }
 }

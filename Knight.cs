@@ -10,7 +10,8 @@ namespace Szachy2
     {
         public Knight(bool color) : base(color) { }
      
-        public override bool CanMove(ChessBoard chessBoard, Square start, Square end)
+
+        public override void HighlightMovement(ChessBoard chessBoard, Square mySquare)
         {
             throw new NotImplementedException();
         }

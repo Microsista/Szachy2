@@ -15,18 +15,21 @@ namespace Szachy2
         public void Click(int x, int y)
         {
             Square s = chessBoard.GetSquare(x, y);
-            if(s.GetHighlight() == true)
+            if(s.GetHighlight() == true) //jeśli hilighted to mozna tam isc
             {
                 MakeMove();
             } else
             {
-                SelectStartSquare(s);
+                SelectStartSquare(s); //wybierz inne pole?
             }
         }
 
-        public bool SelectStartSquare(Square square)
+        public void SelectStartSquare(Square square)
         {
-            if(selectedSquare != null)
+            if (selectedSquare == square)
+                return;
+
+            if(selectedSquare != null) //wybieramy inne pole
             {
                 selectedSquare = null;
                 foreach (Square s in chessBoard.GetSquares())
@@ -41,18 +44,9 @@ namespace Szachy2
                 if(p.GetColor() == turn)
                 {
                     selectedSquare = square;
-                    selectedSquare.Select();
-                    foreach (Square s in chessBoard.GetSquares())
-                    {
-                        if(p.CanMove(chessBoard, selectedSquare, s))
-                        {
-                            s.SetHighlight(true);
-                        }
-                    }
-                    return true;
+                    selectedSquare.Select(chessBoard);
                 }
             }
-            return false;
         }
 
         public Game()
@@ -62,7 +56,7 @@ namespace Szachy2
 
         public void MakeMove()
         {
-
+            //todo xd
         }
 
         public ChessBoard GetChessBoard()

@@ -807,16 +807,19 @@ namespace Szachy2
 					if (chessboard[i, j].Name == (sender as Button).Name)
 					{
 						Console.Write("Koordynaty X = " + i + ", Koordynaty Y = " + j + "\n");
-						// zaznacz klikniete pole
-						game.GetChessBoard().GetSquare(j, j).SetSelected(true);
+						
+						//// zaznacz klikniete pole
+						//game.GetChessBoard().GetSquare(j, j).SetSelected(true);
 
-						// jesli klikniete pole jest podswietlone
-						if (game.GetChessBoard().GetSquare(j, j).GetHighlight())
-						{
-							game.GetChessBoard().GetSquare(j, j).SetPiece(findSelected(sender));
-							clearSelection();
-							return;
-						}
+						//// jesli klikniete pole jest podswietlone
+						//if (game.GetChessBoard().GetSquare(j, j).GetHighlight())
+						//{
+						//	game.GetChessBoard().GetSquare(j, j).SetPiece(findSelected(sender));
+						//	clearSelection();
+						//	return;
+						//}
+
+						game.Click(i, j);
 					}
 			
 			//if ((sender as Button).Tag == "highlighted")
@@ -825,7 +828,7 @@ namespace Szachy2
 			//	clearSelection();
 			//	return;
 			//}
-			clearSelection();
+			clearSelection(); //czy to jest po prostu draw?
 
 			//(sender as Button).Tag = "selected";
 

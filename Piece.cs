@@ -9,7 +9,8 @@ namespace Szachy2
     abstract class Piece
     {
         protected bool color;
-        public abstract bool CanMove(ChessBoard chessBoard, Square start, Square end);
+
+        public abstract void HighlightMovement(ChessBoard chessBoard, Square mySquare);
 
         public Piece(bool color)
         {

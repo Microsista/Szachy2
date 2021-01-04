@@ -61,6 +61,9 @@ namespace Szachy2
                     squares[i, j] = new Square(i, j);
                 }
             }
+
+            //debug
+            squares[2, 1].SetPiece(new Pawn(Constants.Black));
         }
     }
 }
