@@ -838,7 +838,6 @@ namespace Szachy2
 				for (int j = 0; j < 8; j++)
 					if (game.GetChessBoard().GetSquare(i, j).GetHighlight())
 					{
-						game.GetChessBoard().GetSquare(i, j).SetHighlight(true);
 						fchessboard[i + 1, j].BorderThickness = new Thickness(2);
 						fchessboard[i + 1, j].BorderBrush = highlighted;
 					}
