@@ -14,7 +14,7 @@ namespace Szachy2
 
         private bool firstMove = true;
 
-        public override void HighlightMovement(ChessBoard chessBoard, Square mySquare)
+        public override void HighlightMovement(ChessBoard chessBoard, Square mySquare, bool threat = false)
         {
             int x = mySquare.GetX();
             int y = mySquare.GetY();
@@ -28,7 +28,7 @@ namespace Szachy2
                 {
                     if(squares[i, y].GetPiece() == null) //no piece
                     {
-                        squares[i, y].SetHighlight(true);
+                        Highlight(true, threat, squares[i, y]);
                         i--;
                     }
                     else if(squares[i, y].GetPiece().GetColor() == color) //same color piece
@@ -37,7 +37,7 @@ namespace Szachy2
                     }
                     else //another color piece
                     {
-                        squares[i, y].SetHighlight(true);
+                        Highlight(true, threat, squares[i, y]);
                         break;
                     }
                 } while (i >= 0);
@@ -51,7 +51,7 @@ namespace Szachy2
                 {
                     if (squares[i, y].GetPiece() == null) //no piece
                     {
-                        squares[i, y].SetHighlight(true);
+                        Highlight(true, threat, squares[i, y]);
                         i++;
                     }
                     else if (squares[i, y].GetPiece().GetColor() == color) //same color piece
@@ -60,7 +60,7 @@ namespace Szachy2
                     }
                     else //another color piece
                     {
-                        squares[i, y].SetHighlight(true);
+                        Highlight(true, threat, squares[i, y]);
                         break;
                     }
                 } while (i <= 7);
@@ -74,7 +74,7 @@ namespace Szachy2
                 {
                     if (squares[x, i].GetPiece() == null) //no piece
                     {
-                        squares[x, i].SetHighlight(true);
+                        Highlight(true, threat, squares[x, i]);
                         i++;
                     }
                     else if (squares[x, i].GetPiece().GetColor() == color) //same color piece
@@ -83,7 +83,7 @@ namespace Szachy2
                     }
                     else //another color piece
                     {
-                        squares[x, i].SetHighlight(true);
+                        Highlight(true, threat, squares[x, i]);
                         break;
                     }
                 } while (i <= 7);
@@ -97,7 +97,7 @@ namespace Szachy2
                 {
                     if (squares[x, i].GetPiece() == null) //no piece
                     {
-                        squares[x, i].SetHighlight(true);
+                        Highlight(true, threat, squares[x, i]);
                         i--;
                     }
                     else if (squares[x, i].GetPiece().GetColor() == color) //same color piece
@@ -106,7 +106,7 @@ namespace Szachy2
                     }
                     else //another color piece
                     {
-                        squares[x, i].SetHighlight(true);
+                        Highlight(true, threat, squares[x, i]);
                         break;
                     }
                 } while (i >= 0);

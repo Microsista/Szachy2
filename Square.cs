@@ -12,8 +12,7 @@ namespace Szachy2
         private bool highlight = false; //is the movement here ok thus the highlight
         private Square enPassant = null; //Square tied to this square who caused enPassant
 
-        private bool threatForWhite = false; //is this square threatened by blacks - king cannot move here
-        private bool threatForBlack = false; //is this square threatened by whites
+        private bool threat = false; //is this square threatened by blacks - king cannot move here
 
         private int x, y;   //coordinates of the square
         private Piece piece;    //piece on this square
@@ -58,9 +57,12 @@ namespace Szachy2
             return selected;
         }
 
-        public void SetHighlight(bool highlight)
+        public void SetHighlight(bool highlight, bool threat = false)
         {
-            this.highlight = highlight;
+            if (threat)
+                this.threat = highlight;
+            else
+                this.highlight = highlight;
         }
 
         public bool GetHighlight()
@@ -78,17 +80,14 @@ namespace Szachy2
             this.enPassant = enPassant;
         }
 
-        public void CaptureEnPassant()
+        public bool GetThreat()
         {
-            
+            return threat;
         }
 
-        public bool GetThreat(bool turn)
+        public void SetThreat(bool threat)
         {
-            if(turn == Constants.White)
-                return threatForBlack;
-            else
-                return threatForWhite;
+            this.threat = threat;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Szachy2
 		SolidColorBrush dark = new SolidColorBrush(Colors.Brown);
 		SolidColorBrush selected = new SolidColorBrush(Colors.Blue);
 		SolidColorBrush highlighted = new SolidColorBrush(Colors.Green);
-		SolidColorBrush threat = new SolidColorBrush(Colors.Red);
+		SolidColorBrush threat = new SolidColorBrush(Colors.Yellow);
 		SolidColorBrush white = new SolidColorBrush(Colors.White);
 
 		Game game = new Game();
@@ -842,7 +842,7 @@ namespace Szachy2
 			for (int i = 0; i < 8; i++)
 				for (int j = 0; j < 8; j++)
 					//if (game.GetChessBoard().GetSquare(i, j).GetEnPassant() != null) debug 
-					if (game.GetChessBoard().GetSquare(i, j).GetThreat(game.GetTurn()))
+					if (game.GetChessBoard().GetSquare(i, j).GetThreat())
 					{
 						fchessboard[i, j].BorderThickness = new Thickness(2);
 						fchessboard[i, j].BorderBrush = threat;

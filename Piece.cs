@@ -15,9 +15,14 @@ namespace Szachy2
             return this.MemberwiseClone() as Piece;
         }
 
+        protected void Highlight(bool highligh, bool threat, Square s)
+        {
+            s.SetHighlight(highligh, threat);
+        }
+
         public abstract void Move(Square startSquare, Square endSquare, ChessBoard chessBoard);
 
-        public abstract void HighlightMovement(ChessBoard chessBoard, Square mySquare);
+        public abstract void HighlightMovement(ChessBoard chessBoard, Square mySquare, bool threat = false); //threat = place king cannot go
 
         public Piece(bool color)
         {

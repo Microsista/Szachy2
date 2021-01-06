@@ -16,10 +16,10 @@ namespace Szachy2
             rook = new Rook(color);
         }
 
-        public override void HighlightMovement(ChessBoard chessBoard, Square mySquare)
+        public override void HighlightMovement(ChessBoard chessBoard, Square mySquare, bool threat = false)
         {
-            bishop.HighlightMovement(chessBoard, mySquare);
-            rook.HighlightMovement(chessBoard, mySquare);
+            bishop.HighlightMovement(chessBoard, mySquare, threat);
+            rook.HighlightMovement(chessBoard, mySquare, threat);
         }
 
         public override void Move(Square startSquare, Square endSquare, ChessBoard chessBoard)

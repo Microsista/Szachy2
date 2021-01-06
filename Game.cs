@@ -14,38 +14,30 @@ namespace Szachy2
 
         public void Click(int x, int y)
         {
+            //chessBoard.HighlightThreats(turn, false);
             Square s = chessBoard.GetSquare(x, y);
             if(s.GetHighlight() == true) //jeśli hilighted to mozna tam isc
             {
                 MakeMove(s);
             } else
             {
-                SelectStartSquare(s); //wybierz inne pole?
+                SelectStartSquare(s); //wybierz inne pole
             }
-            
         }
 
         public void SelectStartSquare(Square square)
         {
             if (selectedSquare == square)
-                return;
+                return; //wybrane to samo pole
 
-            if(selectedSquare != null) //wybieramy inne pole
+            chessBoard.GenerateLegalMoves(turn);
+            selectedSquare = null;
+            foreach (Move m in chessBoard.GetMoves())
             {
-                selectedSquare = null;
-                foreach (Square s in chessBoard.GetSquares())
-                {
-                    s.SetHighlight(false);
-                }
-            }
-
-            Piece p = square.GetPiece();
-            if (p != null)
-            {
-                if(p.GetColor() == turn)
+                if (m.GetStartSquare() == square)    //one of possible moves!
                 {
                     selectedSquare = square;
-                    selectedSquare.Select(chessBoard);
+                    m.GetEndSquare().SetHighlight(true); //highlight one of legal moves
                 }
             }
         }
@@ -56,7 +48,7 @@ namespace Szachy2
 
         public void MakeMove(Square endSquare)
         {
-            chessBoard.makeMove(selectedSquare, endSquare);
+            chessBoard.MakeMove(selectedSquare, endSquare);
 
             selectedSquare = null;
             foreach (Square s in chessBoard.GetSquares())

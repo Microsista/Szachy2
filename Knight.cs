@@ -10,7 +10,7 @@ namespace Szachy2
     {
         public Knight(bool color) : base(color) { }
      
-        private void HighlightSquare(Square s)
+        private void HighlightSquare(Square s, bool threat)
         {
             if(s.GetPiece() != null)
             {
@@ -18,10 +18,10 @@ namespace Szachy2
                     return;
             }
 
-            s.SetHighlight(true);
+            s.SetHighlight(true, threat);
         }
 
-        public override void HighlightMovement(ChessBoard chessBoard, Square mySquare)
+        public override void HighlightMovement(ChessBoard chessBoard, Square mySquare, bool threat = false)
         {
             Square[,] squares = chessBoard.GetSquares();
             int x = mySquare.GetX();
@@ -31,42 +31,41 @@ namespace Szachy2
             {
                 //left
                 if (y > 0)
-                    HighlightSquare(squares[x + 2, y - 1]);
+                    HighlightSquare(squares[x + 2, y - 1], threat);
                 //right
                 if (y < 7)
-                    HighlightSquare(squares[x + 2, y + 1]);
+                    HighlightSquare(squares[x + 2, y + 1], threat);
             }
             //down
             if (x > 1)
             {
                 //left
                 if (y > 0)
-                    HighlightSquare(squares[x - 2, y - 1]);
+                    HighlightSquare(squares[x - 2, y - 1], threat);
                 //right
                 if (y < 7)
-                    HighlightSquare(squares[x - 2, y + 1]);
+                    HighlightSquare(squares[x - 2, y + 1], threat);
             }
             //right
             if(y < 6)
             {
                 //down
                 if(x > 0)
-                    HighlightSquare(squares[x - 1, y + 2]);
+                    HighlightSquare(squares[x - 1, y + 2], threat);
                 //up
                 if (x < 7)
-                    HighlightSquare(squares[x + 1, y + 2]);
+                    HighlightSquare(squares[x + 1, y + 2], threat);
             }
             //left
             if (y > 1)
             {
                 //down
                 if (x > 0)
-                    HighlightSquare(squares[x - 1, y - 2]);
+                    HighlightSquare(squares[x - 1, y - 2], threat);
                 //up
                 if (x < 7)
-                    HighlightSquare(squares[x + 1, y - 2]);
+                    HighlightSquare(squares[x + 1, y - 2], threat);
             }
-
         }
 
         public override void Move(Square startSquare, Square endSquare, ChessBoard chessBoard)

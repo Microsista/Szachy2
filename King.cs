@@ -12,14 +12,14 @@ namespace Szachy2
         {
         }
 
-        private bool kingInCheck = false;
         private bool firstMove = true;
+        private bool inDanger = false;
 
-        private void Highlight(int i, int j, Square[,] squares) //todo check for threats!
+        private void HighlightKing(int i, int j, Square[,] squares, bool threat) //todo check for threats!
         {
             if (squares[i, j].GetPiece() == null) //no piece
             {
-                squares[i, j].SetHighlight(true);
+                Highlight(true, threat, squares[i, j]);
             }
             else if (squares[i, j].GetPiece().GetColor() == color) //same color piece
             {
@@ -27,12 +27,12 @@ namespace Szachy2
             }
             else //another color piece
             {
-                squares[i, j].SetHighlight(true);
-                
+                Highlight(true, threat, squares[i, j]);
+
             }
         }
 
-        public override void HighlightMovement(ChessBoard chessBoard, Square mySquare)
+        public override void HighlightMovement(ChessBoard chessBoard, Square mySquare, bool threat = false) 
         {
             int x = mySquare.GetX();
             int y = mySquare.GetY();
@@ -41,41 +41,41 @@ namespace Szachy2
             //left is ok
             if(x > 0)
             {
-                Highlight(x - 1, y, squares);
+                HighlightKing(x - 1, y, squares, threat);
                 if(y > 0)
-                    Highlight(x - 1, y - 1, squares);
+                    HighlightKing(x - 1, y - 1, squares, threat);
                 if(y < 7)
-                    Highlight(x - 1, y + 1, squares);
+                    HighlightKing(x - 1, y + 1, squares, threat);
             }
             
             if (x < 7) //right is ok
             {
-                Highlight(x + 1, y, squares);
+                HighlightKing(x + 1, y, squares, threat);
                 if (y > 0)
-                    Highlight(x + 1, y - 1, squares);
+                    HighlightKing(x + 1, y - 1, squares, threat);
                 if (y < 7)
-                    Highlight(x + 1, y + 1, squares);
+                    HighlightKing(x + 1, y + 1, squares, threat);
             }
             
             if (y > 0) //down is ok
             {
-                Highlight(x, y - 1, squares);
+                HighlightKing(x, y - 1, squares, threat);
                 if (x > 0)
-                    Highlight(x - 1, y - 1, squares);
+                    HighlightKing(x - 1, y - 1, squares, threat);
                 if (x < 7)
-                    Highlight(x + 1, y - 1, squares);
+                    HighlightKing(x + 1, y - 1, squares, threat);
             }
 
             if(y < 7)  //up is ok
             {
-                Highlight(x, y + 1, squares);
+                HighlightKing(x, y + 1, squares, threat);
                 if (x > 0)
-                    Highlight(x - 1, y + 1, squares);
+                    HighlightKing(x - 1, y + 1, squares, threat);
                 if (x < 7)
-                    Highlight(x + 1, y + 1, squares);
+                    HighlightKing(x + 1, y + 1, squares, threat);
             }
 
-            if (firstMove && kingInCheck == false) //there's option for castling
+            if (firstMove && !inDanger) //there's option for castling
             {
                 int i;
                 if(color == Constants.White)
@@ -87,7 +87,7 @@ namespace Szachy2
                     i = 7;
                 }
                 //left side
-                if (squares[i, 1].GetPiece() == null && squares[i, 2].GetPiece() == null && squares[i, 3].GetPiece() == null) //no pieces in between
+                if (squares[i, 1].GetPiece() == null && squares[i, 2].GetPiece() == null && squares[i, 3].GetPiece() == null && !squares[i, 2].GetThreat() && !squares[i, 3].GetThreat()) //no pieces in between and king doesnt go through threats
                 {
                     if (squares[i, 0].GetPiece() != null)
                     {
@@ -96,13 +96,14 @@ namespace Szachy2
                             Rook r = squares[i, 0].GetPiece() as Rook;
                             if (r.GetFirstMove())
                             {
-                                squares[i, 2].SetHighlight(true);
+                                if(!threat)
+                                    squares[i, 2].SetHighlight(true); //castling is not really a threat
                             }
                         }
                     }
                 }
                 //right side
-                if (squares[i, 5].GetPiece() == null && squares[i, 6].GetPiece() == null) //no pieces in between
+                if (squares[i, 5].GetPiece() == null && squares[i, 6].GetPiece() == null && !squares[i, 5].GetThreat() && !squares[i, 6].GetThreat()) //no pieces in between
                 {
                     if (squares[i, 7].GetPiece() != null)
                     {
@@ -111,7 +112,8 @@ namespace Szachy2
                             Rook r = squares[i, 7].GetPiece() as Rook;
                             if (r.GetFirstMove())
                             {
-                                squares[i, 6].SetHighlight(true);
+                                if(!threat)
+                                    squares[i, 6].SetHighlight(true);
                             }
                         }
                     }
@@ -149,9 +151,9 @@ namespace Szachy2
             firstMove = false;
         }
 
-        public void setKingInCheck(bool check)
+        public void SetInDanger(bool inDanger)
         {
-            kingInCheck = check;
+            this.inDanger = inDanger;
         }
     }
 }
