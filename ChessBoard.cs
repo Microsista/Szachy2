@@ -69,6 +69,7 @@ namespace Szachy2
                     }
                 }
             }
+            Console.WriteLine("possible moves: " + possibleMoves.Count());
             HighlightThreats(turn, false);
         }
 
@@ -101,8 +102,7 @@ namespace Szachy2
                     }
                 }
             }
-            return false;
-            
+            return false;    
         }
 
         public void HighlightThreats(bool turnColor, bool turnOn)
