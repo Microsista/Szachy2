@@ -176,6 +176,9 @@
 		<Button x:Name="startButton" Content="Rozpocznij grę" Click="startButton_Click" Margin="350,200,350,620"/>
 		<Image x:Name="endBackground" HorizontalAlignment="Left" Height="860" VerticalAlignment="Top" Width="860" Source="gameover.jpeg" Visibility="Hidden"/>
 		<Label x:Name="endLabel" Content="Szach mat" HorizontalAlignment="Left" Margin="335,187,0,0" VerticalAlignment="Top" FontSize="40" FontWeight="Bold" Width="260" Visibility="Hidden"/>
+		<Image x:Name="remisBackground" HorizontalAlignment="Left" Height="860" VerticalAlignment="Top" Width="860" Source="remis.jpeg" Visibility="Hidden" x:FieldModifier="public"/>
+		<Label x:Name="remisLabel" Content="Remis" HorizontalAlignment="Left" Margin="350,230,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" Visibility="Hidden" x:FieldModifier="public"/>
+
 
 
 

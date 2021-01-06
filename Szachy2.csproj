@@ -125,5 +125,8 @@
   <ItemGroup>
     <Resource Include="gameover.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="remis.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
