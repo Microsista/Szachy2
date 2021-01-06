@@ -192,23 +192,23 @@ namespace Szachy2
             squares = new Square[8, 8];
             whiteKing = new King(Constants.White);
             blackKing = new King(Constants.Black);
-            //squares[0, 0] = new Square(0, 0, new Rook(Constants.White));
-            //squares[0, 1] = new Square(0, 1, new Knight(Constants.White));
-            //squares[0, 2] = new Square(0, 2, new Bishop(Constants.White));
-            //squares[0, 3] = new Square(0, 3, new Queen(Constants.White));
-            //squares[0, 4] = new Square(0, 4, whiteKing);
-            //squares[0, 5] = new Square(0, 5, new Bishop(Constants.White));
-            //squares[0, 6] = new Square(0, 6, new Knight(Constants.White));
-            //squares[0, 7] = new Square(0, 7, new Rook(Constants.White));
-
             squares[0, 0] = new Square(0, 0, new Rook(Constants.White));
-            squares[0, 1] = new Square(0, 1, new Pawn(Constants.White));
-            squares[0, 2] = new Square(0, 2, null);
-            squares[0, 3] = new Square(0, 3, null);
+            squares[0, 1] = new Square(0, 1, new Knight(Constants.White));
+            squares[0, 2] = new Square(0, 2, new Bishop(Constants.White));
+            squares[0, 3] = new Square(0, 3, new Queen(Constants.White));
             squares[0, 4] = new Square(0, 4, whiteKing);
-            squares[0, 5] = new Square(0, 5, null);
-            squares[0, 6] = new Square(0, 6, null);
+            squares[0, 5] = new Square(0, 5, new Bishop(Constants.White));
+            squares[0, 6] = new Square(0, 6, new Knight(Constants.White));
             squares[0, 7] = new Square(0, 7, new Rook(Constants.White));
+
+            //squares[0, 0] = new Square(0, 0, new Rook(Constants.White));
+            //squares[0, 1] = new Square(0, 1, new Pawn(Constants.White));
+            //squares[0, 2] = new Square(0, 2, null);
+            //squares[0, 3] = new Square(0, 3, null);
+            //squares[0, 4] = new Square(0, 4, whiteKing);
+            //squares[0, 5] = new Square(0, 5, null);
+            //squares[0, 6] = new Square(0, 6, null);
+            //squares[0, 7] = new Square(0, 7, new Rook(Constants.White));
 
             squares[7, 0] = new Square(7, 0, new Rook(Constants.Black));
             squares[7, 1] = new Square(7, 1, new Knight(Constants.Black));
@@ -220,14 +220,14 @@ namespace Szachy2
             squares[7, 7] = new Square(7, 7, new Rook(Constants.Black));
 
 
-            //for (int i = 0; i < 8; i++)
-            //{
-            //    squares[1,i] = new Square(1, i, new Pawn(Constants.White));
-            //}
             for (int i = 0; i < 8; i++)
             {
-                squares[1, i] = new Square(1, i, null);
+                squares[1, i] = new Square(1, i, new Pawn(Constants.White));
             }
+            //for (int i = 0; i < 8; i++)
+            //{
+            //    squares[1, i] = new Square(1, i, null);
+            //}
 
             for (int i = 0; i < 8; i++)
             {
@@ -242,9 +242,9 @@ namespace Szachy2
                 }
             }
 
-            squares[4, 4] = new Square(4, 4, new Queen(Constants.Black));
-            squares[4, 5] = new Square(4, 5, new Queen(Constants.Black));
-            squares[3, 4] = new Square(3, 4, new Rook(Constants.White));
+            //squares[4, 4] = new Square(4, 4, new Queen(Constants.Black));
+            //squares[4, 5] = new Square(4, 5, new Queen(Constants.Black));
+            //squares[3, 4] = new Square(3, 4, new Rook(Constants.White));
         }
     }
 }
