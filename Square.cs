@@ -13,6 +13,7 @@ namespace Szachy2
         private Square enPassant = null; //Square tied to this square who caused enPassant
 
         private bool threat = false; //is this square threatened by blacks - king cannot move here
+        private bool lastMove = false;
 
         private int x, y;   //coordinates of the square
         private Piece piece;    //piece on this square
@@ -98,6 +99,16 @@ namespace Szachy2
         public void SetThreat(bool threat)
         {
             this.threat = threat;
+        }
+
+        public bool GetLastMove()
+        {
+            return lastMove;
+        }
+
+        public void SetLastMove(bool lastMove)
+        {
+            this.lastMove = lastMove;
         }
     }
 }

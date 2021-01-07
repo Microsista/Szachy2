@@ -25,6 +25,7 @@ namespace Szachy2
 		SolidColorBrush selected = new SolidColorBrush(Colors.Blue);
 		SolidColorBrush highlighted = new SolidColorBrush(Colors.Green);
 		SolidColorBrush threat = new SolidColorBrush(Colors.Yellow);
+		SolidColorBrush lastMove = new SolidColorBrush(Colors.Black);
 		SolidColorBrush white = new SolidColorBrush(Colors.White);
 
 		Game game = new Game();
@@ -73,8 +74,8 @@ namespace Szachy2
 
 
 
-		Button[,] chessboard = new Button[8, 8];
-		Button[,] fchessboard = new Button[8, 8];
+		public Button[,] chessboard = new Button[8, 8];
+		public Button[,] fchessboard = new Button[8, 8];
 
 		private void assignFields()
 		{
@@ -246,8 +247,9 @@ namespace Szachy2
 			for (int i = 0; i < 8; i++)
 				for (int j = 0; j < 8; j++) {
 					fchessboard[i, j].BorderBrush = white;
+					
 				}
-
+			lastMoveHighlight();
 			for (int i = 0; i < 8; i += 2)
 				for (int j = 0; j < 8; j += 2)
 				{
@@ -848,6 +850,20 @@ namespace Szachy2
 						fchessboard[i, j].BorderBrush = threat;
 					}
 		}
+
+		public void lastMoveHighlight()
+		{
+			for (int i = 0; i < 8; i++)
+				for (int j = 0; j < 8; j++)
+					//if (game.GetChessBoard().GetSquare(i, j).GetEnPassant() != null) debug 
+					if (game.GetChessBoard().GetSquare(i, j).GetLastMove())
+					{
+						fchessboard[i, j].BorderThickness = new Thickness(2);
+						fchessboard[i, j].BorderBrush = lastMove;
+					}
+		}
+
+
 
 		private void highlight(object sender)
 		{
@@ -3174,13 +3190,28 @@ namespace Szachy2
 		{
 			startButton.Visibility = Visibility.Hidden;
 			startBackground.Visibility = Visibility.Hidden;
+			nazwaBialy.Visibility = Visibility.Hidden;
+			nazwaCzarny.Visibility = Visibility.Hidden;
+			nazwaLabel.Visibility = Visibility.Hidden;
+			game.SetNazwaBialy(nazwaBialy.Text);
+			game.SetNazwaCzarny(nazwaCzarny.Text);
 		}
 
 		private void endButtton_Click(object sender, RoutedEventArgs e)
 		{
 			remisBackground.Visibility = Visibility.Visible;
 			remisLabel.Visibility = Visibility.Visible;
-			game.SaveGame();
+			zapisCheck.Visibility = Visibility.Visible;
+			zamknijButton.Visibility = Visibility.Visible;
+			//game.SaveGame();
+
+		}
+
+		private void zamknijButton_Click(object sender, RoutedEventArgs e)
+		{
+			if ((bool)zapisCheck.IsChecked)
+				game.SaveGame();
+			Close();
 		}
 	}
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Media;
 
 namespace Szachy2
 {
@@ -192,6 +194,14 @@ namespace Szachy2
             }
         }
 
+        public void HighlightLastMove(Square start, Square end)
+        {
+            foreach (Square s in squares)
+                s.SetLastMove(false);
+            start.SetLastMove(true);
+            end.SetLastMove(true);
+        }
+
         public ChessBoard()
         {
             Reset();
@@ -205,7 +215,7 @@ namespace Szachy2
         public void MakeMove(Square start, Square end)
         {
             start.GetPiece().Move(start, end, this); //because each piece tracks its movement differently espacially castling
-            
+
             foreach (Square s in squares)
             {
                 s.SetEnPassant(null);  //after my move enPassant is no longer available, as it is 1 turn only

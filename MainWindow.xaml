@@ -208,9 +208,16 @@
 
 		<Image x:Name="startBackground" HorizontalAlignment="Left" Height="860" VerticalAlignment="Top" Width="860" Source="menu.jpeg"/>
 		<Button x:Name="startButton" Content="Rozpocznij grę" Click="startButton_Click" Margin="350,200,350,620"/>
+		
 		<Image x:Name="endBackground" HorizontalAlignment="Left" Height="860" VerticalAlignment="Top" Width="860" Source="gameover.jpeg" Visibility="Hidden"/>
 		<Label x:Name="endLabel" Content="Szach mat" HorizontalAlignment="Left" Margin="335,187,0,0" VerticalAlignment="Top" FontSize="40" FontWeight="Bold" Width="260" Visibility="Hidden"/>
+		
 		<Image x:Name="remisBackground" HorizontalAlignment="Left" Height="860" VerticalAlignment="Top" Width="860" Source="remis.jpeg" Visibility="Hidden" x:FieldModifier="public"/>
 		<Label x:Name="remisLabel" Content="Remis" HorizontalAlignment="Left" Margin="350,230,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" Visibility="Hidden" x:FieldModifier="public"/>
+		<TextBox x:Name="nazwaCzarny" HorizontalAlignment="Left" Height="23" Margin="630,316,0,0" TextWrapping="Wrap" Text="Czarny" VerticalAlignment="Top" Width="120" x:FieldModifier="public"/>
+		<TextBox x:Name="nazwaBialy" HorizontalAlignment="Left" Height="23" Margin="130,316,0,0" TextWrapping="Wrap" Text="Biały" VerticalAlignment="Top" Width="120" x:FieldModifier="public"/>
+		<Label x:Name="nazwaLabel" Content="Nazwy graczy" HorizontalAlignment="Left" Margin="399,316,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="White"/>
+		<CheckBox x:Name="zapisCheck" Content="Zapisz grę?" HorizontalAlignment="Left" Margin="382,400,0,0" VerticalAlignment="Top" Visibility="Hidden" FontSize="14" FontWeight="ExtraBold" Foreground="#FF68FF00"/>
+		<Button x:Name="zamknijButton" Content="Zamknij" HorizontalAlignment="Left" Margin="399,513,0,0" VerticalAlignment="Top" Width="75" Click="zamknijButton_Click" Visibility="Hidden"/>
 	</Grid>
 </Window>

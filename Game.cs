@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace Szachy2
 {
@@ -13,6 +14,8 @@ namespace Szachy2
         private ChessBoard chessBoard = new ChessBoard();
         private Square selectedSquare = null;
         private bool turn = Constants.White;
+        private String nazwaBialy = "Biały";
+        private String nazwaCzarny = "Czarny";
 
         public static void EndGame(bool win)
         {
@@ -24,11 +27,15 @@ namespace Szachy2
                     {
                         (window as MainWindow).endBackground.Visibility = Visibility.Visible;
                         (window as MainWindow).endLabel.Visibility = Visibility.Visible;
+                        (window as MainWindow).zapisCheck.Visibility = Visibility.Visible;
+                        (window as MainWindow).zamknijButton.Visibility = Visibility.Visible;
                     }
                     else
                     {
                         (window as MainWindow).remisBackground.Visibility = Visibility.Visible;
                         (window as MainWindow).remisLabel.Visibility = Visibility.Visible;
+                        (window as MainWindow).zapisCheck.Visibility = Visibility.Visible;
+                        (window as MainWindow).zamknijButton.Visibility = Visibility.Visible;
                     }
                 }
             }
@@ -94,12 +101,12 @@ namespace Szachy2
             {
                 if (chessBoard.KingInDanger(turn))
                 {
-                    SaveGame();
+                    //SaveGame();
                     EndGame(true);
                 }
                 else
                 {
-                    SaveGame();
+                    //SaveGame();
                     EndGame(false);
                 }
             }
@@ -111,7 +118,6 @@ namespace Szachy2
             Move m = new Move(selectedSquare, endSquare, selectedSquare.GetPiece(), endSquare.GetPiece());
             gameMoves.AddMove(m);
             chessBoard.MakeMove(selectedSquare, endSquare);
-            selectedSquare = null;
 
             if (chessBoard.PromotionTime())
             {
@@ -124,6 +130,8 @@ namespace Szachy2
                 CheckForWin();
             }
             chessBoard.ClearHighlights();
+            chessBoard.HighlightLastMove(selectedSquare, endSquare);            
+            selectedSquare = null;
         }
 
         public ChessBoard GetChessBoard()
@@ -134,6 +142,16 @@ namespace Szachy2
         public bool GetTurn()
         {
             return turn;
+        }
+
+        public void SetNazwaBialy(String nazwa)
+		{
+            this.nazwaBialy = nazwa;
+		}
+
+        public void SetNazwaCzarny(String nazwa)
+        {
+            this.nazwaCzarny = nazwa;
         }
 
     }
