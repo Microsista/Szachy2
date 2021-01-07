@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 
 namespace Szachy2
 {
-	/// <summary>
-	/// Interaction logic for App.xaml
-	/// </summary>
+	// Entry point of the application class
 	public partial class App : Application
 	{
 	}
