@@ -8,6 +8,9 @@
         Title="MainWindow" Height="891" Width="868">
 	<Grid Margin="0,0,-27,-21">
 		<Grid.Resources>
+			<Style x:Key="fField" TargetType="Button">
+			</Style>
+			
 			<Style x:Key="Field" TargetType="Button">
 				<Setter Property="Template">
 					<Setter.Value>
@@ -23,81 +26,112 @@
 					</Setter.Value>
 				</Setter>
 			</Style>
+			
+			<Style TargetType="{x:Type Button}">
+				<Setter Property="Background" Value="#373737" />
+				<Setter Property="Foreground" Value="White" />
+				<Setter Property="FontSize" Value="15" />
+				<Setter Property="SnapsToDevicePixels" Value="True" />
+
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="{x:Type Button}">
+							<Border CornerRadius="4" Background="{TemplateBinding Background}">
+								<Grid>
+									<ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+								</Grid>
+							</Border>
+
+							<ControlTemplate.Triggers>
+								<Trigger Property="IsMouseOver" Value="True">
+									<Setter Property="Background" Value="#E59400" />
+									<Setter Property="Foreground" Value="White" />
+								</Trigger>
+
+								<Trigger Property="IsPressed" Value="True">
+									<Setter Property="Background" Value="OrangeRed" />
+									<Setter Property="Foreground" Value="White" />
+								</Trigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
 		</Grid.Resources>
 
 
 
-		<Button x:Name="fa1" Content="cWieza" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fb1" Content="cKon" HorizontalAlignment="Left" Margin="130,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fc1" Content="cLaufer" HorizontalAlignment="Left" Margin="230,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fd1" Content="cKrolowa" HorizontalAlignment="Left" Margin="330,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fe1" Content="cKrol" HorizontalAlignment="Left" Margin="430,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="ff1" Content="cLaufer" HorizontalAlignment="Left" Margin="530,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fg1" Content="cKon" HorizontalAlignment="Left" Margin="630,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fh1" Content="cWieza" HorizontalAlignment="Left" Margin="730,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fa1" Content="cWieza" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fb1" Content="cKon" HorizontalAlignment="Left" Margin="130,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fc1" Content="cLaufer" HorizontalAlignment="Left" Margin="230,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fd1" Content="cKrolowa" HorizontalAlignment="Left" Margin="330,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fe1" Content="cKrol" HorizontalAlignment="Left" Margin="430,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="ff1" Content="cLaufer" HorizontalAlignment="Left" Margin="530,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fg1" Content="cKon" HorizontalAlignment="Left" Margin="630,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fh1" Content="cWieza" HorizontalAlignment="Left" Margin="730,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
 
-		<Button x:Name="fa2" Content="cPion" HorizontalAlignment="Left" Margin="30,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fb2" Content="cPion" HorizontalAlignment="Left" Margin="130,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fc2" Content="cPion" HorizontalAlignment="Left" Margin="230,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fd2" Content="cPion" HorizontalAlignment="Left" Margin="330,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fe2" Content="cPion" HorizontalAlignment="Left" Margin="430,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="ff2" Content="cPion" HorizontalAlignment="Left" Margin="530,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fg2" Content="cPion" HorizontalAlignment="Left" Margin="630,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fh2" Content="cPion" HorizontalAlignment="Left" Margin="730,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fa2" Content="cPion" HorizontalAlignment="Left" Margin="30,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fb2" Content="cPion" HorizontalAlignment="Left" Margin="130,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fc2" Content="cPion" HorizontalAlignment="Left" Margin="230,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fd2" Content="cPion" HorizontalAlignment="Left" Margin="330,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fe2" Content="cPion" HorizontalAlignment="Left" Margin="430,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="ff2" Content="cPion" HorizontalAlignment="Left" Margin="530,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fg2" Content="cPion" HorizontalAlignment="Left" Margin="630,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fh2" Content="cPion" HorizontalAlignment="Left" Margin="730,130,0,0" VerticalAlignment="Top" Width="100" Height="100" />
 
-		<Button x:Name="fa3" Content="" HorizontalAlignment="Left" Margin="30,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fb3" Content="" HorizontalAlignment="Left" Margin="130,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fc3" Content="" HorizontalAlignment="Left" Margin="230,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fd3" Content="" HorizontalAlignment="Left" Margin="330,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fe3" Content="" HorizontalAlignment="Left" Margin="430,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="ff3" Content="" HorizontalAlignment="Left" Margin="530,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fg3" Content="" HorizontalAlignment="Left" Margin="630,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fh3" Content="" HorizontalAlignment="Left" Margin="730,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fa3" Content="" HorizontalAlignment="Left" Margin="30,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fb3" Content="" HorizontalAlignment="Left" Margin="130,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fc3" Content="" HorizontalAlignment="Left" Margin="230,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fd3" Content="" HorizontalAlignment="Left" Margin="330,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fe3" Content="" HorizontalAlignment="Left" Margin="430,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="ff3" Content="" HorizontalAlignment="Left" Margin="530,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fg3" Content="" HorizontalAlignment="Left" Margin="630,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}" x:Name="fh3" Content="" HorizontalAlignment="Left" Margin="730,230,0,0" VerticalAlignment="Top" Width="100" Height="100" />
 
-		<Button x:Name="fa4" Content="" HorizontalAlignment="Left" Margin="30,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fb4" Content="" HorizontalAlignment="Left" Margin="130,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fc4" Content="" HorizontalAlignment="Left" Margin="230,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fd4" Content="" HorizontalAlignment="Left" Margin="330,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fe4" Content="" HorizontalAlignment="Left" Margin="430,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="ff4" Content="" HorizontalAlignment="Left" Margin="530,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fg4" Content="" HorizontalAlignment="Left" Margin="630,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fh4" Content="" HorizontalAlignment="Left" Margin="730,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fa4" Content="" HorizontalAlignment="Left" Margin="30,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fb4" Content="" HorizontalAlignment="Left" Margin="130,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fc4" Content="" HorizontalAlignment="Left" Margin="230,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fd4" Content="" HorizontalAlignment="Left" Margin="330,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fe4" Content="" HorizontalAlignment="Left" Margin="430,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="ff4" Content="" HorizontalAlignment="Left" Margin="530,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fg4" Content="" HorizontalAlignment="Left" Margin="630,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fh4" Content="" HorizontalAlignment="Left" Margin="730,330,0,0" VerticalAlignment="Top" Width="100" Height="100" />
 
-		<Button x:Name="fa5" Content="" HorizontalAlignment="Left" Margin="30,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fb5" Content="" HorizontalAlignment="Left" Margin="130,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fc5" Content="" HorizontalAlignment="Left" Margin="230,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fd5" Content="" HorizontalAlignment="Left" Margin="330,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fe5" Content="" HorizontalAlignment="Left" Margin="430,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="ff5" Content="" HorizontalAlignment="Left" Margin="530,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fg5" Content="" HorizontalAlignment="Left" Margin="630,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fh5" Content="" HorizontalAlignment="Left" Margin="730,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fa5" Content="" HorizontalAlignment="Left" Margin="30,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fb5" Content="" HorizontalAlignment="Left" Margin="130,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fc5" Content="" HorizontalAlignment="Left" Margin="230,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fd5" Content="" HorizontalAlignment="Left" Margin="330,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fe5" Content="" HorizontalAlignment="Left" Margin="430,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="ff5" Content="" HorizontalAlignment="Left" Margin="530,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fg5" Content="" HorizontalAlignment="Left" Margin="630,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fh5" Content="" HorizontalAlignment="Left" Margin="730,429,0,0" VerticalAlignment="Top" Width="100" Height="100" />
 
-		<Button x:Name="fa6" Content="" HorizontalAlignment="Left" Margin="30,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fb6" Content="" HorizontalAlignment="Left" Margin="130,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fc6" Content="" HorizontalAlignment="Left" Margin="230,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fd6" Content="" HorizontalAlignment="Left" Margin="330,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fe6" Content="" HorizontalAlignment="Left" Margin="430,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="ff6" Content="" HorizontalAlignment="Left" Margin="530,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fg6" Content="" HorizontalAlignment="Left" Margin="630,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fh6" Content="" HorizontalAlignment="Left" Margin="730,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fa6" Content="" HorizontalAlignment="Left" Margin="30,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fb6" Content="" HorizontalAlignment="Left" Margin="130,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fc6" Content="" HorizontalAlignment="Left" Margin="230,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fd6" Content="" HorizontalAlignment="Left" Margin="330,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fe6" Content="" HorizontalAlignment="Left" Margin="430,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="ff6" Content="" HorizontalAlignment="Left" Margin="530,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fg6" Content="" HorizontalAlignment="Left" Margin="630,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fh6" Content="" HorizontalAlignment="Left" Margin="730,529,0,0" VerticalAlignment="Top" Width="100" Height="100" />
 
-		<Button x:Name="fa7" Content="bPion" HorizontalAlignment="Left" Margin="30,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fb7" Content="bPion" HorizontalAlignment="Left" Margin="130,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fc7" Content="bPion" HorizontalAlignment="Left" Margin="230,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fd7" Content="bPion" HorizontalAlignment="Left" Margin="330,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fe7" Content="bPion" HorizontalAlignment="Left" Margin="430,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="ff7" Content="bPion" HorizontalAlignment="Left" Margin="530,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fg7" Content="bPion" HorizontalAlignment="Left" Margin="630,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fh7" Content="bPion" HorizontalAlignment="Left" Margin="730,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fa7" Content="bPion" HorizontalAlignment="Left" Margin="30,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fb7" Content="bPion" HorizontalAlignment="Left" Margin="130,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fc7" Content="bPion" HorizontalAlignment="Left" Margin="230,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fd7" Content="bPion" HorizontalAlignment="Left" Margin="330,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fe7" Content="bPion" HorizontalAlignment="Left" Margin="430,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="ff7" Content="bPion" HorizontalAlignment="Left" Margin="530,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fg7" Content="bPion" HorizontalAlignment="Left" Margin="630,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fh7" Content="bPion" HorizontalAlignment="Left" Margin="730,629,0,0" VerticalAlignment="Top" Width="100" Height="100" />
 
-		<Button x:Name="fa8" Content="bWieza" HorizontalAlignment="Left" Margin="30,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fb8" Content="bKon" HorizontalAlignment="Left" Margin="130,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fc8" Content="bLaufer" HorizontalAlignment="Left" Margin="230,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fd8" Content="bKrolowa" HorizontalAlignment="Left" Margin="330,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fe8" Content="bKrol" HorizontalAlignment="Left" Margin="430,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="ff8" Content="bLaufer" HorizontalAlignment="Left" Margin="530,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fg8" Content="bKon" HorizontalAlignment="Left" Margin="630,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
-		<Button x:Name="fh8" Content="bWieza" HorizontalAlignment="Left" Margin="730,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fa8" Content="bWieza" HorizontalAlignment="Left" Margin="30,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fb8" Content="bKon" HorizontalAlignment="Left" Margin="130,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fc8" Content="bLaufer" HorizontalAlignment="Left" Margin="230,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fd8" Content="bKrolowa" HorizontalAlignment="Left" Margin="330,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fe8" Content="bKrol" HorizontalAlignment="Left" Margin="430,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="ff8" Content="bLaufer" HorizontalAlignment="Left" Margin="530,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fg8" Content="bKon" HorizontalAlignment="Left" Margin="630,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
+		<Button Style="{StaticResource fField}"  x:Name="fh8" Content="bWieza" HorizontalAlignment="Left" Margin="730,729,0,0" VerticalAlignment="Top" Width="100" Height="100" />
 
 		<Button Style="{StaticResource Field}" x:Name="a1" Content="cWieza" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
 		<Button Style="{StaticResource Field}" x:Name="b1" Content="cKon" HorizontalAlignment="Left" Margin="130,30,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="fieldClick"/>
@@ -178,9 +212,5 @@
 		<Label x:Name="endLabel" Content="Szach mat" HorizontalAlignment="Left" Margin="335,187,0,0" VerticalAlignment="Top" FontSize="40" FontWeight="Bold" Width="260" Visibility="Hidden"/>
 		<Image x:Name="remisBackground" HorizontalAlignment="Left" Height="860" VerticalAlignment="Top" Width="860" Source="remis.jpeg" Visibility="Hidden" x:FieldModifier="public"/>
 		<Label x:Name="remisLabel" Content="Remis" HorizontalAlignment="Left" Margin="350,230,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" Visibility="Hidden" x:FieldModifier="public"/>
-
-
-
-
 	</Grid>
 </Window>
