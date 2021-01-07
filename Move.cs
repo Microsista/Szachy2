@@ -90,7 +90,7 @@ namespace Szachy2
             }
             else if (startSquarePiece.GetType() == typeof(Knight))
             {
-                result = "K" + startSquare.GetSquareName();
+                result = "N" + startSquare.GetSquareName();
                 if (endSquarePiece != null)
                     result += "x";
                 result += endSquare.GetSquareName();
