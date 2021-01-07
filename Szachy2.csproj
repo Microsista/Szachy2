@@ -67,10 +67,6 @@
     <Compile Include="Queen.cs" />
     <Compile Include="Rook.cs" />
     <Compile Include="Square.cs" />
-    <Page Include="Field.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
@@ -80,9 +76,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ChessBoard.cs" />
-    <Compile Include="Field.xaml.cs">
-      <DependentUpon>Field.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -115,16 +108,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="bKrolowa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="bPionek.png" />
+    <Resource Include="gameover.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="menu.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="gameover.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="remis.jpeg" />
