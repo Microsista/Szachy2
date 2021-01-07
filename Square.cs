@@ -34,6 +34,16 @@ namespace Szachy2
             return y;
         }
 
+        public string GetSquareName()
+        { 
+            return GetYChar().ToString() + (x + 1).ToString();
+        }
+
+        public Char GetYChar()
+        {
+            return (char)(y + 97);
+        }
+
         public void SetPiece(Piece piece)
         {
             this.piece = piece;

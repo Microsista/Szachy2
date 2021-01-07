@@ -9,6 +9,7 @@ namespace Szachy2
 {
     class Game
     {
+        private ChessGameMoves gameMoves = new ChessGameMoves();
         private ChessBoard chessBoard = new ChessBoard();
         private Square selectedSquare = null;
         private bool turn = Constants.White;
@@ -39,7 +40,8 @@ namespace Szachy2
             if(s.GetHighlight() == true) //jeśli hilighted to mozna tam isc
             {
                 MakeMove(s);
-            } else
+            } 
+            else
             {
                 SelectStartSquare(s); //wybierz inne pole
             }
@@ -50,8 +52,18 @@ namespace Szachy2
             if (selectedSquare == square)
                 return; //wybrane to samo pole
 
-            chessBoard.ClearHighlights();
+            if (chessBoard.PromotionTime())
+            {
+                if(square.GetPiece() != null) //chosen piece
+                {
+                    chessBoard.Promote(square.GetPiece());
+                    turn = !turn;
+                    CheckForWin();
+                }
+                return;
+            }
 
+            chessBoard.ClearHighlights();
             selectedSquare = null;
             foreach (Move m in chessBoard.GetMoves())
             {
@@ -68,25 +80,50 @@ namespace Szachy2
             chessBoard.GenerateLegalMoves(turn);
         }
 
-        public void MakeMove(Square endSquare)
+        public void SaveGame()
         {
-            chessBoard.MakeMove(selectedSquare, endSquare);
+            gameMoves.saveAsPGN();
+        }
 
-            selectedSquare = null;
-            chessBoard.ClearHighlights();
-
-            turn = !turn;
-
+        private void CheckForWin()
+        {
             //checkm8 - king in check and no legal moves
             //stalem8 - king not in check but no legal moves
             chessBoard.GenerateLegalMoves(turn);
             if (chessBoard.GetMoves().Count() == 0)
             {
                 if (chessBoard.KingInDanger(turn))
+                {
+                    SaveGame();
                     EndGame(true);
+                }
                 else
+                {
+                    SaveGame();
                     EndGame(false);
+                }
             }
+        }
+
+        public void MakeMove(Square endSquare)
+        {
+            Console.WriteLine("Making Move to: " + endSquare.GetSquareName());
+            Move m = new Move(selectedSquare, endSquare, selectedSquare.GetPiece(), endSquare.GetPiece());
+            gameMoves.AddMove(m);
+            chessBoard.MakeMove(selectedSquare, endSquare);
+            selectedSquare = null;
+
+            if (chessBoard.PromotionTime())
+            {
+                chessBoard.ClearHighlights();
+                chessBoard.SetupPromotion();
+            }
+            else
+            {
+                turn = !turn;
+                CheckForWin();
+            }
+            chessBoard.ClearHighlights();
         }
 
         public ChessBoard GetChessBoard()

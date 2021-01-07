@@ -3178,8 +3178,9 @@ namespace Szachy2
 
 		private void endButtton_Click(object sender, RoutedEventArgs e)
 		{
-			endBackground.Visibility = Visibility.Visible;
-			endLabel.Visibility = Visibility.Visible;
+			//endBackground.Visibility = Visibility.Visible;
+			//endLabel.Visibility = Visibility.Visible;
+			game.SaveGame();
 		}
 	}
 }

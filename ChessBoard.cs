@@ -11,7 +11,9 @@ namespace Szachy2
         private Square[,] squares = new Square[8, 8];
         private King whiteKing, blackKing;
 
-        List<Move> possibleMoves = new List<Move>();
+        private Square[,] promotionSquares = new Square[8, 8];
+        private List<Move> possibleMoves = new List<Move>();
+        private Square promotionSquare = null;
 
         public List<Move> GetMoves()
         {
@@ -69,8 +71,68 @@ namespace Szachy2
                     }
                 }
             }
-            Console.WriteLine("possible moves: " + possibleMoves.Count());
+            //Console.WriteLine("possible moves: " + possibleMoves.Count());
             HighlightThreats(turn, false);
+        }
+
+        public bool PromotionTime()
+        {
+            if (promotionSquare != null)
+                return true;
+
+            for(int i = 0; i < 8; i++)
+            {
+                if(squares[0, i].GetPiece() != null)
+                {
+                    if (squares[0, i].GetPiece().GetType() == typeof(Pawn) && squares[0, i].GetPiece().GetColor() == Constants.Black)
+                    {
+                        promotionSquare = squares[0, i];
+                        return true;
+                    }
+                }
+            }
+            for (int i = 0; i < 8; i++)
+            {
+                if (squares[7, i].GetPiece() != null)
+                {
+                    if (squares[7, i].GetPiece().GetType() == typeof(Pawn) && squares[7, i].GetPiece().GetColor() == Constants.White)
+                    {
+                        promotionSquare = squares[7, i];
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public void Promote(Piece p)
+        {
+            ReturnToGameSquares();
+            promotionSquare.SetPiece(p);
+            promotionSquare = null;
+        }
+
+        public void SetupPromotion()
+        {
+            if (promotionSquare.GetPiece() != null)
+            {
+                for (int i = 0; i < 8; i++)
+                    for (int j = 0; j < 8; j++)
+                        promotionSquares[i, j] = new Square(i, j, null);
+                promotionSquares[4, 2] = new Square(4, 2, new Knight(promotionSquare.GetPiece().GetColor()));
+                promotionSquares[4, 3] = new Square(4, 3, new Bishop(promotionSquare.GetPiece().GetColor()));
+                promotionSquares[4, 4] = new Square(4, 4, new Rook(promotionSquare.GetPiece().GetColor()));
+                promotionSquares[4, 5] = new Square(4, 5, new Queen(promotionSquare.GetPiece().GetColor()));
+
+                ReturnToGameSquares();
+            }
+        }
+
+        public void ReturnToGameSquares()
+        {
+            Square[,] temp = squares;
+            squares = promotionSquares;
+            promotionSquares = temp;
         }
 
         public void ClearHighlights()
@@ -201,15 +263,6 @@ namespace Szachy2
             squares[0, 6] = new Square(0, 6, new Knight(Constants.White));
             squares[0, 7] = new Square(0, 7, new Rook(Constants.White));
 
-            //squares[0, 0] = new Square(0, 0, new Rook(Constants.White));
-            //squares[0, 1] = new Square(0, 1, new Pawn(Constants.White));
-            //squares[0, 2] = new Square(0, 2, null);
-            //squares[0, 3] = new Square(0, 3, null);
-            //squares[0, 4] = new Square(0, 4, whiteKing);
-            //squares[0, 5] = new Square(0, 5, null);
-            //squares[0, 6] = new Square(0, 6, null);
-            //squares[0, 7] = new Square(0, 7, new Rook(Constants.White));
-
             squares[7, 0] = new Square(7, 0, new Rook(Constants.Black));
             squares[7, 1] = new Square(7, 1, new Knight(Constants.Black));
             squares[7, 2] = new Square(7, 2, new Bishop(Constants.Black));
@@ -224,10 +277,6 @@ namespace Szachy2
             {
                 squares[1, i] = new Square(1, i, new Pawn(Constants.White));
             }
-            //for (int i = 0; i < 8; i++)
-            //{
-            //    squares[1, i] = new Square(1, i, null);
-            //}
 
             for (int i = 0; i < 8; i++)
             {
@@ -241,7 +290,7 @@ namespace Szachy2
                     squares[i, j] = new Square(i, j);
                 }
             }
-
+            
             //squares[4, 4] = new Square(4, 4, new Queen(Constants.Black));
             //squares[4, 5] = new Square(4, 5, new Queen(Constants.Black));
             //squares[3, 4] = new Square(3, 4, new Rook(Constants.White));
