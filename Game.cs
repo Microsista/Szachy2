@@ -101,12 +101,10 @@ namespace Szachy2
             {
                 if (chessBoard.KingInDanger(turn))
                 {
-                    //SaveGame();
                     EndGame(true);
                 }
                 else
                 {
-                    //SaveGame();
                     EndGame(false);
                 }
             }
@@ -114,15 +112,16 @@ namespace Szachy2
 
         public void MakeMove(Square endSquare)
         {
-            Console.WriteLine("Making Move to: " + endSquare.GetSquareName());
+            //Console.WriteLine("Making Move to: " + endSquare.GetSquareName());
             Move m = new Move(selectedSquare, endSquare, selectedSquare.GetPiece(), endSquare.GetPiece());
             gameMoves.AddMove(m);
             chessBoard.MakeMove(selectedSquare, endSquare);
             chessBoard.HighlightLastMove(selectedSquare, endSquare);
-            chessBoard.ClearHighlights();
+            selectedSquare = null;
 
             if (chessBoard.PromotionTime())
             {
+                chessBoard.ClearHighlights();
                 chessBoard.SetupPromotion();
             }
             else
@@ -130,8 +129,6 @@ namespace Szachy2
                 turn = !turn;
                 CheckForWin();
             }
-            chessBoard.ClearHighlights();
-            selectedSquare = null;
         }
 
         public ChessBoard GetChessBoard()

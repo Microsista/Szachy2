@@ -74,6 +74,7 @@ namespace Szachy2
                 }
             }
             //Console.WriteLine("possible moves: " + possibleMoves.Count());
+            ClearHighlights();
             HighlightThreats(turn, false);
         }
 
