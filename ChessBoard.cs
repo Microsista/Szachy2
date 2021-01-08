@@ -116,7 +116,7 @@ namespace Szachy2
 
         public void SetupPromotion()
         {
-            if (promotionSquare.GetPiece() != null)
+            if (promotionSquare.GetPiece() != null) //just in case
             {
                 for (int i = 0; i < 8; i++)
                     for (int j = 0; j < 8; j++)

@@ -118,10 +118,11 @@ namespace Szachy2
             Move m = new Move(selectedSquare, endSquare, selectedSquare.GetPiece(), endSquare.GetPiece());
             gameMoves.AddMove(m);
             chessBoard.MakeMove(selectedSquare, endSquare);
+            chessBoard.HighlightLastMove(selectedSquare, endSquare);
+            chessBoard.ClearHighlights();
 
             if (chessBoard.PromotionTime())
             {
-                chessBoard.ClearHighlights();
                 chessBoard.SetupPromotion();
             }
             else
@@ -130,7 +131,6 @@ namespace Szachy2
                 CheckForWin();
             }
             chessBoard.ClearHighlights();
-            chessBoard.HighlightLastMove(selectedSquare, endSquare);            
             selectedSquare = null;
         }
 
