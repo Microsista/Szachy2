@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -50,6 +51,8 @@ namespace Szachy2
 		// Arrays holding the front and background fields
 		public Button[,] chessboard = new Button[8, 8];
 		public Button[,] fchessboard = new Button[8, 8];
+
+		SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\.NET Projects\Szachy2\BazaDanych.mdf;Integrated Security=True");
 
 		// Assigning the fields to the arrays
 		private void assignFields()
@@ -556,7 +559,7 @@ namespace Szachy2
 			remisBackground.Visibility = Visibility.Visible;
 			remisLabel.Visibility = Visibility.Visible;
 			zapisCheck.Visibility = Visibility.Visible;
-			zamknijButton.Visibility = Visibility.Visible;
+			zamknijButton.Visibility = Visibility.Visible; 
 		}
 
 		// Invoked when the close app button is pressed
@@ -564,10 +567,81 @@ namespace Szachy2
 		{
 			// Save if the checkbox was checked
 			if ((bool)zapisCheck.IsChecked)
+			{
+				con.Open();
+				String zwyciezca = "";
+				if (game.GetTurn())
+					zwyciezca = "Czarny";
+				else
+					zwyciezca = "Biały";
+				if (remisBackground.IsVisible)
+					zwyciezca = "Remis";
+
+				SqlCommand cmd = new SqlCommand("insert into Tabela_HistoriaGier values('"+zwyciezca+"','" + game.GetNazwaBialy() + "', '" + game.GetNazwaCzarny()+"', GETDATE())", con);
+				int i = cmd.ExecuteNonQuery();
+				if (i > 0)
+				{
+					Console.WriteLine("Dodano");
+				}
+				else
+				{
+					Console.WriteLine("Blad");
+				}
+				//Console.WriteLine("Wchodze");
+				//Szachy2.BazaDanychDataSet bazaDanychDataSet = ((Szachy2.BazaDanychDataSet)(this.FindResource("bazaDanychDataSet")));
+
+				//BazaDanychDataSetTableAdapters.Tabela_HistoriaGierTableAdapter TableAdapter = new BazaDanychDataSetTableAdapters.Tabela_HistoriaGierTableAdapter();
+
+				//TableAdapter.Insert(null, game.GetNazwaBialy(), game.GetNazwaCzarny(), DateTime.Now);
+
+				//// Create a new row.
+				//BazaDanychDataSet.Tabela_HistoriaGierRow newhgRow;
+				//newhgRow = bazaDanychDataSet.Tabela_HistoriaGier.NewTabela_HistoriaGierRow();
+				//newhgRow.BiałyGracz = game.GetNazwaBialy();
+				//newhgRow.CarnyGracz = game.GetNazwaCzarny();
+				//newhgRow.Data = DateTime.Now;
+				//newhgRow.Zwyciezca = null;
+
+				//// Add the row to the table
+				//bazaDanychDataSet.Tabela_HistoriaGier.Rows.Add(newhgRow);
+
+				//// Save the new row to the database
+				//TableAdapter.Update(bazaDanychDataSet.Tabela_HistoriaGier);
+
 				game.SaveGame();
+			}
+				
 
 			// Close the app
 			Close();
+		}
+
+		private void Window_Loaded(object sender, RoutedEventArgs e)
+		{
+
+			Szachy2.BazaDanychDataSet bazaDanychDataSet = ((Szachy2.BazaDanychDataSet)(this.FindResource("bazaDanychDataSet")));
+			// Load data into the table Tabela_HistoriaGier. You can modify this code as needed.
+			Szachy2.BazaDanychDataSetTableAdapters.Tabela_HistoriaGierTableAdapter bazaDanychDataSetTabela_HistoriaGierTableAdapter = new Szachy2.BazaDanychDataSetTableAdapters.Tabela_HistoriaGierTableAdapter();
+			bazaDanychDataSetTabela_HistoriaGierTableAdapter.Fill(bazaDanychDataSet.Tabela_HistoriaGier);
+			System.Windows.Data.CollectionViewSource tabela_HistoriaGierViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("tabela_HistoriaGierViewSource")));
+			tabela_HistoriaGierViewSource.View.MoveCurrentToFirst();
+		}
+
+		private void dbButton_Click(object sender, RoutedEventArgs e)
+		{
+			if (bazaGrid.Visibility == Visibility.Visible)
+				bazaGrid.Visibility = Visibility.Hidden;
+			else
+				bazaGrid.Visibility = Visibility.Visible;
+		}
+
+		private void bazaGrid_Loaded(object sender, RoutedEventArgs e)
+		{
+			DataGrid dg = sender as DataGrid;
+			foreach (var column in dg.Columns)
+			{
+				column.Width = new DataGridLength(dg.ActualWidth / dg.Columns.Count, DataGridLengthUnitType.Pixel);
+			}
 		}
 	}
 }

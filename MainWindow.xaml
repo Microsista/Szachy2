@@ -1,24 +1,29 @@
 ﻿<!--Main application window-->
-<Window x:Class="Szachy2.MainWindow"
+<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Szachy2" x:Class="Szachy2.MainWindow"
         mc:Ignorable="d"
-        Title="Szachy" Height="891" Width="868">
+        Title="Szachy" Height="891" Width="868" Loaded="Window_Loaded">
+	<Window.Resources>
+		<local:BazaDanychDataSet x:Key="bazaDanychDataSet"/>
+		<CollectionViewSource x:Key="tabela_HistoriaGierViewSource" Source="{Binding Tabela_HistoriaGier, Source={StaticResource bazaDanychDataSet}}"/>
+	</Window.Resources>
 	<!--Main content layout inside the window-->
 	<Grid Margin="0,0,-27,-21">
 		<!--Resources used by the application-->
 		<Grid.Resources>
 			<!--Blank style, used by the background fields-->
-			<Style x:Key="fField" TargetType="Button" />
+			<Style x:Key="fField" TargetType="{x:Type Button}" />
 
 			<!--Style used by the front fields-->
-			<Style x:Key="Field" TargetType="Button">
+			<Style x:Key="Field" TargetType="{x:Type Button}">
 				<Setter Property="Template">
 					<Setter.Value>
-						<ControlTemplate TargetType="Button">
-							<Border Name="border" BorderThickness="2" BorderBrush="{x:Null}" Background="{TemplateBinding Background}"/>
+						<ControlTemplate TargetType="{x:Type Button}">
+							<Border x:Name="border" BorderThickness="2" BorderBrush="{x:Null}" Background="{TemplateBinding Background}"/>
 							<ControlTemplate.Triggers>
 								<Trigger Property="IsKeyboardFocused" Value="True">
 									<Setter TargetName="border" Property="BorderBrush" Value="Blue" />
@@ -29,7 +34,7 @@
 					</Setter.Value>
 				</Setter>
 			</Style>
-			
+
 			<!--Style used by the buttons-->
 			<Style TargetType="{x:Type Button}">
 				<Setter Property="Background" Value="#373737" />
@@ -63,6 +68,9 @@
 			</Style>
 		</Grid.Resources>
 
+		<Grid.DataContext>
+			<StaticResource ResourceKey="tabela_HistoriaGierViewSource"/>
+		</Grid.DataContext>
 		<!--Background fields-->
 		<Button Style="{StaticResource fField}" x:Name="fa1" Content="cWieza" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
 		<Button Style="{StaticResource fField}" x:Name="fb1" Content="cKon" HorizontalAlignment="Left" Margin="130,30,0,0" VerticalAlignment="Top" Width="100" Height="100" />
@@ -227,5 +235,7 @@
 		<!--Checkbox and button used to save the game and quit the application-->
 		<CheckBox x:Name="zapisCheck" Content="Zapisz grę?" HorizontalAlignment="Center" Margin="0,400,0,0" VerticalAlignment="Top" Visibility="Hidden" FontSize="14" FontWeight="ExtraBold" Foreground="#FF68FF00"/>
 		<Button x:Name="zamknijButton" Content="Zamknij" HorizontalAlignment="Center" Margin="0,513,0,0" VerticalAlignment="Top" Width="75" Click="zamknijButton_Click" Visibility="Hidden"/>
+		<DataGrid x:Name="bazaGrid" HorizontalAlignment="Left" Height="815" Margin="10,30,0,0" VerticalAlignment="Top" Width="835" ItemsSource="{Binding}" Loaded="bazaGrid_Loaded" Visibility="Hidden"/>
+		<Button x:Name="dbButton" Content="Wyniki" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Width="75" Click="dbButton_Click"/>
 	</Grid>
 </Window>

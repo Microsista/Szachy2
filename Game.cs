@@ -151,5 +151,15 @@ namespace Szachy2
             this.nazwaCzarny = nazwa;
         }
 
+        public String GetNazwaBialy()
+        {
+            return this.nazwaBialy;
+        }
+
+        public String GetNazwaCzarny()
+        {
+            return this.nazwaCzarny;
+        }
+
     }
 }
