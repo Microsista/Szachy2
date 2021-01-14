@@ -640,7 +640,7 @@ namespace Szachy2
 			DataGrid dg = sender as DataGrid;
 			foreach (var column in dg.Columns)
 			{
-				column.Width = new DataGridLength(dg.ActualWidth / dg.Columns.Count, DataGridLengthUnitType.Pixel);
+				column.Width = new DataGridLength(dg.ActualWidth / dg.Columns.Count - 2, DataGridLengthUnitType.Pixel);
 			}
 		}
 	}
