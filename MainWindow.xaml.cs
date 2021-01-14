@@ -576,6 +576,8 @@ namespace Szachy2
 					zwyciezca = "Biały";
 				if (remisBackground.IsVisible)
 					zwyciezca = "Remis";
+				//SqlCommand cmd2 = new SqlCommand("DBCC CHECKIDENT ('Tabela_HistoriaGier', RESEED, 0)", con);
+				//cmd2.ExecuteNonQuery();
 
 				SqlCommand cmd = new SqlCommand("insert into Tabela_HistoriaGier values('"+zwyciezca+"','" + game.GetNazwaBialy() + "', '" + game.GetNazwaCzarny()+"', GETDATE())", con);
 				int i = cmd.ExecuteNonQuery();
