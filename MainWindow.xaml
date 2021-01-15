@@ -235,7 +235,8 @@
 		<!--Checkbox and button used to save the game and quit the application-->
 		<CheckBox x:Name="zapisCheck" Content="Zapisz grę?" HorizontalAlignment="Center" Margin="0,400,0,0" VerticalAlignment="Top" Visibility="Hidden" FontSize="14" FontWeight="ExtraBold" Foreground="#FF68FF00"/>
 		<Button x:Name="zamknijButton" Content="Zamknij" HorizontalAlignment="Center" Margin="0,513,0,0" VerticalAlignment="Top" Width="75" Click="zamknijButton_Click" Visibility="Hidden"/>
-		<DataGrid x:Name="bazaGrid" HorizontalAlignment="Left" Height="815" Margin="10,30,0,0" VerticalAlignment="Top" Width="835" ItemsSource="{Binding}" Loaded="bazaGrid_Loaded" Visibility="Hidden"/>
+		<DataGrid x:Name="bazaGrid" HorizontalAlignment="Left" Height="815" Margin="10,30,0,0" VerticalAlignment="Top" Width="835" ItemsSource="{Binding}" Loaded="bazaGrid_Loaded" Visibility="Hidden" SelectionChanged="bazaGrid_SelectionChanged"/>
 		<Button x:Name="dbButton" Content="Wyniki" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Width="75" Click="dbButton_Click"/>
+		<Button x:Name="pgnButton" Content="ZapiszPGN" HorizontalAlignment="Left" Margin="100,6,0,0" VerticalAlignment="Top" Width="75" Click="pgnButton_Click" Visibility="Hidden"/>
 	</Grid>
 </Window>

@@ -44,5 +44,15 @@ namespace Szachy2
                 sw.Write(GeneratePGNString());
             }
         }
+
+        public void saveAsPGN(String str)
+        {
+            string path = Directory.GetCurrentDirectory() + "/Game" + DateTime.Now.ToString("yyyy-MM-dd_hh-mm-ss") + ".pgn";
+            Console.WriteLine(path);
+            using (StreamWriter sw = File.CreateText(path))
+            {
+                sw.Write(str);
+            }
+        }
     }
 }

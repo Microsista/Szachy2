@@ -54,6 +54,7 @@ namespace Szachy2
 		public Button[,] fchessboard = new Button[8, 8];
 
 		SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + @"\BazaDanych.mdf;Integrated Security=True");
+		int rowindex = 0;
 
 		// Assigning the fields to the arrays
 		private void assignFields()
@@ -580,7 +581,7 @@ namespace Szachy2
 				//SqlCommand cmd2 = new SqlCommand("DBCC CHECKIDENT ('Tabela_HistoriaGier', RESEED, 0)", con);
 				//cmd2.ExecuteNonQuery();
 
-				SqlCommand cmd = new SqlCommand("insert into Tabela_HistoriaGier values('"+zwyciezca+"','" + game.GetNazwaBialy() + "', '" + game.GetNazwaCzarny()+"', GETDATE())", con);
+				SqlCommand cmd = new SqlCommand("insert into Tabela_HistoriaGier values('"+zwyciezca+"','" + game.GetNazwaBialy() + "', '" + game.GetNazwaCzarny()+"', GETDATE(), '"+game.GetGameMoves().GeneratePGNString()+"')", con);
 				int i = cmd.ExecuteNonQuery();
 				if (i > 0)
 				{
@@ -633,9 +634,16 @@ namespace Szachy2
 		private void dbButton_Click(object sender, RoutedEventArgs e)
 		{
 			if (bazaGrid.Visibility == Visibility.Visible)
+			{
 				bazaGrid.Visibility = Visibility.Hidden;
+				pgnButton.Visibility = Visibility.Hidden;
+			}
 			else
+			{
 				bazaGrid.Visibility = Visibility.Visible;
+				pgnButton.Visibility = Visibility.Visible;
+			}
+				
 		}
 
 		private void bazaGrid_Loaded(object sender, RoutedEventArgs e)
@@ -645,6 +653,19 @@ namespace Szachy2
 			{
 				column.Width = new DataGridLength(dg.ActualWidth / dg.Columns.Count - 2, DataGridLengthUnitType.Pixel);
 			}
+		}
+
+		private void pgnButton_Click(object sender, RoutedEventArgs e)
+		{
+
+			//bazaGrid.Items.IndexOf(bazaGrid.CurrentItem);
+			TextBlock x = bazaGrid.Columns[5].GetCellContent(bazaGrid.Items[rowindex]) as TextBlock;
+			game.GetGameMoves().saveAsPGN(x.Text);
+		}
+
+		private void bazaGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+		{
+			rowindex = bazaGrid.Items.IndexOf(bazaGrid.CurrentItem);
 		}
 	}
 }

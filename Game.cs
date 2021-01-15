@@ -136,6 +136,11 @@ namespace Szachy2
             return chessBoard;
 		}
 
+        public ChessGameMoves GetGameMoves()
+        {
+            return gameMoves;
+        }
+
         public bool GetTurn()
         {
             return turn;

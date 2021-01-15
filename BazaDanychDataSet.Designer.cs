@@ -285,9 +285,11 @@ namespace Szachy2 {
             
             private global::System.Data.DataColumn columnBiałyGracz;
             
-            private global::System.Data.DataColumn columnCarnyGracz;
+            private global::System.Data.DataColumn columnCzarnyGracz;
             
             private global::System.Data.DataColumn columnData;
+            
+            private global::System.Data.DataColumn columnPGNString;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -348,9 +350,9 @@ namespace Szachy2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CarnyGraczColumn {
+            public global::System.Data.DataColumn CzarnyGraczColumn {
                 get {
-                    return this.columnCarnyGracz;
+                    return this.columnCzarnyGracz;
                 }
             }
             
@@ -359,6 +361,14 @@ namespace Szachy2 {
             public global::System.Data.DataColumn DataColumn {
                 get {
                     return this.columnData;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PGNStringColumn {
+                get {
+                    return this.columnPGNString;
                 }
             }
             
@@ -399,14 +409,15 @@ namespace Szachy2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Tabela_HistoriaGierRow AddTabela_HistoriaGierRow(string Zwyciezca, string BiałyGracz, string CarnyGracz, System.DateTime Data) {
+            public Tabela_HistoriaGierRow AddTabela_HistoriaGierRow(string Zwyciezca, string BiałyGracz, string CzarnyGracz, System.DateTime Data, string PGNString) {
                 Tabela_HistoriaGierRow rowTabela_HistoriaGierRow = ((Tabela_HistoriaGierRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Zwyciezca,
                         BiałyGracz,
-                        CarnyGracz,
-                        Data};
+                        CzarnyGracz,
+                        Data,
+                        PGNString};
                 rowTabela_HistoriaGierRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTabela_HistoriaGierRow);
                 return rowTabela_HistoriaGierRow;
@@ -439,8 +450,9 @@ namespace Szachy2 {
                 this.columnIdGry = base.Columns["IdGry"];
                 this.columnZwyciezca = base.Columns["Zwyciezca"];
                 this.columnBiałyGracz = base.Columns["BiałyGracz"];
-                this.columnCarnyGracz = base.Columns["CarnyGracz"];
+                this.columnCzarnyGracz = base.Columns["CzarnyGracz"];
                 this.columnData = base.Columns["Data"];
+                this.columnPGNString = base.Columns["PGNString"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -452,10 +464,12 @@ namespace Szachy2 {
                 base.Columns.Add(this.columnZwyciezca);
                 this.columnBiałyGracz = new global::System.Data.DataColumn("BiałyGracz", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBiałyGracz);
-                this.columnCarnyGracz = new global::System.Data.DataColumn("CarnyGracz", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCarnyGracz);
+                this.columnCzarnyGracz = new global::System.Data.DataColumn("CzarnyGracz", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCzarnyGracz);
                 this.columnData = new global::System.Data.DataColumn("Data", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnData);
+                this.columnPGNString = new global::System.Data.DataColumn("PGNString", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPGNString);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdGry}, true));
                 this.columnIdGry.AutoIncrement = true;
@@ -466,7 +480,7 @@ namespace Szachy2 {
                 this.columnIdGry.Unique = true;
                 this.columnZwyciezca.MaxLength = 150;
                 this.columnBiałyGracz.MaxLength = 150;
-                this.columnCarnyGracz.MaxLength = 150;
+                this.columnCzarnyGracz.MaxLength = 150;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -652,17 +666,17 @@ namespace Szachy2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CarnyGracz {
+            public string CzarnyGracz {
                 get {
                     try {
-                        return ((string)(this[this.tableTabela_HistoriaGier.CarnyGraczColumn]));
+                        return ((string)(this[this.tableTabela_HistoriaGier.CzarnyGraczColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CarnyGracz\' in table \'Tabela_HistoriaGier\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'CzarnyGracz\' in table \'Tabela_HistoriaGier\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTabela_HistoriaGier.CarnyGraczColumn] = value;
+                    this[this.tableTabela_HistoriaGier.CzarnyGraczColumn] = value;
                 }
             }
             
@@ -679,6 +693,22 @@ namespace Szachy2 {
                 }
                 set {
                     this[this.tableTabela_HistoriaGier.DataColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string PGNString {
+                get {
+                    try {
+                        return ((string)(this[this.tableTabela_HistoriaGier.PGNStringColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PGNString\' in table \'Tabela_HistoriaGier\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTabela_HistoriaGier.PGNStringColumn] = value;
                 }
             }
             
@@ -708,14 +738,14 @@ namespace Szachy2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCarnyGraczNull() {
-                return this.IsNull(this.tableTabela_HistoriaGier.CarnyGraczColumn);
+            public bool IsCzarnyGraczNull() {
+                return this.IsNull(this.tableTabela_HistoriaGier.CzarnyGraczColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCarnyGraczNull() {
-                this[this.tableTabela_HistoriaGier.CarnyGraczColumn] = global::System.Convert.DBNull;
+            public void SetCzarnyGraczNull() {
+                this[this.tableTabela_HistoriaGier.CzarnyGraczColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -728,6 +758,18 @@ namespace Szachy2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDataNull() {
                 this[this.tableTabela_HistoriaGier.DataColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPGNStringNull() {
+                return this.IsNull(this.tableTabela_HistoriaGier.PGNStringColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPGNStringNull() {
+                this[this.tableTabela_HistoriaGier.PGNStringColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -893,49 +935,57 @@ namespace Szachy2.BazaDanychDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("IdGry", "IdGry");
             tableMapping.ColumnMappings.Add("Zwyciezca", "Zwyciezca");
             tableMapping.ColumnMappings.Add("BiałyGracz", "BiałyGracz");
-            tableMapping.ColumnMappings.Add("CarnyGracz", "CarnyGracz");
+            tableMapping.ColumnMappings.Add("CarnyGracz", "CzarnyGracz");
             tableMapping.ColumnMappings.Add("Data", "Data");
+            tableMapping.ColumnMappings.Add("CzarnyGracz", "CzarnyGracz");
+            tableMapping.ColumnMappings.Add("PGNString", "PGNString");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Tabela_HistoriaGier] WHERE (([IdGry] = @Original_IdGry) AND ((@IsNull_Zwyciezca = 1 AND [Zwyciezca] IS NULL) OR ([Zwyciezca] = @Original_Zwyciezca)) AND ((@IsNull_BiałyGracz = 1 AND [BiałyGracz] IS NULL) OR ([BiałyGracz] = @Original_BiałyGracz)) AND ((@IsNull_CarnyGracz = 1 AND [CarnyGracz] IS NULL) OR ([CarnyGracz] = @Original_CarnyGracz)) AND ((@IsNull_Data = 1 AND [Data] IS NULL) OR ([Data] = @Original_Data)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Tabela_HistoriaGier] WHERE (([IdGry] = @Original_IdGry) AND ((@IsNull_Zwyciezca = 1 AND [Zwyciezca] IS NULL) OR ([Zwyciezca] = @Original_Zwyciezca)) AND ((@IsNull_BiałyGracz = 1 AND [BiałyGracz] IS NULL) OR ([BiałyGracz] = @Original_BiałyGracz)) AND ((@IsNull_CzarnyGracz = 1 AND [CzarnyGracz] IS NULL) OR ([CzarnyGracz] = @Original_CzarnyGracz)) AND ((@IsNull_Data = 1 AND [Data] IS NULL) OR ([Data] = @Original_Data)) AND ((@IsNull_PGNString = 1 AND [PGNString] IS NULL) OR ([PGNString] = @Original_PGNString)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdGry", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdGry", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Zwyciezca", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zwyciezca", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Zwyciezca", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zwyciezca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BiałyGracz", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BiałyGracz", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BiałyGracz", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BiałyGracz", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CarnyGracz", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CarnyGracz", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CarnyGracz", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CarnyGracz", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CzarnyGracz", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CzarnyGracz", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CzarnyGracz", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CzarnyGracz", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Data", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PGNString", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PGNString", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PGNString", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PGNString", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Tabela_HistoriaGier] ([Zwyciezca], [BiałyGracz], [CarnyGracz], [Data]) VALUES (@Zwyciezca, @BiałyGracz, @CarnyGracz, @Data);
-SELECT IdGry, Zwyciezca, BiałyGracz, CarnyGracz, Data FROM Tabela_HistoriaGier WHERE (IdGry = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Tabela_HistoriaGier] ([Zwyciezca], [BiałyGracz], [CzarnyGracz], [Data], [PGNString]) VALUES (@Zwyciezca, @BiałyGracz, @CzarnyGracz, @Data, @PGNString);
+SELECT IdGry, Zwyciezca, BiałyGracz, CzarnyGracz, Data, PGNString FROM Tabela_HistoriaGier WHERE (IdGry = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zwyciezca", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zwyciezca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BiałyGracz", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BiałyGracz", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CarnyGracz", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CarnyGracz", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CzarnyGracz", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CzarnyGracz", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PGNString", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PGNString", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Tabela_HistoriaGier] SET [Zwyciezca] = @Zwyciezca, [BiałyGracz] = @BiałyGracz, [CarnyGracz] = @CarnyGracz, [Data] = @Data WHERE (([IdGry] = @Original_IdGry) AND ((@IsNull_Zwyciezca = 1 AND [Zwyciezca] IS NULL) OR ([Zwyciezca] = @Original_Zwyciezca)) AND ((@IsNull_BiałyGracz = 1 AND [BiałyGracz] IS NULL) OR ([BiałyGracz] = @Original_BiałyGracz)) AND ((@IsNull_CarnyGracz = 1 AND [CarnyGracz] IS NULL) OR ([CarnyGracz] = @Original_CarnyGracz)) AND ((@IsNull_Data = 1 AND [Data] IS NULL) OR ([Data] = @Original_Data)));
-SELECT IdGry, Zwyciezca, BiałyGracz, CarnyGracz, Data FROM Tabela_HistoriaGier WHERE (IdGry = @IdGry)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Tabela_HistoriaGier] SET [Zwyciezca] = @Zwyciezca, [BiałyGracz] = @BiałyGracz, [CzarnyGracz] = @CzarnyGracz, [Data] = @Data, [PGNString] = @PGNString WHERE (([IdGry] = @Original_IdGry) AND ((@IsNull_Zwyciezca = 1 AND [Zwyciezca] IS NULL) OR ([Zwyciezca] = @Original_Zwyciezca)) AND ((@IsNull_BiałyGracz = 1 AND [BiałyGracz] IS NULL) OR ([BiałyGracz] = @Original_BiałyGracz)) AND ((@IsNull_CzarnyGracz = 1 AND [CzarnyGracz] IS NULL) OR ([CzarnyGracz] = @Original_CzarnyGracz)) AND ((@IsNull_Data = 1 AND [Data] IS NULL) OR ([Data] = @Original_Data)) AND ((@IsNull_PGNString = 1 AND [PGNString] IS NULL) OR ([PGNString] = @Original_PGNString)));
+SELECT IdGry, Zwyciezca, BiałyGracz, CzarnyGracz, Data, PGNString FROM Tabela_HistoriaGier WHERE (IdGry = @IdGry)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Zwyciezca", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zwyciezca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BiałyGracz", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BiałyGracz", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CarnyGracz", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CarnyGracz", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CzarnyGracz", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CzarnyGracz", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Data", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PGNString", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PGNString", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdGry", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdGry", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Zwyciezca", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zwyciezca", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Zwyciezca", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Zwyciezca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_BiałyGracz", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BiałyGracz", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BiałyGracz", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BiałyGracz", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CarnyGracz", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CarnyGracz", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CarnyGracz", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CarnyGracz", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CzarnyGracz", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CzarnyGracz", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CzarnyGracz", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CzarnyGracz", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Data", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Data", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Data", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PGNString", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PGNString", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PGNString", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PGNString", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdGry", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdGry", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -952,8 +1002,8 @@ SELECT IdGry, Zwyciezca, BiałyGracz, CarnyGracz, Data FROM Tabela_HistoriaGier 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IdGry, Zwyciezca, BiałyGracz, CarnyGracz, Data FROM dbo.Tabela_HistoriaGie" +
-                "r";
+            this._commandCollection[0].CommandText = "SELECT IdGry, Zwyciezca, BiałyGracz, CzarnyGracz, Data, PGNString FROM dbo.Tabela" +
+                "_HistoriaGier";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1014,7 +1064,7 @@ SELECT IdGry, Zwyciezca, BiałyGracz, CarnyGracz, Data FROM Tabela_HistoriaGier 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_IdGry, string Original_Zwyciezca, string Original_BiałyGracz, string Original_CarnyGracz, global::System.Nullable<global::System.DateTime> Original_Data) {
+        public virtual int Delete(int Original_IdGry, string Original_Zwyciezca, string Original_BiałyGracz, string Original_CzarnyGracz, global::System.Nullable<global::System.DateTime> Original_Data, string Original_PGNString) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IdGry));
             if ((Original_Zwyciezca == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -1032,13 +1082,13 @@ SELECT IdGry, Zwyciezca, BiałyGracz, CarnyGracz, Data FROM Tabela_HistoriaGier 
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_BiałyGracz));
             }
-            if ((Original_CarnyGracz == null)) {
+            if ((Original_CzarnyGracz == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_CarnyGracz));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_CzarnyGracz));
             }
             if ((Original_Data.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
@@ -1047,6 +1097,14 @@ SELECT IdGry, Zwyciezca, BiałyGracz, CarnyGracz, Data FROM Tabela_HistoriaGier 
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PGNString == null)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_PGNString));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1068,7 +1126,7 @@ SELECT IdGry, Zwyciezca, BiałyGracz, CarnyGracz, Data FROM Tabela_HistoriaGier 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Zwyciezca, string BiałyGracz, string CarnyGracz, global::System.Nullable<global::System.DateTime> Data) {
+        public virtual int Insert(string Zwyciezca, string BiałyGracz, string CzarnyGracz, global::System.Nullable<global::System.DateTime> Data, string PGNString) {
             if ((Zwyciezca == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1081,17 +1139,23 @@ SELECT IdGry, Zwyciezca, BiałyGracz, CarnyGracz, Data FROM Tabela_HistoriaGier 
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(BiałyGracz));
             }
-            if ((CarnyGracz == null)) {
+            if ((CzarnyGracz == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(CarnyGracz));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(CzarnyGracz));
             }
             if ((Data.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Data.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((PGNString == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PGNString));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1113,7 +1177,7 @@ SELECT IdGry, Zwyciezca, BiałyGracz, CarnyGracz, Data FROM Tabela_HistoriaGier 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Zwyciezca, string BiałyGracz, string CarnyGracz, global::System.Nullable<global::System.DateTime> Data, int Original_IdGry, string Original_Zwyciezca, string Original_BiałyGracz, string Original_CarnyGracz, global::System.Nullable<global::System.DateTime> Original_Data, int IdGry) {
+        public virtual int Update(string Zwyciezca, string BiałyGracz, string CzarnyGracz, global::System.Nullable<global::System.DateTime> Data, string PGNString, int Original_IdGry, string Original_Zwyciezca, string Original_BiałyGracz, string Original_CzarnyGracz, global::System.Nullable<global::System.DateTime> Original_Data, string Original_PGNString, int IdGry) {
             if ((Zwyciezca == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1126,11 +1190,11 @@ SELECT IdGry, Zwyciezca, BiałyGracz, CarnyGracz, Data FROM Tabela_HistoriaGier 
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(BiałyGracz));
             }
-            if ((CarnyGracz == null)) {
+            if ((CzarnyGracz == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(CarnyGracz));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(CzarnyGracz));
             }
             if ((Data.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Data.Value));
@@ -1138,40 +1202,54 @@ SELECT IdGry, Zwyciezca, BiałyGracz, CarnyGracz, Data FROM Tabela_HistoriaGier 
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_IdGry));
-            if ((Original_Zwyciezca == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            if ((PGNString == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Zwyciezca));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PGNString));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_IdGry));
+            if ((Original_Zwyciezca == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Zwyciezca));
             }
             if ((Original_BiałyGracz == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_BiałyGracz));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_BiałyGracz));
             }
-            if ((Original_CarnyGracz == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((Original_CzarnyGracz == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_CarnyGracz));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_CzarnyGracz));
             }
             if ((Original_Data.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_Data.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_Data.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(IdGry));
+            if ((Original_PGNString == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_PGNString));
+            }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(IdGry));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1192,8 +1270,8 @@ SELECT IdGry, Zwyciezca, BiałyGracz, CarnyGracz, Data FROM Tabela_HistoriaGier 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Zwyciezca, string BiałyGracz, string CarnyGracz, global::System.Nullable<global::System.DateTime> Data, int Original_IdGry, string Original_Zwyciezca, string Original_BiałyGracz, string Original_CarnyGracz, global::System.Nullable<global::System.DateTime> Original_Data) {
-            return this.Update(Zwyciezca, BiałyGracz, CarnyGracz, Data, Original_IdGry, Original_Zwyciezca, Original_BiałyGracz, Original_CarnyGracz, Original_Data, Original_IdGry);
+        public virtual int Update(string Zwyciezca, string BiałyGracz, string CzarnyGracz, global::System.Nullable<global::System.DateTime> Data, string PGNString, int Original_IdGry, string Original_Zwyciezca, string Original_BiałyGracz, string Original_CzarnyGracz, global::System.Nullable<global::System.DateTime> Original_Data, string Original_PGNString) {
+            return this.Update(Zwyciezca, BiałyGracz, CzarnyGracz, Data, PGNString, Original_IdGry, Original_Zwyciezca, Original_BiałyGracz, Original_CzarnyGracz, Original_Data, Original_PGNString, Original_IdGry);
         }
     }
     
