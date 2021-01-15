@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -52,7 +53,7 @@ namespace Szachy2
 		public Button[,] chessboard = new Button[8, 8];
 		public Button[,] fchessboard = new Button[8, 8];
 
-		SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\.NET Projects\Szachy2\BazaDanych.mdf;Integrated Security=True");
+		SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + @"\BazaDanych.mdf;Integrated Security=True");
 
 		// Assigning the fields to the arrays
 		private void assignFields()
