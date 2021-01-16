@@ -659,8 +659,11 @@ namespace Szachy2
 		{
 
 			//bazaGrid.Items.IndexOf(bazaGrid.CurrentItem);
-			TextBlock x = bazaGrid.Columns[5].GetCellContent(bazaGrid.Items[rowindex]) as TextBlock;
-			game.GetGameMoves().saveAsPGN(x.Text);
+			TextBlock x = null;
+			if (rowindex != -1)
+				x = bazaGrid.Columns[5].GetCellContent(bazaGrid.Items[rowindex]) as TextBlock;
+			if (x != null)
+				game.GetGameMoves().saveAsPGN(x.Text);
 		}
 
 		private void bazaGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
