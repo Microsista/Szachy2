@@ -12,8 +12,8 @@ namespace Szachy2
         private bool highlight = false; //is the movement here ok thus the highlight
         private Square enPassant = null; //Square tied to this square who caused enPassant
 
-        private bool threat = false; //is this square threatened by blacks - king cannot move here
-        private bool lastMove = false;
+        private bool threat = false; //is this square threatened - king cannot move here
+        private bool lastMove = false; //is this square involved in last move
 
         private int x, y;   //coordinates of the square
         private Piece piece;    //piece on this square
