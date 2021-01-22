@@ -215,7 +215,7 @@ namespace Szachy2
 		}
 
 		// Clear and draw function
-		private void clearSelection()
+		public void clearSelection()
 		{
 			// Clear the background fields
 			for (int i = 0; i < 8; i++)
@@ -561,7 +561,8 @@ namespace Szachy2
 			remisBackground.Visibility = Visibility.Visible;
 			remisLabel.Visibility = Visibility.Visible;
 			zapisCheck.Visibility = Visibility.Visible;
-			zamknijButton.Visibility = Visibility.Visible; 
+			zamknijButton.Visibility = Visibility.Visible;
+			podglad.Visibility = Visibility.Visible;
 		}
 
 		// Invoked when the close app button is pressed
@@ -669,6 +670,47 @@ namespace Szachy2
 		private void bazaGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			rowindex = bazaGrid.Items.IndexOf(bazaGrid.CurrentItem);
+		}
+
+		private void podglad_Click(object sender, RoutedEventArgs e)
+		{
+			if (game.GetWin() == true)
+			{
+				if (endBackground.Visibility == Visibility.Hidden)
+				{
+					endBackground.Visibility = Visibility.Visible;
+					endLabel.Visibility = Visibility.Visible;
+					zapisCheck.Visibility = Visibility.Visible;
+					zamknijButton.Visibility = Visibility.Visible;
+
+				}
+				else
+				{
+					endBackground.Visibility = Visibility.Hidden;
+					endLabel.Visibility = Visibility.Hidden;
+					zapisCheck.Visibility = Visibility.Hidden;
+					zamknijButton.Visibility = Visibility.Hidden;
+				}
+			}
+			else
+			{
+				if (remisBackground.Visibility == Visibility.Hidden)
+				{
+					remisBackground.Visibility = Visibility.Visible;
+					remisLabel.Visibility = Visibility.Visible;
+					zapisCheck.Visibility = Visibility.Visible;
+					zamknijButton.Visibility = Visibility.Visible;
+
+				}
+				else
+				{
+					remisBackground.Visibility = Visibility.Hidden;
+					remisLabel.Visibility = Visibility.Hidden;
+					zapisCheck.Visibility = Visibility.Hidden;
+					zamknijButton.Visibility = Visibility.Hidden;
+				}
+			}
+				
 		}
 	}
 }

@@ -16,9 +16,12 @@ namespace Szachy2
         private bool turn = Constants.White;
         private String nazwaBialy = "Biały";
         private String nazwaCzarny = "Czarny";
+        private static bool win = false;
 
-        public static void EndGame(bool win)
+        public static void EndGame(ChessBoard chessboard)
         {
+            chessboard.HighlightThreats(true, false);
+            chessboard.HighlightThreats(false, false);
             foreach (Window window in Application.Current.Windows)
             {
                 if (window.GetType() == typeof(MainWindow))
@@ -29,6 +32,7 @@ namespace Szachy2
                         (window as MainWindow).endLabel.Visibility = Visibility.Visible;
                         (window as MainWindow).zapisCheck.Visibility = Visibility.Visible;
                         (window as MainWindow).zamknijButton.Visibility = Visibility.Visible;
+                        (window as MainWindow).podglad.Visibility = Visibility.Visible;
                     }
                     else
                     {
@@ -36,6 +40,7 @@ namespace Szachy2
                         (window as MainWindow).remisLabel.Visibility = Visibility.Visible;
                         (window as MainWindow).zapisCheck.Visibility = Visibility.Visible;
                         (window as MainWindow).zamknijButton.Visibility = Visibility.Visible;
+                        (window as MainWindow).podglad.Visibility = Visibility.Visible;
                     }
                 }
             }
@@ -99,16 +104,34 @@ namespace Szachy2
             chessBoard.GenerateLegalMoves(turn);
             if (chessBoard.GetMoves().Count() == 0)
             {
+                //chessBoard.HighlightThreats(!turn, false);
+                //chessBoard.ClearHighlights();
+                //foreach (Window window in Application.Current.Windows)
+                //{
+                //    if (window.GetType() == typeof(MainWindow))
+                //    {
+
+                //        (window as MainWindow).clearSelection();
+                            
+                //    }
+                //}
                 if (chessBoard.KingInDanger(turn))
                 {
-                    EndGame(true);
+                    win = true;
+                    EndGame(chessBoard);
                 }
                 else
                 {
-                    EndGame(false);
+                    win = false;
+                    EndGame(chessBoard);
                 }
             }
         }
+
+        public bool GetWin()
+		{
+            return win;
+		}
 
         public void MakeMove(Square endSquare)
         {
