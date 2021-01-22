@@ -33,20 +33,11 @@ namespace Szachy2
         {
             possibleMoves.Clear();
 
-            if (KingInDanger(turn))
-            {
-                if (turn == Constants.White)
-                    whiteKing.SetInDanger(true);
-                else
-                    blackKing.SetInDanger(true);
-            }
+            if (turn == Constants.White)
+                whiteKing.SetInDanger(KingInDanger(turn));
             else
-            {
-                if (turn == Constants.White)
-                    whiteKing.SetInDanger(false);
-                else
-                    blackKing.SetInDanger(false);
-            }
+                blackKing.SetInDanger(KingInDanger(turn));
+
 
             foreach (Square s in GetSquares())
             {
@@ -60,11 +51,11 @@ namespace Szachy2
                         {
                             if (highlighted.GetHighlight()) //possible move
                             {
-                                ChessBoard chessBoardAfterMove = this.Copy();
+                                ChessBoard chessBoardAfterMove = this.Copy(); //looking one move forward on copy
                                 Square start = chessBoardAfterMove.GetSquare(s.GetX(), s.GetY());
                                 Square end = chessBoardAfterMove.GetSquare(highlighted.GetX(), highlighted.GetY());
                                 chessBoardAfterMove.MakeMove(start, end);
-                                if (!chessBoardAfterMove.KingInDanger(turn))
+                                if (!chessBoardAfterMove.KingInDanger(turn)) //this is legal move
                                 {
                                     possibleMoves.Add(new Move(s, highlighted, s.GetPiece(), highlighted.GetPiece()));
                                 }
@@ -148,8 +139,8 @@ namespace Szachy2
 
         public bool KingInDanger(bool turn)
         {
-            HighlightThreats(turn, false);
-            HighlightThreats(turn, true);
+            HighlightThreats(turn, false); //clear threats
+            HighlightThreats(turn, true); //highlight threats
             foreach (Square s in GetSquares())
             {
                 if (s.GetPiece() != null)
@@ -301,10 +292,6 @@ namespace Szachy2
                     squares[i, j] = new Square(i, j);
                 }
             }
-            
-            //squares[4, 4] = new Square(4, 4, new Queen(Constants.Black));
-            //squares[4, 5] = new Square(4, 5, new Queen(Constants.Black));
-            //squares[3, 4] = new Square(3, 4, new Rook(Constants.White));
         }
     }
 }

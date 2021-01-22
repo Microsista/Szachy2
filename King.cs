@@ -15,7 +15,7 @@ namespace Szachy2
         private bool firstMove = true;
         private bool inDanger = false;
 
-        private void HighlightKing(int i, int j, Square[,] squares, bool threat) //todo check for threats!
+        private void HighlightKing(int i, int j, Square[,] squares, bool threat)
         {
             if (squares[i, j].GetPiece() == null) //no piece
             {
@@ -23,12 +23,11 @@ namespace Szachy2
             }
             else if (squares[i, j].GetPiece().GetColor() == color) //same color piece
             {
-                //no highlight
+                //no highlight - cannot go
             }
             else //another color piece
             {
                 Highlight(true, threat, squares[i, j]);
-
             }
         }
 

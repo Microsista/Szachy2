@@ -83,7 +83,6 @@ namespace Szachy2
                         }
                     }
                 }
-                HighlightAttack(squares, mySquare, threat);
             }
             else //black
             {
@@ -101,8 +100,8 @@ namespace Szachy2
                         }
                     }
                 }
-                HighlightAttack(squares, mySquare, threat);
             }
+            HighlightAttack(squares, mySquare, threat);
         }
 
         public override void Move(Square startSquare, Square endSquare, ChessBoard chessBoard)
