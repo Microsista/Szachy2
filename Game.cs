@@ -89,7 +89,7 @@ namespace Szachy2
 
         public void SaveGame()
         {
-            gameMoves.saveAsPGN();
+            gameMoves.saveAsPGN(this);
         }
 
         private void CheckForWin()

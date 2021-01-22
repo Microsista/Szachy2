@@ -581,7 +581,7 @@ namespace Szachy2
 				//SqlCommand cmd2 = new SqlCommand("DBCC CHECKIDENT ('Tabela_HistoriaGier', RESEED, 0)", con);
 				//cmd2.ExecuteNonQuery();
 
-				SqlCommand cmd = new SqlCommand("insert into Tabela_HistoriaGier values('"+zwyciezca+"','" + game.GetNazwaBialy() + "', '" + game.GetNazwaCzarny()+"', GETDATE(), '"+game.GetGameMoves().GeneratePGNString()+"')", con);
+				SqlCommand cmd = new SqlCommand("insert into Tabela_HistoriaGier values('"+zwyciezca+"','" + game.GetNazwaBialy() + "', '" + game.GetNazwaCzarny()+"', GETDATE(), '"+game.GetGameMoves().GeneratePGNString(game)+"')", con);
 				int i = cmd.ExecuteNonQuery();
 				if (i > 0)
 				{
@@ -612,7 +612,7 @@ namespace Szachy2
 				//// Save the new row to the database
 				//TableAdapter.Update(bazaDanychDataSet.Tabela_HistoriaGier);
 
-				game.SaveGame();
+				//game.SaveGame();
 			}
 				
 

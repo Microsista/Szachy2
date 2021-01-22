@@ -16,9 +16,11 @@ namespace Szachy2
             moves.Add(move);
         }
 
-        public string GeneratePGNString()
+        public string GeneratePGNString(Game game)
         {
             string result = "[Date \"" + DateTime.Now.ToString("yyyy.MM.dd") + "\"]";
+            result += "\n[White \"" + game.GetNazwaBialy() + "\"]";
+            result += "\n[Black \"" + game.GetNazwaCzarny() + "\"]";
             int round = 1;
             foreach (Move m in moves)
             {
@@ -30,18 +32,17 @@ namespace Szachy2
                     round++;
                 }
             }
-            //Console.WriteLine(result);
 
             return result;
         }
 
-        public void saveAsPGN()
+        public void saveAsPGN(Game game)
         {
             string path = Directory.GetCurrentDirectory() + "/Game" + DateTime.Now.ToString("yyyy-MM-dd_hh-mm-ss") + ".pgn";
             Console.WriteLine(path);
             using (StreamWriter sw = File.CreateText(path))
             {
-                sw.Write(GeneratePGNString());
+                sw.Write(GeneratePGNString(game));
             }
         }
 
